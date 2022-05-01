@@ -1,26 +1,24 @@
 use yew::prelude::*;
 
-enum Msg {
+enum CounterComponentMsg {
     AddOne,
 }
 
-struct Model {
+struct CounterComponent {
     value: i64,
 }
 
-impl Component for Model {
-    type Message = Msg;
+impl Component for CounterComponent {
+    type Message = CounterComponentMsg;
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self {
-            value: 0,
-        }
+        Self { value: 0 }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::AddOne => {
+            CounterComponentMsg::AddOne => {
                 self.value += 1;
                 // the value has changed so we need to
                 // re-render for it to appear on the page
@@ -34,7 +32,7 @@ impl Component for Model {
         let link = ctx.link();
         html! {
             <div>
-                <button onclick={link.callback(|_| Msg::AddOne)}>{ "+1" }</button>
+                <button onclick={link.callback(|_| CounterComponentMsg::AddOne)}>{ "+1" }</button>
                 <p>{ self.value }</p>
             </div>
         }
@@ -42,5 +40,5 @@ impl Component for Model {
 }
 
 fn main() {
-    yew::start_app::<Model>();
+    yew::start_app::<CounterComponent>();
 }

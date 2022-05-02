@@ -1,10 +1,10 @@
 #![recursion_limit = "640"]
 
-mod app_router;
-mod components;
 mod pages;
+mod components;
+mod router;
 
-use app_router::{switch, Route};
+use router::{switch, Route};
 use yew::prelude::*;
 use yew_router::prelude::*;
 

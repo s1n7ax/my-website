@@ -1,8 +1,8 @@
 [watch]
 #  watch = []
-ignore = ["./tailwind", "./README.md"]
+ignore = ["node_dependencies", "README.md"]
 
 [[hooks]]
 stage = "pre_build"
 command = "yarn"
-command_arguments = ["--cwd", "./tailwind", "run", "build"]
+command_arguments = ["--cwd", "node_dependencies", "run", "build"]

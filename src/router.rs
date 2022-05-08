@@ -1,9 +1,8 @@
+use crate::pages::*;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use crate::pages::{About, CoverLetter, Index, NotFound};
-
-#[derive(Routable, Debug, Clone, PartialEq)]
+#[derive(Routable, PartialEq, Clone, Copy, Debug)]
 pub enum Route {
     #[at("/")]
     Index,
@@ -11,10 +10,13 @@ pub enum Route {
     #[at("about")]
     About,
 
-    #[at("/cover_letter")]
-    CoverLetter,
+    #[at("/contact")]
+    Contact,
 
-    #[at("/404")]
+    #[at("/portfolio")]
+    Portfolio,
+
+    #[at("*")]
     NotFound,
 }
 
@@ -22,7 +24,8 @@ pub fn switch(routes: &Route) -> Html {
     match routes {
         Route::Index => html! { <Index /> },
         Route::About => html! { <About /> },
-        Route::CoverLetter => html! { <CoverLetter /> },
+        Route::Contact => html! { <Contact /> },
+        Route::Portfolio => html! { <Portfolio /> },
         _ => html! { <NotFound /> },
     }
 }

@@ -1,9 +1,11 @@
-pub mod index;
 pub mod about;
-pub mod cover_letter;
+pub mod contact;
+pub mod index;
 pub mod not_found;
+pub mod portfolio;
 
-pub use self::index::Index;
 pub use self::about::About;
-pub use self::cover_letter::CoverLetter;
+pub use self::contact::Contact;
+pub use self::index::Index;
 pub use self::not_found::NotFound;
+pub use self::portfolio::Portfolio;

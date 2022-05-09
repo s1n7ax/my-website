@@ -1,7 +1,7 @@
-# my-website
+# my-website (WIP)
 my website written in web assembly
 
-# Dev guide
+# Dev Setup
 * Install `rustc <= 1.59`
 * Add build target `rustup target add wasm32-unknown-unknown`
 * Install trunk `cargo install trunk`

@@ -18,7 +18,6 @@ pub fn body(props: &Props) -> Html {
                         "flex-col",
                         "justify-center",
                         "items-center",
-                        "w-14",
                         "bg-green-300")}>
                 <NavigationMenu />
             </div>

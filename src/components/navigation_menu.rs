@@ -14,10 +14,10 @@ pub fn icon(props: &IconProps) -> Html {
     let src = format!("assets/icons/{}.svg", props.icon_name);
 
     html! {
-        <Link<Route> classes={classes!("my-2",
+        <Link<Route> classes={classes!("m-2",
                                        "p-2",
-                                       "w-12",
-                                       "h-12",
+                                       "w-20",
+                                       "h-20",
                                        "bg-orange-200")}
         to={props.route}>
             <img

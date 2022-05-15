@@ -1,5 +1,5 @@
-use yew::prelude::*;
 use crate::components::NavigationMenu;
+use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]
 pub struct Props {

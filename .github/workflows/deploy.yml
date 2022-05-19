@@ -33,10 +33,13 @@ jobs:
     - name: Publish to github pages
       shell: bash
       run: |
+        echo "creating tmp dir"
         TEMP_DIR=$(mktemp -d)
-        ls "$TEMP_DIR"
+        echo "tmp dir is $TEMP_DIR"
+        echo "tmp dir content 1 $(ls $TEMP_DIR)"
         mv "./dist" "$TEMP_DIR"
-        ls "$TEMP_DIR"
+        echo "tmp dir content 2 $(ls $TEMP_DIR)"
+        echo "tmp dir content 3 $(ls $TEMP_DIR/dist)"
         git switch -c "gh-pages" || git switch "gh-pages"
         rm -rf *
         cp -r "$TEMP_DIR/dist/*" .

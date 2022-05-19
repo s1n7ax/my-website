@@ -43,5 +43,5 @@ jobs:
         git config user.name "s1n7ax"
         git add .
         git commit -m "chore: published at $(date)"
-        git pull -r
+        git pull -r origin "gh-pages"
         git push origin "gh-pages"

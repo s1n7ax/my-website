@@ -39,6 +39,8 @@ jobs:
         rm -rf *
         pwd
         mv "$TEMP_DIR/dist/"* .
+        git config user.email "srineshnisala@gmail.com"
+        git config user.name "s1n7ax"
         git add .
         git commit -m "chore: published at $(date)"
         git push origin gh-pages

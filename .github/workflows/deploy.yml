@@ -1,0 +1,40 @@
+name: Rust
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install trunk
+      run: cargo install trunk
+      
+    - name: Install wasm
+      run: rustup target add wasm32-unknown-unknown
+      
+    - name: Install node dependencies
+      working-directory: node_dependencies
+      run: yarn
+    
+    - name: Build
+      run: trunk build
+      
+    - name: Publish to github pages
+      run: |
+        TEMP_DIR=$(mktemp -d)
+        mv dist $TEMP_DIR
+        git switch -c "gh-pages" || git switch "gh-pages"
+        rm -rf *
+        cp -r "$TEMP_DIR/dist/*" .
+        git push

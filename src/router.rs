@@ -3,6 +3,7 @@ use crate::pages::contact::Contact;
 use crate::pages::home::Home;
 use crate::pages::not_found::NotFound;
 use crate::pages::portfolio::Portfolio;
+use crate::pages::resume::Resume;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -21,6 +22,9 @@ pub enum Route {
     #[at("/portfolio")]
     Portfolio,
 
+    #[at("/resume")]
+    Resume,
+
     #[at("*")]
     NotFound,
 }
@@ -31,6 +35,7 @@ pub fn switch(routes: &Route) -> Html {
         Route::About => html! { <About /> },
         Route::Contact => html! { <Contact /> },
         Route::Portfolio => html! { <Portfolio /> },
+        Route::Resume => html! { <Resume /> },
         _ => html! { <NotFound /> },
     }
 }

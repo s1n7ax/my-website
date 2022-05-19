@@ -23,7 +23,7 @@ pub fn body(props: &Props) -> Html {
             </div>
 
             // content
-            <div class={classes!("flex-grow", "bg-red-200")}>
+            <div class={classes!("flex-grow", "bg-red-200", "p-10")}>
                 {props.children.to_owned()}
             </div>
         </div>

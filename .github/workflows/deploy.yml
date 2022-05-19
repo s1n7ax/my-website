@@ -35,7 +35,7 @@ jobs:
       run: |
         TEMP_DIR=$(mktemp -d)
         mv "./dist" "$TEMP_DIR"
-        git switch -c "gh-pages" || git switch "gh-pages"
+        git switch "gh-pages"
         rm -rf *
         pwd
         mv "$TEMP_DIR/dist/"* .

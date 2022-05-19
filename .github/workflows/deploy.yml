@@ -44,6 +44,7 @@ jobs:
         echo "tmp dir content 4 $(ls $TEMP_DIR)"
         rm -rf *
         echo "tmp dir content 5 $(ls $TEMP_DIR/dist)"
-        mv "$TEMP_DIR/dist/*" .
+        pwd
+        mv "$TEMP_DIR/dist/" .
         echo "tmp dir content 6 $(ls $TEMP_DIR)"
         git push

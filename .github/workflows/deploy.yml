@@ -43,7 +43,7 @@ jobs:
         git switch -c "gh-pages" || git switch "gh-pages"
         echo "tmp dir content 4 $(ls $TEMP_DIR)"
         rm -rf *
-        echo "tmp dir content 5 $(ls $TEMP_DIR)"
-        cp -r "$TEMP_DIR/dist/*" .
+        echo "tmp dir content 5 $(ls $TEMP_DIR/dist)"
+        mv "$TEMP_DIR/dist/*" .
         echo "tmp dir content 6 $(ls $TEMP_DIR)"
         git push

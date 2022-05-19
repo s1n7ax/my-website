@@ -33,7 +33,9 @@ jobs:
     - name: Publish to github pages
       run: |
         TEMP_DIR=$(mktemp -d)
-        mv dist $TEMP_DIR
+        ls "$TEMP_DIR"
+        mv "./dist" "$TEMP_DIR"
+        ls "$TEMP_DIR"
         git switch -c "gh-pages" || git switch "gh-pages"
         rm -rf *
         cp -r "$TEMP_DIR/dist/*" .

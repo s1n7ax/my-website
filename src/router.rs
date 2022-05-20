@@ -13,7 +13,7 @@ pub enum Route {
     #[at("/")]
     Index,
 
-    #[at("about")]
+    #[at("/about")]
     About,
 
     #[at("/contact")]

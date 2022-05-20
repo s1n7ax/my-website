@@ -504,6 +504,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0.5rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -552,6 +557,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .w-full {
@@ -657,14 +666,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.75rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-5xl {

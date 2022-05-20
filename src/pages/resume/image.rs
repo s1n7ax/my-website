@@ -5,6 +5,6 @@ pub fn image() -> Html {
     let src = format!("assets/images/me_01.webp");
 
     html! {
-        <img src={src} />
+        <img class={classes!("w-96")} src={src} />
     }
 }

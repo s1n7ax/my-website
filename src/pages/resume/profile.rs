@@ -1,10 +1,12 @@
 use yew::prelude::*;
 
+use crate::components::H2;
+
 #[function_component(Profile)]
 pub fn profile() -> Html {
     html! {
         <div>
-            <h2>{ "Profile" }</h2>
+            <H2>{ "Profile" }</H2>
             <p>
                 { "Motivated and resourceful engineer with 6 years’ of working
                 experience in the industry. Primarily working with Java and

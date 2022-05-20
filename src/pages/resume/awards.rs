@@ -1,10 +1,12 @@
 use yew::prelude::*;
 
+use crate::components::H2;
+
 #[function_component(Awards)]
 pub fn awards() -> Html {
     html! {
         <div>
-            <h2>{ "Awards" }</h2>
+            <H2>{ "Awards" }</H2>
             <AwardsRecord
                 year="2021"
                 description="SLIIT Best Performance of the Year"

@@ -1,9 +1,12 @@
 use yew::prelude::*;
 
+use crate::components::H2;
+
 #[function_component(Education)]
 pub fn education() -> Html {
     html! {
         <div>
+            <H2>{ "Education" }</H2>
             <EducationRecord
                 from="2014"
                 to="2015"

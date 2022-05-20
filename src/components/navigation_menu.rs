@@ -34,8 +34,9 @@ pub fn navigation_menu() -> Html {
         // Navbar
         <nav class={classes!("flex", "flex-col", "py-10")}>
             <Icon route={Route::Index} icon_name="house-chimney-solid" alt="Home" />
+            <Icon route={Route::Resume} icon_name="address-card-solid" alt="Resume" />
             <Icon route={Route::Portfolio} icon_name="user-graduate-solid" alt="Portfolio" />
-            <Icon route={Route::Contact} icon_name="address-card-solid" alt="Contact" />
+            <Icon route={Route::Contact} icon_name="address-book-solid" alt="Contact" />
             <Icon route={Route::About} icon_name="circle-info-solid" alt="About" />
         </nav>
     }

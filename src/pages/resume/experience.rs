@@ -1,12 +1,12 @@
 use yew::prelude::*;
 
+use crate::components::H2;
+
 #[function_component(Experience)]
 pub fn experience() -> Html {
     html! {
         <div>
-            <h2>
-                { "Experience" }
-            </h2>
+            <H2>{ "Experience" }</H2>
             <div class={classes!("flex", "flex-col")}>
                 <WorkRecord
                     from="FEB 2016"

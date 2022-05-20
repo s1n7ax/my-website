@@ -28,7 +28,7 @@ jobs:
       run: yarn
     
     - name: Build
-      run: ./trunk build --public-url /my-website/
+      run: ./trunk build --public-url /my-website/ --release
       
     - name: Publish to github pages
       shell: bash

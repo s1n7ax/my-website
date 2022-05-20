@@ -2,7 +2,7 @@ use yew::prelude::*;
 
 use crate::components::body::Body;
 use crate::pages::resume::{
-    Awards, Contact, Container, Education, Experience, Image, Languages, Profile, Title,
+    Awards, Contact, Container, Education, Experience, Image, Technologies, Profile, Title,
 };
 
 #[function_component(Resume)]
@@ -18,7 +18,7 @@ pub fn resume() -> Html {
                     <div class={classes!("bg-red-400")}><Experience /></div>
                     <div class={classes!("bg-red-400")}><Education /></div>
                     <div class={classes!("bg-red-400")}><Awards /></div>
-                    <div class={classes!("bg-red-400")}><Languages /></div>
+                    <div class={classes!("bg-red-400")}><Technologies /></div>
                 </div>
             </Container>
         </Body>

@@ -7,41 +7,57 @@ pub fn technologies() -> Html {
     html! {
         <div>
             <H2>{ "Technologies" }</H2>
-            <LanguageRecord
-                lang="JavaScript"
+            <TechnologyRecord
+                name="ReactJs"
                 percentage={80}
             />
-            <LanguageRecord
-                lang="Lua"
+            <TechnologyRecord
+                name="Angular"
+                percentage={30}
+            />
+            <TechnologyRecord
+                name="Spring Boot"
+                percentage={40}
+            />
+            <TechnologyRecord
+                name="Typescript"
                 percentage={80}
             />
-            <LanguageRecord
-                lang="Python"
+            <TechnologyRecord
+                name="Python"
                 percentage={60}
             />
-            <LanguageRecord
-                lang="Java"
+            <TechnologyRecord
+                name="Java"
                 percentage={60}
             />
-            <LanguageRecord
-                lang="Rust"
+            <TechnologyRecord
+                name="Rust"
                 percentage={20}
+            />
+            <TechnologyRecord
+                name="Selenium"
+                percentage={80}
+            />
+            <TechnologyRecord
+                name="Cypress"
+                percentage={80}
             />
         </div>
     }
 }
 
 #[derive(Properties, PartialEq)]
-struct LanguageRecordProps {
-    lang: String,
+struct TechnologyRecordProps {
+    name: String,
     percentage: u8,
 }
 
-#[function_component(LanguageRecord)]
-fn language_record(props: &LanguageRecordProps) -> Html {
+#[function_component(TechnologyRecord)]
+fn technology_record(props: &TechnologyRecordProps) -> Html {
     html! {
         <div class={classes!("flex", "gap-2")}>
-            <span> { props.lang.to_owned() } </span>
+            <span> { props.name.to_owned() } </span>
             <span> { format!("{}%", props.percentage) } </span>
         </div>
     }

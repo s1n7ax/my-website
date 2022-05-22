@@ -502,8 +502,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .order-first {
   order: -9999;
+}
+
+.col-start-1 {
+  grid-column-start: 1;
+}
+
+.row-start-1 {
+  grid-row-start: 1;
 }
 
 .float-left {
@@ -577,10 +589,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2.5rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .flex-grow {
   flex-grow: 1;
 }
@@ -591,6 +599,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -666,6 +678,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
+.fill-green-600 {
+  fill: #16a34a;
+}
+
+.fill-green-500 {
+  fill: #22c55e;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -710,6 +730,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.hover\:visible:hover {
+  visibility: visible;
 }
 
 @media (min-width: 1024px) {

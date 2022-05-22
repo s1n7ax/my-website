@@ -5,25 +5,28 @@ pub fn image() -> Html {
     let src = format!("assets/images/me_01.webp");
 
     html! {
-        <div class={classes!()}>
-            <svg class={classes!()} viewBox="15 15 150 150">
-                <defs>
-                    <pattern
-                        id="imgpattern"
-                        width="1"
-                        height="1"
-                        viewBox="0 0 100 100"
-                        preserveAspectRatio="xMidYMid slice"
-                    >
-                        <image width="100" height="100" href={ src }/>
-                    </pattern>
-                </defs>
+        <div class={classes!("flex", "justify-center", "lg:justify-end")}>
+            <div class={classes!("w-1/2")}>
+                <svg viewBox="50 50 100 100">
+                    <defs>
+                        <pattern
+                            id="imgpattern"
+                            width="1"
+                            height="1"
+                            viewBox="0 0 100 100"
+                            preserveAspectRatio="xMidYMid slice"
+                        >
+                            <image width="100" height="100" href={ src }/>
+                        </pattern>
+                    </defs>
 
-                <path
-                    fill="url(#imgpattern)"
-                    d="M36.7,-43.4C41.7,-31.6,36,-15.8,36.5,0.5C37,16.8,43.7,33.6,38.7,40.8C33.6,47.9,16.8,45.4,-1,46.4C-18.8,47.4,-37.5,51.8,-48.7,44.7C-59.8,37.5,-63.3,18.8,-61,2.3C-58.7,-14.2,-50.6,-28.4,-39.5,-40.2C-28.4,-52,-14.2,-61.4,0.8,-62.2C15.8,-63,31.6,-55.2,36.7,-43.4Z" transform="translate(100 100)"
-                />
-            </svg>
+                    <path
+                        fill="url(#imgpattern)"
+                        d="M24.1,-28.6C31.3,-22.7,37.3,-15.1,37.5,-7.5C37.8,0.1,32.5,7.9,28,16.6C23.5,25.2,19.8,34.8,13.3,37.6C6.8,40.4,-2.5,36.5,-10.9,32.4C-19.4,28.3,-26.9,24.1,-30.4,17.7C-33.8,11.4,-33.2,2.8,-31.5,-5.3C-29.8,-13.5,-27,-21.2,-21.6,-27.5C-16.2,-33.7,-8.1,-38.5,0.2,-38.7C8.4,-38.9,16.9,-34.6,24.1,-28.6Z"
+                        transform="translate(100 100)"
+                    />
+                </svg>
+            </div>
         </div>
     }
 }

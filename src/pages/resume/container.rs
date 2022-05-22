@@ -13,8 +13,15 @@ pub fn container(props: &ContainerProps) -> Html {
         <div class={
             classes!(
                 "flex",
-                "my-10",
-                "p-10",
+                "flex-col",
+                "justify-center",
+                "items-center",
+                "overflow-auto",
+
+                "min-h-full",
+
+                "px-10",
+                "py-10",
                 "bg-yellow-400",
             )
         }>

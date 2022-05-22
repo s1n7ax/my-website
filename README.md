@@ -1,6 +1,12 @@
 # my-website (WIP)
 my website written in web assembly
 
+## DEMO
+
+[https://s1n7ax.github.io/my-website/](https://s1n7ax.github.io/my-website/)
+
+![screenshot](./screenshots/screenshot_1.png)
+
 # Dev Setup
 * Install `rustc <= 1.59`
 * Add build target `rustup target add wasm32-unknown-unknown`

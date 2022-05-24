@@ -10,25 +10,23 @@ pub struct Props {
 #[function_component(Body)]
 pub fn body(props: &Props) -> Html {
     html! {
-        <div class={classes!("flex", "h-screen")}>
-            // navigation menu
-            <div
-                class={classes!(
-                        "flex",
-                        "flex-col",
-                        "justify-center",
-                        "bg-green-300")}>
+        <div class={classes!(
+            "flex",
+            "h-screen"
+        )}>
+            <div class={classes!(
+                "flex",
+                "flex-col",
+                "justify-center",
+            )}>
                 <NavigationMenu />
             </div>
 
-            // content
-            <div class={
-                classes!(
-                    "flex-grow",
-                    "overflow-auto",
-                    "bg-red-200",
-                )}
-            >
+            <div class={classes!(
+                "flex-grow",
+                "overflow-auto",
+                "bg-red-200",
+            )}>
                 {props.children.to_owned()}
             </div>
         </div>

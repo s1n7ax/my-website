@@ -20,19 +20,36 @@ pub fn icon(props: &IconProps) -> Html {
                 "group",
                 "flex",
                 "items-center",
-                "m-2",
                 "p-2",
-                "w-20",
-                "h-20",
-                "bg-orange-200"
+                "z-10",
+
+                "hover:w-max",
+                "hover:rounded-lg",
+                "transition-all",
+
+                "bg-orange-600"
             )}
             to={props.route}
         >
-            <img
+            <img class={classes!(
+                    "w-20",
+                )}
                 src={src}
                 alt={props.alt.to_owned()}
             />
-            <span class={classes!("invisible", "hover:visible")}>{ props.presentation.to_owned() }</span>
+            <span class={classes!(
+                "text-2xl",
+                "mx-2",
+                "hidden",
+                "opacity-0",
+
+                "group-hover:inline-block",
+                "group-hover:opacity-100",
+                "transition-all",
+                "duration-1000"
+            )}>
+                { props.presentation.to_owned() }
+            </span>
         </Link<Route>>
     }
 }
@@ -40,8 +57,17 @@ pub fn icon(props: &IconProps) -> Html {
 #[function_component(NavigationMenu)]
 pub fn navigation_menu() -> Html {
     html! {
-        // Navbar
-        <nav class={classes!("flex", "flex-col", "py-10")}>
+        <nav class={classes!(
+            "flex",
+            "flex-col",
+            "justify-center",
+
+            "m-2",
+            "w-24",
+            "gap-2",
+
+            "bg-blue-600",
+        )}>
             <Icon
                 presentation="Home"
                 route={Route::Index} icon_name="house-chimney-solid"

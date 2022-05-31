@@ -5,7 +5,7 @@ pub fn image() -> Html {
     let src = format!("assets/images/me_01.webp");
 
     html! {
-        <div class={classes!("flex", "justify-center", "lg:justify-end")}>
+        <div class={classes!("flex", "justify-center", "lg:justify-center")}>
             <div class={classes!("w-2/3", "grid", "grid-cols-1", "grid-rows-1")}>
                 <div class={classes!("col-start-1", "row-start-1")}>
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

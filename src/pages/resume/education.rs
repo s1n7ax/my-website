@@ -5,38 +5,40 @@ use crate::components::H2;
 #[function_component(Education)]
 pub fn education() -> Html {
     html! {
-        <div class={classes!("flex", "flex-col", "gap-3")}>
+        <div>
             <H2>{ "Education" }</H2>
-            <EducationRecord
-                from="2020"
-                to="2021"
-                university="University of Bedfordshire"
-                localtion="England"
-                course="BSc (Hons) Computer Science & Software Engineering"
-                class="first class"
-                awards={vec![
-                    "SLIIT Award — Best performance of the year".to_string(),
-                    "SLIIT Award — Best research of the year".to_string()
-                ]}
-            />
-            <EducationRecord
-                from="2015"
-                to="2016"
-                university="National Institute of Business Management"
-                localtion="Sri Lanka"
-                course="Higher Diploma in Computer Based Information Systems"
-                class=""
-                awards={vec![]}
-            />
-            <EducationRecord
-                from="2014"
-                to="2015"
-                university="National Institute of Business Management"
-                localtion="Sri Lanka"
-                course="Diploma in Computer System Design"
-                class=""
-                awards={vec![]}
-            />
+            <div class={classes!("flex", "flex-col", "gap-3")}>
+                <EducationRecord
+                    from="2020"
+                    to="2021"
+                    university="University of Bedfordshire"
+                    localtion="England"
+                    course="BSc (Hons) Computer Science & Software Engineering"
+                    class="first class"
+                    awards={vec![
+                        "SLIIT Award — Best performance of the year".to_string(),
+                        "SLIIT Award — Best research of the year".to_string()
+                    ]}
+                />
+                <EducationRecord
+                    from="2015"
+                    to="2016"
+                    university="National Institute of Business Management"
+                    localtion="Sri Lanka"
+                    course="Higher Diploma in Computer Based Information Systems"
+                    class=""
+                    awards={vec![]}
+                />
+                <EducationRecord
+                    from="2014"
+                    to="2015"
+                    university="National Institute of Business Management"
+                    localtion="Sri Lanka"
+                    course="Diploma in Computer System Design"
+                    class=""
+                    awards={vec![]}
+                />
+            </div>
         </div>
     }
 }

@@ -8,6 +8,7 @@ pub mod experience;
 pub mod education;
 pub mod awards;
 pub mod technologies;
+pub mod links;
 
 pub use self::resume::Resume;
 pub use self::title::Title;
@@ -19,3 +20,4 @@ pub use self::experience::Experience;
 pub use self::education::Education;
 pub use self::awards::Awards;
 pub use self::technologies::Technologies;
+pub use self::links::Links;

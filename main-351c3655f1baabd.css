@@ -541,11 +541,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2.5rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .flex {
   display: flex;
 }
@@ -622,10 +617,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -646,12 +637,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 0.5rem;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-5 {
-  gap: 1.25rem;
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .gap-3 {
@@ -795,12 +782,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-column: span 10 / span 10;
   }
 
-  .lg\:col-span-6 {
-    grid-column: span 6 / span 6;
+  .lg\:col-span-7 {
+    grid-column: span 7 / span 7;
   }
 
-  .lg\:col-span-4 {
-    grid-column: span 4 / span 4;
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
+  .lg\:col-start-4 {
+    grid-column-start: 4;
   }
 
   .lg\:row-span-2 {
@@ -809,6 +800,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:row-span-3 {
     grid-row: span 3 / span 3;
+  }
+
+  .lg\:row-start-6 {
+    grid-row-start: 6;
+  }
+
+  .lg\:row-start-7 {
+    grid-row-start: 7;
+  }
+
+  .lg\:flex {
+    display: flex;
   }
 
   .lg\:w-96 {
@@ -831,8 +834,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     flex-direction: row-reverse;
   }
 
-  .lg\:justify-end {
-    justify-content: flex-end;
+  .lg\:justify-center {
+    justify-content: center;
+  }
+
+  .lg\:gap-5 {
+    gap: 1.25rem;
   }
 
   .lg\:rounded-3xl {

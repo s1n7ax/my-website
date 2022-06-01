@@ -593,6 +593,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.25rem;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -653,6 +657,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 0.75rem;
 }
 
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -661,9 +669,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 9999px;
 }
 
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .bg-orange-600 {
@@ -684,6 +691,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
+.bg-neutral-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
@@ -785,11 +797,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(38 38 38 / var(--tw-text-opacity));
 }
 
-.text-blue-100 {
-  --tw-text-opacity: 1;
-  color: rgb(219 234 254 / var(--tw-text-opacity));
-}
-
 .opacity-0 {
   opacity: 0;
 }
@@ -804,6 +811,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 1000ms;
 }
 
+.duration-200 {
+  transition-duration: 200ms;
+}
+
 .hover\:w-max:hover {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -812,6 +823,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:rounded-lg:hover {
   border-radius: 0.5rem;
+}
+
+.hover\:drop-shadow-lg:hover {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .group:hover .group-hover\:inline-block {
@@ -854,12 +870,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-column-start: 4;
   }
 
+  .lg\:row-span-3 {
+    grid-row: span 3 / span 3;
+  }
+
   .lg\:row-span-2 {
     grid-row: span 2 / span 2;
   }
 
-  .lg\:row-start-4 {
-    grid-row-start: 4;
+  .lg\:row-start-3 {
+    grid-row-start: 3;
   }
 
   .lg\:row-start-5 {
@@ -888,6 +908,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:flex-row-reverse {
     flex-direction: row-reverse;
+  }
+
+  .lg\:justify-start {
+    justify-content: flex-start;
   }
 
   .lg\:justify-center {

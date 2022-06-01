@@ -19,9 +19,9 @@ pub fn links() -> Html {
                     href="https://www.youtube.com/c/s1n7ax"
                 />
                 <Icon
-                    icon_name="twitter-brands"
-                    presentation="Twitter"
-                    href="https://twitter.com/s1n7ax"
+                    icon_name="linkedin-brands"
+                    presentation="LinkedIn"
+                    href="https://www.linkedin.com/in/srinesh-nisala/"
                 />
             </div>
         </div>

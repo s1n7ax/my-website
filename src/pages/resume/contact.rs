@@ -19,11 +19,6 @@ pub fn contact() -> Html {
                     presentation="srineshnisala@gmail.com"
                     href="mailto: srineshnisala@gmail.com"
                 />
-                <ContactInfo
-                    icon_name="linkedin-brands"
-                    presentation="srinesh-nisala"
-                    href="https://www.linkedin.com/in/srinesh-nisala/"
-                />
             </div>
         </div>
     }

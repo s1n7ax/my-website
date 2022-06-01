@@ -21,7 +21,7 @@ pub fn resume() -> Html {
                 )}>
                     <div class={classes!(
                         "lg:col-span-5",
-                        "lg:row-span-2",
+
                         "bg-red-400"
                     )}>
                         <Title />
@@ -29,16 +29,17 @@ pub fn resume() -> Html {
 
                     <div class={classes!(
                         "lg:col-span-5",
-                        "lg:row-span-3",
                         "bg-red-400",
+                        "lg:order-none",
+
                         "order-first",
-                        "lg:order-none"
                     )}>
                         <Image />
                     </div>
 
                     <div class={classes!(
                         "lg:col-span-10",
+
                         "bg-red-400"
                     )}>
                         <Contact />
@@ -46,6 +47,7 @@ pub fn resume() -> Html {
 
                     <div class={classes!(
                         "lg:col-span-10",
+
                         "bg-red-400"
                     )}>
                         <Profile />
@@ -55,6 +57,7 @@ pub fn resume() -> Html {
                         "lg:col-span-7",
                         "lg:row-span-2",
                         "lg:col-start-4",
+
                         "bg-red-400"
                     )}>
                         <Experience />
@@ -63,6 +66,7 @@ pub fn resume() -> Html {
                     <div class={classes!(
                         "lg:col-span-7",
                         "lg:col-start-4",
+
                         "bg-red-400"
                     )}>
                         <Education />
@@ -70,7 +74,8 @@ pub fn resume() -> Html {
 
                     <div class={classes!(
                         "lg:col-span-3",
-                        "lg:row-start-6",
+                        "lg:row-start-4",
+
                         "bg-red-400"
                     )}>
                         <Links />
@@ -79,7 +84,8 @@ pub fn resume() -> Html {
                     <div class={classes!(
                         "lg:col-span-3",
                         "lg:row-span-2",
-                        "lg:row-start-7",
+                        "lg:row-start-5",
+
                         "bg-red-400"
                     )}>
                         <Technologies />

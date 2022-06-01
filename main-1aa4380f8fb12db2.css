@@ -541,6 +541,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2.5rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -591,6 +595,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .flex-grow {
@@ -678,6 +686,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+}
+
 .fill-green-600 {
   fill: #16a34a;
 }
@@ -692,6 +710,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-10 {
   padding: 2.5rem;
+}
+
+.p-0\.5 {
+  padding: 0.125rem;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .py-3 {
@@ -709,6 +735,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 2.5rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -724,17 +754,40 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.25rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .font-bold {
   font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .uppercase {
   text-transform: uppercase;
 }
 
+.leading-none {
+  line-height: 1;
+}
+
 .text-neutral-800 {
   --tw-text-opacity: 1;
   color: rgb(38 38 38 / var(--tw-text-opacity));
+}
+
+.text-blue-100 {
+  --tw-text-opacity: 1;
+  color: rgb(219 234 254 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
@@ -769,6 +822,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   opacity: 1;
 }
 
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-gray-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:order-none {
     order: 0;
@@ -798,16 +858,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-row: span 2 / span 2;
   }
 
-  .lg\:row-span-3 {
-    grid-row: span 3 / span 3;
+  .lg\:row-start-4 {
+    grid-row-start: 4;
   }
 
-  .lg\:row-start-6 {
-    grid-row-start: 6;
-  }
-
-  .lg\:row-start-7 {
-    grid-row-start: 7;
+  .lg\:row-start-5 {
+    grid-row-start: 5;
   }
 
   .lg\:flex {

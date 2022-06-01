@@ -7,11 +7,17 @@ use crate::components::h2::H2;
 pub fn title() -> Html {
     html! {
         <div class={classes!(
-            "grid",
-            "grid-cols-1",
+            "flex",
+            "h-full",
+            "items-center",
         )}>
-            <H1>{ "Srinesh Nisala" }</H1>
-            <H2>{ "Full Stack Engineer" }</H2>
+            <div class={classes!(
+                "flex",
+                "flex-col",
+            )}>
+                <H1>{ "Srinesh Nisala" }</H1>
+                <H2>{ "Full Stack Engineer" }</H2>
+            </div>
         </div>
     }
 }

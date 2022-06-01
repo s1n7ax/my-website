@@ -21,7 +21,7 @@ pub fn resume() -> Html {
                     <div class={classes!(
                         "grid",
                         "grid-cols-1",
-                        "gap-5",
+                        "gap-10",
 
                         "lg:grid-cols-10",
                         "w-9/10",

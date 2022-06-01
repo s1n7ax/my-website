@@ -5,44 +5,46 @@ use crate::components::H2;
 #[function_component(Technologies)]
 pub fn technologies() -> Html {
     html! {
-        <div class={classes!("flex", "flex-col", "gap-2")}>
+        <div>
             <H2>{ "Technologies" }</H2>
-            <TechnologyRecord
-                name="ReactJs"
-                percentage={80}
-            />
-            <TechnologyRecord
-                name="Angular"
-                percentage={30}
-            />
-            <TechnologyRecord
-                name="Spring Boot"
-                percentage={40}
-            />
-            <TechnologyRecord
-                name="Typescript"
-                percentage={80}
-            />
-            <TechnologyRecord
-                name="Python"
-                percentage={60}
-            />
-            <TechnologyRecord
-                name="Java"
-                percentage={60}
-            />
-            <TechnologyRecord
-                name="Rust"
-                percentage={20}
-            />
-            <TechnologyRecord
-                name="Selenium"
-                percentage={80}
-            />
-            <TechnologyRecord
-                name="Cypress"
-                percentage={80}
-            />
+            <div class={classes!("flex", "flex-col", "gap-2")}>
+                <TechnologyRecord
+                    name="ReactJs"
+                    percentage={80}
+                />
+                <TechnologyRecord
+                    name="Angular"
+                    percentage={30}
+                />
+                <TechnologyRecord
+                    name="Spring Boot"
+                    percentage={40}
+                />
+                <TechnologyRecord
+                    name="Typescript"
+                    percentage={80}
+                />
+                <TechnologyRecord
+                    name="Python"
+                    percentage={60}
+                />
+                <TechnologyRecord
+                    name="Java"
+                    percentage={60}
+                />
+                <TechnologyRecord
+                    name="Rust"
+                    percentage={20}
+                />
+                <TechnologyRecord
+                    name="Selenium"
+                    percentage={80}
+                />
+                <TechnologyRecord
+                    name="Cypress"
+                    percentage={80}
+                />
+            </div>
         </div>
     }
 }

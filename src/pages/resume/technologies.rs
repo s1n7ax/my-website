@@ -5,7 +5,7 @@ use crate::components::H2;
 #[function_component(Technologies)]
 pub fn technologies() -> Html {
     html! {
-        <div>
+        <div class={classes!("flex", "flex-col", "gap-2")}>
             <H2>{ "Technologies" }</H2>
             <TechnologyRecord
                 name="ReactJs"
@@ -56,9 +56,37 @@ struct TechnologyRecordProps {
 #[function_component(TechnologyRecord)]
 fn technology_record(props: &TechnologyRecordProps) -> Html {
     html! {
-        <div class={classes!("flex", "gap-2")}>
-            <span> { props.name.to_owned() } </span>
-            <span> { format!("{}%", props.percentage) } </span>
+        <div>
+            <div class={classes!(
+                "mb-1",
+                "text-base",
+                "font-medium",
+            )}>
+                { props.name.to_owned() }
+            </div>
+
+            <div class={classes!(
+                "w-full",
+                "bg-gray-200",
+                "rounded-full",
+                "dark:bg-gray-700"
+            )}>
+                <div
+                    class={classes!(
+                        "text-xs",
+                        "font-medium",
+                        "text-blue-100",
+                        "text-center",
+                        "p-0.5",
+                        "leading-none",
+                        "rounded-full",
+                        "bg-orange-500",
+                    )}
+                    style={ format!("width: {}%", props.percentage) }
+                >
+                    { format!("{}%", props.percentage) }
+                </div>
+            </div>
         </div>
     }
 }

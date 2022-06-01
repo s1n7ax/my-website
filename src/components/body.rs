@@ -25,7 +25,6 @@ pub fn body(props: &Props) -> Html {
             <div class={classes!(
                 "flex-grow",
                 "overflow-auto",
-                "bg-red-200",
             )}>
                 {props.children.to_owned()}
             </div>

@@ -11,84 +11,81 @@ pub fn resume() -> Html {
         <Body>
             <Container>
                 <div class={classes!(
-                    "grid",
-                    "grid-cols-1",
-                    "lg:grid-cols-10",
-                    "gap-3",
-
-                    "w-9/10",
-                    "xl:max-w-[80rem]",
+                    "rounded",
+                    "bg-neutral-200",
+                    "p-10",
+                    "hover:drop-shadow-lg",
+                    "transition-all",
+                    "duration-200",
                 )}>
                     <div class={classes!(
-                        "lg:col-span-5",
+                        "grid",
+                        "grid-cols-1",
+                        "gap-5",
 
-                        "bg-red-400"
+                        "lg:grid-cols-10",
+                        "w-9/10",
+                        "xl:max-w-[80rem]",
                     )}>
-                        <Title />
-                    </div>
+                        <div class={classes!(
+                            "lg:col-span-5",
+                        )}>
+                            <Title />
+                        </div>
 
-                    <div class={classes!(
-                        "lg:col-span-5",
-                        "bg-red-400",
-                        "lg:order-none",
+                        <div class={classes!(
+                            "lg:col-span-5",
+                            "lg:order-none",
 
-                        "order-first",
-                    )}>
-                        <Image />
-                    </div>
+                            "order-first",
+                        )}>
+                            <Image />
+                        </div>
 
-                    <div class={classes!(
-                        "lg:col-span-10",
+                        <div class={classes!(
+                            "lg:col-span-10",
+                        )}>
+                            <Contact />
+                        </div>
 
-                        "bg-red-400"
-                    )}>
-                        <Contact />
-                    </div>
+                        <div class={classes!(
+                            "lg:col-start-4",
+                            "lg:col-span-7",
+                        )}>
+                            <Profile />
+                        </div>
 
-                    <div class={classes!(
-                        "lg:col-span-10",
+                        <div class={classes!(
+                            "lg:col-span-7",
+                            "lg:row-span-3",
+                            "lg:col-start-4",
+                        )}>
+                            <Experience />
+                        </div>
 
-                        "bg-red-400"
-                    )}>
-                        <Profile />
-                    </div>
+                        <div class={classes!(
+                            "lg:col-span-7",
+                            "lg:col-start-4",
+                        )}>
+                            <Education />
+                        </div>
 
-                    <div class={classes!(
-                        "lg:col-span-7",
-                        "lg:row-span-2",
-                        "lg:col-start-4",
+                        <div class={classes!(
+                            "lg:col-span-3",
+                            "lg:row-span-2",
 
-                        "bg-red-400"
-                    )}>
-                        <Experience />
-                    </div>
+                            "lg:row-start-3",
+                        )}>
+                            <Links />
+                        </div>
 
-                    <div class={classes!(
-                        "lg:col-span-7",
-                        "lg:col-start-4",
-
-                        "bg-red-400"
-                    )}>
-                        <Education />
-                    </div>
-
-                    <div class={classes!(
-                        "lg:col-span-3",
-                        "lg:row-start-4",
-
-                        "bg-red-400"
-                    )}>
-                        <Links />
-                    </div>
-
-                    <div class={classes!(
-                        "lg:col-span-3",
-                        "lg:row-span-2",
-                        "lg:row-start-5",
-
-                        "bg-red-400"
-                    )}>
-                        <Technologies />
+                        <div class={classes!(
+                            "lg:col-span-3",
+                            "lg:row-span-3",
+                            "lg:row-start-5",
+                        )}>
+                            <Technologies />
+                        </div>
                     </div>
                 </div>
             </Container>

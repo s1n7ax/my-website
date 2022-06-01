@@ -22,7 +22,6 @@ pub fn container(props: &ContainerProps) -> Html {
 
                 "px-10",
                 "py-10",
-                "bg-yellow-400",
             )
         }>
             {props.children.to_owned()}

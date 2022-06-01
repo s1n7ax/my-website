@@ -7,7 +7,11 @@ pub fn technologies() -> Html {
     html! {
         <div>
             <H2>{ "Technologies" }</H2>
-            <div class={classes!("flex", "flex-col", "gap-2")}>
+            <div class={classes!(
+                "flex",
+                "flex-col",
+                "gap-2"
+            )}>
                 <TechnologyRecord
                     name="ReactJs"
                     percentage={80}
@@ -77,7 +81,6 @@ fn technology_record(props: &TechnologyRecordProps) -> Html {
                     class={classes!(
                         "text-xs",
                         "font-medium",
-                        "text-blue-100",
                         "text-center",
                         "p-0.5",
                         "leading-none",

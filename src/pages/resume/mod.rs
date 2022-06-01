@@ -9,6 +9,7 @@ pub mod education;
 pub mod awards;
 pub mod technologies;
 pub mod links;
+pub mod h2;
 
 pub use self::resume::Resume;
 pub use self::title::Title;
@@ -21,3 +22,5 @@ pub use self::education::Education;
 pub use self::awards::Awards;
 pub use self::technologies::Technologies;
 pub use self::links::Links;
+pub use self::h2::H2Left;
+pub use self::h2::H2Center;

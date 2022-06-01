@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::H2;
+use crate::pages::resume::H2Center as H2;
 
 #[function_component(Technologies)]
 pub fn technologies() -> Html {
@@ -73,9 +73,9 @@ fn technology_record(props: &TechnologyRecordProps) -> Html {
 
             <div class={classes!(
                 "w-full",
-                "bg-gray-200",
+                "bg-blue-1000",
                 "rounded-full",
-                "dark:bg-gray-700"
+                "dark:bg-gray-600"
             )}>
                 <div
                     class={classes!(

@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::H2;
+use crate::pages::resume::H2Left as H2;
 
 #[function_component(Experience)]
 pub fn experience() -> Html {

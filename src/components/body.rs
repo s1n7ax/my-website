@@ -12,12 +12,12 @@ pub fn body(props: &Props) -> Html {
     html! {
         <div class={classes!(
             "flex",
-            "h-screen"
+            "flex-col",
+            "lg:flex-row",
+            "h-screen",
         )}>
             <div class={classes!(
                 "flex",
-                "flex-col",
-                "justify-center",
             )}>
                 <NavigationMenu />
             </div>

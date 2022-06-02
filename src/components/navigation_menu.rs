@@ -2,71 +2,18 @@ use crate::router::Route;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-#[derive(Properties, PartialEq)]
-pub struct IconProps {
-    pub route: Route,
-    pub alt: String,
-    pub icon_name: String,
-    pub presentation: String,
-}
-
-#[function_component(Icon)]
-pub fn icon(props: &IconProps) -> Html {
-    let src = format!("assets/icons/{}.svg", props.icon_name);
-
-    html! {
-        <Link<Route> classes={
-            classes!(
-                "group",
-                "flex",
-                "items-center",
-                "p-2",
-                "z-10",
-
-                "hover:w-max",
-                "hover:rounded-lg",
-                "transition-all",
-
-                "bg-orange-600"
-            )}
-            to={props.route}
-        >
-            <img class={classes!(
-                    "w-20",
-                )}
-                src={src}
-                alt={props.alt.to_owned()}
-            />
-            <span class={classes!(
-                "text-2xl",
-                "mx-2",
-                "hidden",
-                "opacity-0",
-
-                "group-hover:inline-block",
-                "group-hover:opacity-100",
-                "transition-all",
-                "duration-1000"
-            )}>
-                { props.presentation.to_owned() }
-            </span>
-        </Link<Route>>
-    }
-}
-
 #[function_component(NavigationMenu)]
 pub fn navigation_menu() -> Html {
     html! {
         <nav class={classes!(
             "flex",
-            "flex-col",
+            "flex-row",
+            "lg:flex-col",
             "justify-center",
 
-            "m-2",
-            "w-24",
+            "w-full",
+            "lg:w-24",
             "gap-2",
-
-            "bg-blue-600",
         )}>
             <Icon
                 presentation="Home"
@@ -94,5 +41,63 @@ pub fn navigation_menu() -> Html {
                 alt="About"
             />
         </nav>
+    }
+}
+
+#[derive(Properties, PartialEq)]
+pub struct IconProps {
+    pub route: Route,
+    pub alt: String,
+    pub icon_name: String,
+    pub presentation: String,
+}
+
+#[function_component(Icon)]
+pub fn icon(props: &IconProps) -> Html {
+    let src = format!("assets/icons/{}.svg", props.icon_name);
+
+    html! {
+        <Link<Route> classes={
+            classes!(
+                "group",
+                "flex",
+                "items-center",
+                "p-2",
+                "z-10",
+                "transition-all",
+
+                "hover:w-max",
+                "hover:rounded-lg",
+
+                "bg-orange-600"
+            )}
+            to={props.route}
+        >
+            <img class={classes!(
+                    "hidden",
+                    "lg:inline-block",
+                    "w-20",
+                )}
+                src={src}
+                alt={props.alt.to_owned()}
+            />
+            <span class={classes!(
+                "text-2xl",
+                "mx-2",
+                "block",
+                "opacity-1",
+
+                "transition-all",
+                "duration-1000",
+
+                "lg:opacity-0",
+                "lg:hidden",
+                "lg:group-hover:inline-block",
+                "lg:group-hover:opacity-100",
+
+            )}>
+                { props.presentation.to_owned() }
+            </span>
+        </Link<Route>>
     }
 }

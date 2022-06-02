@@ -73,7 +73,7 @@ fn technology_record(props: &TechnologyRecordProps) -> Html {
 
             <div class={classes!(
                 "w-full",
-                "bg-blue-1000",
+                "bg-neutral-300",
                 "rounded-full",
                 "dark:bg-gray-600"
             )}>

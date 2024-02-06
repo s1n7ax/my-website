@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "label": "Watch leptos",
+      "type": "shell",
+      "command": "cargo leptos watch"
+    },
+    {
+      "label": "Watch tailwind",
+      "type": "shell",
+      "command": "yarn run tailwind:watch"
+    }
+  ]
+}

@@ -79,7 +79,7 @@ pub fn Experties() -> impl IntoView {
 
 	view! {
 		<div class="grid grid-cols-6 gap-4">
-			<h2 class="col-start-2 text-4xl uppercase mb-2 mt-7 font-mono">"My Experties"</h2>
+			<h2 class="col-start-2 text-4xl uppercase mb-2 mt-7">"My Experties"</h2>
 			{records
 				.into_iter()
 				.enumerate()

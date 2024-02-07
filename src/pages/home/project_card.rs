@@ -21,7 +21,7 @@ pub fn ProjectCard(
 		overflow-auto
 		bg-zinc-700">
 			<img class="aspect-video w-full" src=video_uri alt="me"/>
-			<h3 class="text-white font-mono text-lg my-3 mx-3 text-xl">{name}</h3>
+			<h3 class="text-white text-lg my-3 mx-3 text-xl">{name}</h3>
 			<p class="text-gray-400 mx-3 h-64">{long_description}</p>
 			<div class="absolute grid grid-flow-col gap-3 p-3 bottom-0 right-0">
 				{links

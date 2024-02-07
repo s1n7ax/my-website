@@ -68,7 +68,7 @@ pub fn Projects() -> impl IntoView {
 	view! {
 		<>
 			<div class="grid grid-cols-6 gap-4 place-content-center">
-				<h2 class="col-start-2 text-4xl uppercase mb-2 mt-7 font-mono">"My projects"</h2>
+				<h2 class="col-start-2 text-4xl uppercase mb-2 mt-7">"My projects"</h2>
 
 				{records
 					.into_iter()

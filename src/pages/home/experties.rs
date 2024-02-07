@@ -24,8 +24,8 @@ pub fn Experties() -> impl IntoView {
 			img_alt: "spring boot logo".to_string(),
 		},
 		ExpertiesRecord {
-			title: "ReactJS".to_string(),
-			descrpition: "I have gained hands-on experience with ReactJS,
+			title: "React".to_string(),
+			descrpition: "I have gained hands-on experience with React,
 						delving into functional components and exploring the latest
 						concurrency APIs brought in by React 18. Additionally,
 						I have worked extensively with diverse state management systems in React,

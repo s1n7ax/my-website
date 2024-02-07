@@ -2,16 +2,12 @@ use leptos::*;
 
 use super::project_card::ProjectCard;
 
-struct ProjectSourceLink {
-	icon_uri: String,
-	url: String,
-}
-
 struct ProjectDetails {
 	name: String,
 	short_description: String,
 	long_description: String,
 	video_uri: String,
+	links: Vec<String>,
 }
 
 #[component]
@@ -27,6 +23,10 @@ pub fn Projects() -> impl IntoView {
 				executing actions on UI elements."
 				.to_string(),
 			video_uri: "images/me_01.webp".to_string(),
+			links: vec![
+				"https://youtube.com/playlist?list=PL0EgBggsoPCm_SgDWaDDOEk7tD1dsmM8K&si=xF3YzpO-UjM-mHd9"
+					.to_string(),
+			],
 		},
 		ProjectDetails {
 			name: "Java for Neovim".to_string(),
@@ -41,6 +41,10 @@ pub fn Projects() -> impl IntoView {
 				or Eclipse."
 					.to_string(),
 			video_uri: "images/me_01.webp".to_string(),
+			links: vec![
+				"https://github.com/nvim-java/nvim-java".to_string(),
+				"https://youtu.be/CXv0WUX_E_Q".to_string(),
+			],
 		},
 		ProjectDetails {
 			name: "Open Unicode Converter".to_string(),
@@ -54,6 +58,10 @@ pub fn Projects() -> impl IntoView {
 				including bold formatting, headers, italicized text, bullet points, and more."
 					.to_string(),
 			video_uri: "images/me_01.webp".to_string(),
+			links: vec![
+				"https://github.com/s1n7ax/open-unicode-converter".to_string(),
+				"https://www.sinhalaunicode.org".to_string(),
+			],
 		},
 	];
 
@@ -72,6 +80,7 @@ pub fn Projects() -> impl IntoView {
 									short_description=record.short_description
 									long_description=record.long_description
 									video_uri=record.video_uri
+									links=record.links
 								/>
 							</div>
 						}

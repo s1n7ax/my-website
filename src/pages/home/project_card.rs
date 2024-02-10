@@ -1,12 +1,11 @@
-use leptos::*;
-
 use icondata as i;
+use leptos::*;
 use leptos_icons::*;
 
 #[component]
 pub fn ProjectCard(
 	name: String,
-	short_description: String,
+	// short_description: String,
 	long_description: String,
 	video_uri: String,
 	links: Vec<String>,
@@ -14,16 +13,14 @@ pub fn ProjectCard(
 	view! {
 		<div class="
 		grid
-		relative
-		auto-rows-min
-		w-[30rem]
+		auto-rows-[auto_auto_auto_1fr]
 		rounded-lg
-		overflow-auto
-		bg-zinc-700">
-			<img class="aspect-video w-full" src=video_uri alt="me"/>
-			<h3 class="text-white text-lg my-3 mx-3 text-xl">{name}</h3>
-			<p class="text-gray-400 mx-3 h-64">{long_description}</p>
-			<div class="absolute grid grid-flow-col gap-3 p-3 bottom-0 right-0">
+		overflow-hidden
+		bg-gray-200">
+			<img class="aspect-video w-[50rem]" src=video_uri alt="me"/>
+			<h3 class="text-lg my-3 mx-3 text-xl">{name}</h3>
+			<p class="mx-3">{long_description}</p>
+			<div class="self-end justify-self-end p-2 gap-2 grid grid-flow-col">
 				{links
 					.into_iter()
 					.map(|link| {
@@ -42,7 +39,7 @@ pub fn ProjectCard(
 									icon=icon
 									height="100%"
 									width="100%"
-									class="aspect-square w-[50px] text-gray-400 hover:text-white"
+									class="aspect-square w-12 text-gray-400 hover:text-gray-800 transition ease-in-out duration-200"
 								/>
 							</a>
 						}

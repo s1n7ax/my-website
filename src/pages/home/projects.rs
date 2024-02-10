@@ -4,7 +4,7 @@ use super::project_card::ProjectCard;
 
 struct ProjectDetails {
 	name: String,
-	short_description: String,
+	// short_description: String,
 	long_description: String,
 	video_uri: String,
 	links: Vec<String>,
@@ -12,10 +12,12 @@ struct ProjectDetails {
 
 #[component]
 pub fn Projects() -> impl IntoView {
-	let records: [ProjectDetails; 3] = [
+	const RECORD_COUNT: usize = 4;
+
+	let records: [ProjectDetails; RECORD_COUNT] = [
 		ProjectDetails {
 			name: "Computer Vision Automation Tool".to_string(),
-			short_description: "CVAT leverages computer vision for UI automation".to_string(),
+			// short_description: "CVAT leverages computer vision for UI automation".to_string(),
 			long_description: "CVAT employs an object detection model combined with an Optical
 				Character Recognition model to interpret the user interface into a
 				human-understandable representation, allowing automation engineers to
@@ -30,9 +32,9 @@ pub fn Projects() -> impl IntoView {
 		},
 		ProjectDetails {
 			name: "Java for Neovim".to_string(),
-			short_description: "Java for Neovim provides IDE features such as auto-completion,
-				diagnostics, debugging for Neovim editor"
-				.to_string(),
+			// short_description: "Java for Neovim provides IDE features such as auto-completion,
+			// 	diagnostics, debugging for Neovim editor"
+			// 	.to_string(),
 			long_description:
 				"This plugin combines Neovim's swift editing style with robust Java IDE features,
 				utilizing the Language Server Protocol and Debug Adapter Protocol. It enables
@@ -48,9 +50,9 @@ pub fn Projects() -> impl IntoView {
 		},
 		ProjectDetails {
 			name: "Open Unicode Converter".to_string(),
-			short_description:
-				"Java IDE features such as auto-completion, diagnostics, debugging to Neovim editor"
-					.to_string(),
+			// short_description:
+			// 	"Java IDE features such as auto-completion, diagnostics, debugging to Neovim editor"
+			// 		.to_string(),
 			long_description:
 				"The Open Unicode converter is a highly customizable tool, making the addition
 				of new languages as simple as incorporating a new JSON entry. It features an
@@ -63,30 +65,42 @@ pub fn Projects() -> impl IntoView {
 				"https://www.sinhalaunicode.org".to_string(),
 			],
 		},
+		ProjectDetails {
+			name: "Simple Message Router".to_string(),
+			// short_description: "".to_string(),
+			long_description:
+				"Simple Message Router provides a versatile solution for organizing and managing
+				various communication channels such as web sockets and Chrome extension message passing.
+				It acts as a centralized message router, facilitating the efficient exchange of messages
+				between different components or modules within an application."
+					.to_string(),
+			video_uri: "images/me_01.webp".to_string(),
+			links: vec![
+				"https://github.com/s1n7ax/simple-message-router".to_string(),
+				"".to_string(),
+			],
+		},
 	];
 
 	view! {
-		<>
-			<div class="grid grid-cols-6 gap-4 place-content-center">
-				<h2 class="col-start-2 text-4xl uppercase mb-2 mt-7">"My projects"</h2>
-
+		<div class="grid auto-rows-min px-64 bg-blue-300">
+			<h2 class="text-4xl uppercase mb-2 mt-7">"My Experties"</h2>
+			<div class="grid grid-cols-2 gap-4">
 				{records
 					.into_iter()
 					.map(|record| {
 						view! {
-							<div class="row-start-2 row-span-4 col-span-2 grid place-items-center">
-								<ProjectCard
-									name=record.name
-									short_description=record.short_description
-									long_description=record.long_description
-									video_uri=record.video_uri
-									links=record.links
-								/>
-							</div>
+							<ProjectCard
+								name=record.name
+								// short_description=record.short_description
+								long_description=record.long_description
+								video_uri=record.video_uri
+								links=record.links
+							/>
 						}
 					})
 					.collect::<Vec<_>>()}
 			</div>
-		</>
+		</div>
 	}
 }

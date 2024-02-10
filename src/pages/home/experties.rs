@@ -78,28 +78,25 @@ pub fn Experties() -> impl IntoView {
 	];
 
 	view! {
-		<div class="grid grid-cols-6 gap-4">
-			<h2 class="col-start-2 text-4xl uppercase mb-2 mt-7">"My Experties"</h2>
-			{records
-				.into_iter()
-				.enumerate()
-				.map(|(pos, record)| {
-					view! {
-						<div
-							class="col-span-2"
-							class=("col-start-2", pos % 2 == 0)
-							class=format!("row-start-{}", pos / 2 + 2)
-						>
-							<ExpertiesCart
-								title=record.title
-								description=record.descrpition
-								img_uri=record.img_uri
-								img_alt=record.img_alt
-							/>
-						</div>
-					}
-				})
-				.collect::<Vec<_>>()}
+		<div class="grid auto-rows-min px-64">
+			<h2 class="text-4xl uppercase mb-2 mt-7">"My Experties"</h2>
+			<div class="grid grid-cols-2 gap-4">
+				{records
+					.into_iter()
+					.map(|record| {
+						view! {
+							<div>
+								<ExpertiesCart
+									title=record.title
+									description=record.descrpition
+									img_uri=record.img_uri
+									img_alt=record.img_alt
+								/>
+							</div>
+						}
+					})
+					.collect::<Vec<_>>()}
+			</div>
 		</div>
 	}
 }

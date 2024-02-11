@@ -1,5 +1,7 @@
+use super::about::About;
 use super::experties::Experties;
-// use super::intro::Intro;
+use super::intro::Intro;
+use super::photos::PhotosGallery;
 // use super::projects::Projects;
 
 use leptos::*;
@@ -8,10 +10,21 @@ use leptos::*;
 pub fn HomePage() -> impl IntoView {
 	view! {
 		<div class="grid">
-			// <Intro/>
-			<Experties/>
-			<div class="pb-6"></div>
-		// <Projects/>
+			<section>
+				<Intro/>
+			</section>
+			<section>
+				<About/>
+			</section>
+			<section>
+				<PhotosGallery/>
+			</section>
+			<section>
+				<Experties/>
+			</section>
+			<section>
+				<div class="pb-6"></div>
+			</section>
 		</div>
 	}
 }

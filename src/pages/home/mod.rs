@@ -1,6 +1,11 @@
+pub mod about;
+pub mod education;
 pub mod experties;
 pub mod experties_card;
 pub mod home_page;
 pub mod intro;
+pub mod photos;
 pub mod project_card;
 pub mod projects;
+pub mod socials;
+pub mod work;

@@ -20,7 +20,7 @@ pub fn Experties() -> impl IntoView {
 						access and sharing of sensitive files such as medical reports through the
 						Spring platform."
 				.to_string(),
-			img_uri: "images/logo/spring_boot_logo.webp".to_string(),
+			img_uri: "images/logos/spring_boot_logo.webp".to_string(),
 			img_alt: "spring boot logo".to_string(),
 		},
 		ExpertiesRecord {
@@ -31,7 +31,7 @@ pub fn Experties() -> impl IntoView {
 						I have worked extensively with diverse state management systems in React,
 						including Redux, MobX, and XState."
 				.to_string(),
-			img_uri: "images/logo/reactjs_logo.webp".to_string(),
+			img_uri: "images/logos/reactjs_logo.webp".to_string(),
 			img_alt: "reactjs logo".to_string(),
 		},
 		ExpertiesRecord {
@@ -41,7 +41,7 @@ pub fn Experties() -> impl IntoView {
 						and GraphQL. This hands-on experience has allowed me to build robust and
 						efficient backend systems, ensuring seamless communication and optimal performance."
 				.to_string(),
-			img_uri: "images/logo/node_js_logo.webp".to_string(),
+			img_uri: "images/logos/node_js_logo.webp".to_string(),
 			img_alt: "node.js logo".to_string(),
 		},
 		ExpertiesRecord {
@@ -51,7 +51,7 @@ pub fn Experties() -> impl IntoView {
 						development via Devcontainer. This comprehensive use of Docker ensures the
 						consistancy through out the workflow."
 				.to_string(),
-			img_uri: "images/logo/docker_logo.webp".to_string(),
+			img_uri: "images/logos/docker_logo.webp".to_string(),
 			img_alt: "docker logo".to_string(),
 		},
 		ExpertiesRecord {
@@ -61,7 +61,7 @@ pub fn Experties() -> impl IntoView {
 						tech shifts like X11 to Wayland, PulseAudio to PipeWire, and ext to btrfs file systems.
 						With Linux now crucial in the SDLC, I'm grateful for my early fascination with it."
 					.to_string(),
-			img_uri: "images/logo/linux_logo.webp".to_string(),
+			img_uri: "images/logos/linux_logo.webp".to_string(),
 			img_alt: "linux logo".to_string(),
 		},
 		ExpertiesRecord {
@@ -72,14 +72,14 @@ pub fn Experties() -> impl IntoView {
 						its value on numerous occasions. GitHub, along with GitHub Actions, enhances the open-source
 						experience, streamlining CI/CD processes for a seamless workflow."
 					.to_string(),
-			img_uri: "images/logo/git_logo.webp".to_string(),
+			img_uri: "images/logos/git_logo.webp".to_string(),
 			img_alt: "git logo".to_string(),
 		},
 	];
 
 	view! {
-		<div class="grid auto-rows-min px-64">
-			<h2 class="text-4xl uppercase mb-2 mt-7">"My Experties"</h2>
+		<div class="grid auto-rows-min px-64 py-4">
+			<h2 class="text-4xl uppercase mb-2">"My Experties"</h2>
 			<div class="grid grid-cols-2 gap-4">
 				{records
 					.into_iter()

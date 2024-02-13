@@ -2,7 +2,7 @@ use super::about::About;
 use super::experties::Experties;
 use super::intro::Intro;
 use super::photos::PhotosGallery;
-// use super::projects::Projects;
+use super::projects::Projects;
 
 use leptos::*;
 
@@ -14,13 +14,13 @@ pub fn HomePage() -> impl IntoView {
 				<Intro/>
 			</section>
 			<section>
-				<About/>
+				<Experties/>
+			</section>
+			<section>
+				<Projects/>
 			</section>
 			<section>
 				<PhotosGallery/>
-			</section>
-			<section>
-				<Experties/>
 			</section>
 			<section>
 				<div class="pb-6"></div>

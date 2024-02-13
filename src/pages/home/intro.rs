@@ -1,61 +1,93 @@
 use icondata as i;
+use icondata::Icon;
 use leptos::*;
 use leptos_icons::*;
 
 #[component]
 pub fn Intro() -> impl IntoView {
 	view! {
-		<div class="grid auto-cols-fr grid-flow-col px-64 bg-red-300">
-			<div class="grid content-end px-10 py-24">
-				<div>
-					<h1 class="text-2xl uppercase py-2">"Hi!, I'm Nisala"</h1>
-					<h2 class="text-4xl uppercase py-2">"Senior Full-stack Developer"</h2>
-					<p>
-						"
-						Hey! Welcome to my little corner of the internet! I'm a software whiz who
-						loves making big business apps run smoothly. When I'm not glued to my computer,
-						I'm out hiking, snapping pics, and having a blast playing video games.
-						I'm all about free, open-source software, and I also enjoy giving back to the tech community. 🚀
-						"
-					</p>
-					<div class="grid grid-flow-col gap-4 justify-end p-2">
-						<a
-							href="tel: +94777398803"
-							target="_blank"
-							class="grid grid-flow-col gap-1"
-						>
-							<Icon
-								icon=i::FaPhoneSolid
-								height="100%"
-								width="100%"
-								class="aspect-square w-4 hover:text-gray-800 transition ease-in-out duration-200"
-							/>
-							<span>+94-777-3988-03</span>
-						</a>
-						<a
-							href="mailto: srineshnisala@gmail.com"
-							target="_blank"
-							class="grid grid-flow-col gap-1"
-						>
-							<Icon
-								icon=i::BsEnvelopePaperFill
-								height="100%"
-								width="100%"
-								class="aspect-square w-4 hover:text-gray-800 transition ease-in-out duration-200"
-							/>
-							<span>"srineshnisala@gmail.com"</span>
-						</a>
+		<div
+			class="grid justify-items-center bg-red-200 py-10"
+			class="xl:grid-flow-col xl:grid-cols-2 xl:px-24"
+			class="xl:grid-flow-col xl:grid-cols-2 2xl:px-32"
+		>
+			<CoverPhoto/>
+			<Header/>
+		</div>
+	}
+}
 
-					</div>
-				</div>
+#[component]
+fn Header() -> impl IntoView {
+	view! {
+		<div
+			class="grid justify-items-center gap-4 px-10"
+			class="xl:col-start-1 xl:self-end xl:justify-items-start"
+		>
+			<h1 class="text-2xl text-center uppercase" class="xl:text-left">
+				"Hi!, I'm Nisala"
+			</h1>
+			<h2 class="text-4xl text-center uppercase" class="xl:text-left">
+				"Senior Full-stack Developer"
+			</h2>
+			<p class="md:px-10" class="lg:px-24" class="xl:px-0">
+				"Hey! Welcome to my little corner of the internet! I'm a software whiz who
+				loves making big business apps run smoothly. When I'm not glued to my computer,
+				I'm out hiking, snapping pics, and having a blast playing video games.
+				I'm all about free, open-source software, and I also enjoy giving back to the tech community."
+			</p>
+			<div
+				class="grid gap-2 justify-items-center"
+				class="xl:grid-flow-col xl:gap-4 xl:justify-self-end"
+			>
+				<Contact
+					link="tel: +94777398803".to_string()
+					details="+94 777 3988 03".to_string()
+					icon=i::BsTelephoneFill
+				/>
+				<Contact
+					link="mailto: srineshnisala@gmail.com".to_string()
+					details="srineshnisala@gmail.com".to_string()
+					icon=i::FaEnvelopeOpenTextSolid
+				/>
 			</div>
+		</div>
+	}
+}
+
+#[component]
+fn Contact(link: String, details: String, icon: Icon) -> impl IntoView {
+	view! {
+		<a href=link target="_blank" class="grid grid-flow-col auto-cols-min gap-4">
+			<Icon
+				icon=icon
+				height="100%"
+				width="100%"
+				class="aspect-square w-6 hover:text-gray-800 transition ease-in-out duration-200"
+			/>
+			<span class="whitespace-nowrap">{details}</span>
+		</a>
+	}
+}
+
+#[component]
+fn CoverPhoto(#[prop(optional)] class: String) -> impl IntoView {
+	view! {
+		<div
+			class="w-10/12"
+			class="sm:w-9/12"
+			class="md:w-8/12"
+			class="lg:w-6/12"
+			class="xl:w-full xl:col-start-2"
+			class=class
+		>
 			<svg
 				id="visual"
-				viewBox="150 100 600 400"
+				viewBox="170 100 570 400"
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
 				version="1.1"
-				class="aspect-square w-[40rem]"
+				class="aspect-square"
 			>
 				<defs>
 					<pattern
@@ -90,6 +122,7 @@ pub fn Intro() -> impl IntoView {
 					></path>
 				</g>
 				<g transform="translate(461.2435766118532 299.62190761821614)">
+					// <g transform="translate(461.2435766118532 299.62190761821614)">
 					<path
 						fill="url(#imgpattern)"
 						d="M147.7 -233.2C188.1 -204 215 -157.2 232.9 -109C250.7 -60.8 259.5 -11.1 252.5 36.2C245.6 83.6 222.9 128.5 191.8 168.3C160.7 208.1 121 242.7 74.3 259.2C27.6 275.7 -26.2 274.1 -77.4 260.5C-128.7 246.9 -177.3 221.4 -211.7 182.8C-246 144.2 -266 92.7 -273.8 39.3C-281.7 -14.1 -277.3 -69.4 -253.3 -113C-229.2 -156.7 -185.6 -188.8 -140.1 -215.7C-94.6 -242.6 -47.3 -264.3 3.2 -269.3C53.7 -274.2 107.4 -262.5 147.7 -233.2"

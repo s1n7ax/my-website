@@ -24,7 +24,7 @@ pub fn Projects() -> impl IntoView {
 				utilize a customized and simplified traversal path for capturing and
 				executing actions on UI elements."
 				.to_string(),
-			video_uri: "images/me_01.webp".to_string(),
+			video_uri: "images/projects/cvat.png".to_string(),
 			links: vec![
 				"https://youtube.com/playlist?list=PL0EgBggsoPCm_SgDWaDDOEk7tD1dsmM8K&si=xF3YzpO-UjM-mHd9"
 					.to_string(),
@@ -42,7 +42,7 @@ pub fn Projects() -> impl IntoView {
 				and testing of JUnit tests for Java applications developed with Gradle, Maven,
 				or Eclipse."
 					.to_string(),
-			video_uri: "images/me_01.webp".to_string(),
+			video_uri: "images/projects/nvim-java.png".to_string(),
 			links: vec![
 				"https://github.com/nvim-java/nvim-java".to_string(),
 				"https://youtu.be/CXv0WUX_E_Q".to_string(),
@@ -59,7 +59,7 @@ pub fn Projects() -> impl IntoView {
 				Angular UI for converting Sinhala language with various styling options,
 				including bold formatting, headers, italicized text, bullet points, and more."
 					.to_string(),
-			video_uri: "images/me_01.webp".to_string(),
+			video_uri: "images/projects/open-unicode-converter.png".to_string(),
 			links: vec![
 				"https://github.com/s1n7ax/open-unicode-converter".to_string(),
 				"https://www.sinhalaunicode.org".to_string(),
@@ -74,7 +74,7 @@ pub fn Projects() -> impl IntoView {
 				It acts as a centralized message router, facilitating the efficient exchange of messages
 				between different components or modules within an application."
 					.to_string(),
-			video_uri: "images/me_01.webp".to_string(),
+			video_uri: "images/projects/simple-message-router.png".to_string(),
 			links: vec![
 				"https://github.com/s1n7ax/simple-message-router".to_string(),
 				"".to_string(),
@@ -83,9 +83,14 @@ pub fn Projects() -> impl IntoView {
 	];
 
 	view! {
-		<div class="grid auto-rows-min px-64 bg-blue-300">
-			<h2 class="text-4xl uppercase mb-2 mt-7">"My Experties"</h2>
-			<div class="grid grid-cols-2 gap-4">
+		<div class="grid justify-items-center py-10 bg-red-300" class="xl:px-24" class="2xl:px-32">
+			<h2 class="text-4xl uppercase mb-2">"Some Fun Projects"</h2>
+			<div
+				class="grid grid-cols-1 px-10 gap-4"
+				class="md:grid-cols-2 md:w-10/12"
+				class="lg:w-10/12"
+				class="xl:grid-cols-2 xl:w-11/12"
+			>
 				{records
 					.into_iter()
 					.map(|record| {

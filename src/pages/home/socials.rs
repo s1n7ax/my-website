@@ -40,7 +40,7 @@ fn SocialMedia(icon: Icon, url: String, description: String) -> impl IntoView {
 		<a
 			href=url
 			target="_blank"
-			class="grid grid-flow-col auto-cols-[auto_1fr] gap-x-4 group items-center"
+			class="grid grid-flow-col auto-cols-[auto_1fr] gap-x-4 group"
 		>
 			<Icon
 				icon=icon

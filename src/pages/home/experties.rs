@@ -78,9 +78,14 @@ pub fn Experties() -> impl IntoView {
 	];
 
 	view! {
-		<div class="grid auto-rows-min px-64 py-4">
+		<div class="grid justify-items-center py-10" class="xl:px-24" class="2xl:px-32">
 			<h2 class="text-4xl uppercase mb-2">"My Experties"</h2>
-			<div class="grid grid-cols-2 gap-4">
+			<div
+				class="grid grid-cols-1 px-10 gap-4"
+				class="md:w-10/12"
+				class="lg:w-10/12"
+				class="xl:grid-cols-2 xl:w-11/12"
+			>
 				{records
 					.into_iter()
 					.map(|record| {

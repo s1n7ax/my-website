@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./style/input.css", "./src/**/*.rs"],
   theme: {
-    extend: {},
+    extend: {
+      aspectRatio: {
+        "4/3": "4 / 3",
+        "3/4": "3 / 4",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

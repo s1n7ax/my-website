@@ -17,7 +17,7 @@ pub fn ProjectCard(
 		rounded-lg
 		overflow-hidden
 		bg-gray-200">
-			<img class="aspect-video w-[50rem]" src=video_uri alt="me"/>
+			<img class="aspect-video w-full" src=video_uri alt="me"/>
 			<h3 class="text-lg my-3 mx-3 text-xl">{name}</h3>
 			<p class="mx-3">{long_description}</p>
 			<div class="self-end justify-self-end p-2 gap-2 grid grid-flow-col">

@@ -4,7 +4,7 @@ use leptos::*;
 pub fn PhotosGallery() -> impl IntoView {
 	view! {
 		<div
-			class="grid justify-items-center bg-gray-300 py-10 relative"
+			class="grid justify-items-center bg-gradient-to-r from-pink-200 to-yellow-200"
 			class="xl:px-24"
 			class="2xl:px-32"
 		>

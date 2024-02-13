@@ -83,8 +83,8 @@ pub fn Projects() -> impl IntoView {
 	];
 
 	view! {
-		<div class="grid justify-items-center py-10 bg-red-300" class="xl:px-24" class="2xl:px-32">
-			<h2 class="text-4xl uppercase mb-2">"Some Fun Projects"</h2>
+		<div class="grid justify-items-center py-10" class="xl:px-24" class="2xl:px-32">
+			<h2 class="text-4xl text-center uppercase mb-2">"Some Fun Projects"</h2>
 			<div
 				class="grid grid-cols-1 px-10 gap-4"
 				class="md:grid-cols-2 md:w-10/12"

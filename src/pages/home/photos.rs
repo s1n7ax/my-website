@@ -8,7 +8,7 @@ pub fn PhotosGallery() -> impl IntoView {
 			class="xl:px-24"
 			class="2xl:px-32"
 		>
-			<h2 class="text-4xl uppercase my-2 z-10">"my favorite captures 📷"</h2>
+			<h2 class="text-4xl text-center uppercase my-2 z-10">"my favorite captures 📷"</h2>
 			<div
 				class="grid grid-cols-1 grid-flow-row-dense px-10 gap-4 z-10"
 				class="sm:grid-cols-2 md:w-10/12"

@@ -17,6 +17,7 @@
           buildInputs = [
             tailwindcss-language-server
             leptosfmt
+            binaryen
             emmet-language-server
             openssl
             pkg-config

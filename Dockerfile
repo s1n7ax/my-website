@@ -19,7 +19,7 @@ RUN npm install \
   && npm run tailwind:build \
   && cargo leptos build --release -vv
 
-FROM scratch as runner
+FROM rustlang/rust:nightly-alpine as runner
 
 WORKDIR /app
 
@@ -27,7 +27,8 @@ COPY --from=builder /work/target/release/my-website /app/
 COPY --from=builder /work/target/site /app/site
 COPY --from=builder /work/Cargo.toml /app/
 
-EXPOSE $PORT
+EXPOSE 3000
+
 ENV LEPTOS_SITE_ROOT=./site
 
 CMD ["/app/my-website"]

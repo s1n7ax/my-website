@@ -42,6 +42,7 @@ jobs:
           username: ${{ secrets.DO_USERNAME }}
           key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
           script: |
+            cd ~/my-website
             docker compose down
             docker compose pull
             docker compose up -d

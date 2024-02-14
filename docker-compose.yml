@@ -5,4 +5,4 @@ services:
     build: ./Dockerfile
     image: s1n7ax/my-website
     ports:
-      - 3000
+      - 3000:3000

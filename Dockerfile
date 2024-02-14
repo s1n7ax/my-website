@@ -1,5 +1,7 @@
 FROM rustlang/rust:nightly-alpine as builder
 
+ENV PORT=3000
+
 RUN apk update && \
   apk add --no-cache bash=5.2.15-r0 curl=8.5.0-r0 npm=9.1.2-r0 libc-dev=0.7.2-r3 binaryen=110-r0
 

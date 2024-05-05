@@ -2,7 +2,14 @@ version: "3.8"
 
 services:
   my-website:
-    build: ./Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: s1n7ax/my-website
+
+    environment:
+      - LEPTOS_SITE_ADDR=0.0.0.0:3000
     ports:
       - "3000:3000"
+      - "3001:3001"
+      - "3002:3002"

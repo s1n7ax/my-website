@@ -6,10 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: s1n7ax/my-website
-
     environment:
-      - LEPTOS_SITE_ADDR=0.0.0.0:3000
+      - LEPTOS_SITE_ADDR=0.0.0.0:80
     ports:
-      - "3000:3000"
-      - "3001:3001"
-      - "3002:3002"
+      - "80:80"

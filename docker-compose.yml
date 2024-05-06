@@ -6,7 +6,27 @@ services:
       context: .
       dockerfile: Dockerfile
     image: s1n7ax/my-website
+    container_name: my-website
     environment:
-      - LEPTOS_SITE_ADDR=0.0.0.0:80
+      - LEPTOS_SITE_ADDR=0.0.0.0:3000
+    expose:
+      - "3000"
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/lib/letsencrypt
     ports:
       - "80:80"
+      - "443:443"
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/lib/letsencrypt
+    command: certonly --non-interactive --webroot -w /var/lib/letsencrypt --force-renewal --email srineshnisala@gmail.com -d s1n7ax.com --agree-tos

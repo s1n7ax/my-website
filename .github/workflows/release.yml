@@ -32,7 +32,7 @@ jobs:
           host: ${{ secrets.DO_IP }}
           username: ${{ secrets.DO_USERNAME }}
           key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
-          source: "docker-compose.yml"
+          source: "docker-compose.yml,nginx"
           target: "~/my-website"
 
       - name: Restart the services

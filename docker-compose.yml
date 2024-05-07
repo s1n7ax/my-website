@@ -27,4 +27,4 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/lib/letsencrypt
-    command: certonly --non-interactive --webroot -w /var/lib/letsencrypt --force-renewal --email srineshnisala@gmail.com -d s1n7ax.com --agree-tos
+    command: certonly --non-interactive --webroot -w /var/lib/letsencrypt --keep-until-expiring --email srineshnisala@gmail.com -d s1n7ax.com --agree-tos

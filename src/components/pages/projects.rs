@@ -1,20 +1,10 @@
 use leptos::*;
 
-use super::project_card::ProjectCard;
-
-struct ProjectDetails {
-	name: String,
-	// short_description: String,
-	long_description: String,
-	video_uri: String,
-	links: Vec<String>,
-}
+use crate::components::templates::projects::{ProjectDetails, ProjectsTemplate};
 
 #[component]
 pub fn Projects() -> impl IntoView {
-	const RECORD_COUNT: usize = 4;
-
-	let records: [ProjectDetails; RECORD_COUNT] = [
+	let records: [ProjectDetails; 4] = [
 		ProjectDetails {
 			name: "Computer Vision Automation Tool".to_string(),
 			// short_description: "CVAT leverages computer vision for UI automation".to_string(),
@@ -83,29 +73,6 @@ pub fn Projects() -> impl IntoView {
 	];
 
 	view! {
-		<div class="grid justify-items-center py-10" class="xl:px-24" class="2xl:px-32">
-			<h2 class="text-4xl text-center uppercase mb-2">"Some Fun Projects"</h2>
-			<div
-				class="grid grid-cols-1 px-10 gap-4"
-				class="md:grid-cols-2 md:w-10/12"
-				class="lg:w-10/12"
-				class="xl:grid-cols-2 xl:w-11/12"
-			>
-				{records
-					.into_iter()
-					.map(|record| {
-						view! {
-							<ProjectCard
-								name=record.name
-								// short_description=record.short_description
-								long_description=record.long_description
-								video_uri=record.video_uri
-								links=record.links
-							/>
-						}
-					})
-					.collect::<Vec<_>>()}
-			</div>
-		</div>
+		<ProjectsTemplate records={records} />
 	}
 }

@@ -7,9 +7,9 @@ use leptos_icons::*;
 pub fn Intro() -> impl IntoView {
 	view! {
 		<div
-			class="grid justify-items-center bg-red-200 py-10"
-			class="xl:grid-flow-col xl:grid-cols-2 xl:px-24"
-			class="xl:grid-flow-col xl:grid-cols-2 2xl:px-32"
+			class="grid justify-items-center bg-red-200 pb-3
+			xl:grid-flow-col xl:grid-cols-2 xl:px-24
+			xl:grid-flow-col xl:grid-cols-2 2xl:px-32"
 		>
 			<CoverPhoto/>
 			<Header/>
@@ -74,12 +74,12 @@ fn Contact(link: String, details: String, icon: Icon) -> impl IntoView {
 fn CoverPhoto(#[prop(optional)] class: String) -> impl IntoView {
 	view! {
 		<div
-			class="w-10/12"
-			class="sm:w-9/12"
-			class="md:w-8/12"
-			class="lg:w-6/12"
-			class="xl:w-full xl:col-start-2"
-			class=class
+			class="w-10/12 my-3
+			sm:w-9/12
+			md:w-8/12
+			lg:w-6/12
+			xl:w-full xl:col-start-2
+			".to_owned() + &class
 		>
 			<svg
 				id="visual"

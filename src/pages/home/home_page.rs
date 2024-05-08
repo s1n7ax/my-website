@@ -1,8 +1,9 @@
-use super::about::About;
-use super::experties::Experties;
 use super::intro::Intro;
-use super::photos::PhotosGallery;
-use super::projects::Projects;
+
+use crate::components::pages::about::About;
+use crate::components::pages::experties::Experties;
+use crate::components::pages::photo_gallery::PhotoGallery;
+use crate::components::pages::projects::Projects;
 
 use leptos::*;
 
@@ -20,10 +21,10 @@ pub fn HomePage() -> impl IntoView {
 				<Projects/>
 			</section>
 			<section>
-				<PhotosGallery/>
+				<PhotoGallery/>
 			</section>
 			<section>
-				<div class="pb-6"></div>
+				<About />
 			</section>
 		</div>
 	}

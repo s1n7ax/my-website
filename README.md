@@ -1,6 +1,6 @@
 # My Website
 
-This is my website built using Rust <3
+This is [https://s1n7ax.com](https://s1n7ax.com) built with Rust 🦀
 
 ## Development
 
@@ -11,3 +11,18 @@ This is my website built using Rust <3
 - Run tailwind watch process `yarn run tailwind:watch`
 - Run leptos watch process `cargo leptos watch`
 - Open the browser `http://localhost:3000`
+
+## Deployment
+
+Deployment is done using docker images.
+
+Github workflow in this project, builds a new image and push it to docker hub.
+For the deployment, SSH should be configured in the server.
+
+Following secrets should be registered in the Github Actions
+
+- `DOCKERHUB_USERNAME` - Name of the docker hub user
+- `DOCKERHUB_TOKEN` - Access token
+- `DO_IP` - IP of the server
+- `DO_USERNAME` - Name of the user in the server
+- `DO_SSH_PRIVATE_KEY` - SSH Private key

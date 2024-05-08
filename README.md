@@ -26,3 +26,14 @@ Following secrets should be registered in the Github Actions
 - `DO_IP` - IP of the server
 - `DO_USERNAME` - Name of the user in the server
 - `DO_SSH_PRIVATE_KEY` - SSH Private key
+
+## SSL & TSL update
+
+Using the `certbot` client, we can request a new certificate.
+
+```shell
+docker compose up certbot
+```
+
+Let's encrypt certificate will be outdated in 90 days. So another request has
+to be made to update. This can be automated using a cron job

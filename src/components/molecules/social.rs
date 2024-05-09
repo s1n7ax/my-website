@@ -20,7 +20,7 @@ pub fn SocialMediaRecord(icon: IconType, url: String, description: String) -> im
 					grid-flow-col
 					auto-cols-[auto_1fr]
 					gap-x-4
-					h-1 items-center"
+					items-end"
 				>
 					<Icon
 						icon=icon

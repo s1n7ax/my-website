@@ -12,25 +12,27 @@ pub fn AboutTemplate(
 	education: Vec<CourseDetails>,
 ) -> impl IntoView {
 	view! {
-		<SectionContainer
-			class="
+		<SectionContainer>
+			<div class="
+				grid
 				grid-flow-row
-				grid-rows-4
-				auto-cols-fr
-				auto-rows-fr
 				gap-4
-				py-3
 				px-10
 
 				md:w-10/12
-				lg:w-10/12 lg:grid-flow-col
-				xl:w-11/12
-			"
-		>
 
-			<SocialMediaTemplate records={socials}/>
-			<WorkHistoryTemplate records={work_history}/>
-			<EducationalQualificationTemplate records={education}/>
+				xl:gap-0
+				xl:auto-rows-fr
+				xl:grid-rows-[auto]
+				xl:grid-flow-col
+
+				xl:grid-cols-3
+				xl:w-11/12
+			">
+				<SocialMediaTemplate records={socials} />
+				<WorkHistoryTemplate records={work_history} />
+				<EducationalQualificationTemplate records={education} />
+			</div>
 		</SectionContainer>
 	}
 }
@@ -38,8 +40,15 @@ pub fn AboutTemplate(
 #[component]
 fn AboutCard(title: String, children: Children) -> impl IntoView {
 	view! {
-		<div class="grid grid-rows-subgrid row-span-5">
+		<div class="
+			grid
+			gap-y-3
+			xl:grid-rows-subgrid
+			xl:row-span-5
+		">
+			<hr class="xl:hidden h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 			<H2>{title}</H2>
+
 			{children()}
 		</div>
 	}

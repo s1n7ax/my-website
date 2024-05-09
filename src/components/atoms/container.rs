@@ -8,7 +8,10 @@ pub fn SectionContainer(
 	view! {
 		<div
 			class="
-				grid justify-items-center py-3
+				grid
+        justify-items-center
+        py-3
+
 				xl:px-24
 				2xl:px-32
 			"

@@ -12,11 +12,12 @@ pub fn Education(
 		<a
 			href=url
 			target="_blank"
-			class="grid
-			grid-flow-col
-			grid-cols-[auto_1fr]
-			gap-x-4
-			group"
+			class="
+				grid
+				grid-flow-col
+				gap-x-4
+				group
+			"
 		>
 			<div class="text-gray-600 group-hover:text-gray-800">
 				<div>

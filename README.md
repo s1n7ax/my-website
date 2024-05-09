@@ -2,6 +2,9 @@
 
 This is [https://s1n7ax.com](https://s1n7ax.com) built with Rust 🦀
 
+![Screenshot PC 1](https://github.com/s1n7ax/my-website-ssr/assets/18459807/ebbe2fa6-03fc-4fa9-9e3e-53fb9014682b)
+![Screenshot Mobile 1](https://github.com/s1n7ax/my-website-ssr/assets/18459807/1ff22851-b152-414d-8603-3fb697086d3d)
+
 ## Development
 
 - Clone the project

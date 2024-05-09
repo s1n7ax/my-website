@@ -30,7 +30,7 @@ Following secrets should be registered in the Github Actions
 - `DO_USERNAME` - Name of the user in the server
 - `DO_SSH_PRIVATE_KEY` - SSH Private key
 
-## SSL & TSL update
+## SSL & TLS
 
 Using the `certbot` client, we can request a new certificate.
 

@@ -14,7 +14,7 @@ pub struct ProjectDetails {
 }
 
 #[component]
-pub fn ProjectsTemplate(#[prop()] records: [ProjectDetails; 4]) -> impl IntoView {
+pub fn ProjectsTemplate(records: Vec<ProjectDetails>) -> impl IntoView {
 	const RECORD_COUNT: usize = 4;
 
 	view! {

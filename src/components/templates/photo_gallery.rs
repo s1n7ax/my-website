@@ -1,6 +1,7 @@
 use leptos::*;
 
 use crate::components::atoms::{
+	container::SectionContainer,
 	photo::{AspectType, Photo},
 	title::H2,
 };
@@ -11,14 +12,9 @@ pub struct PhotoDetails {
 }
 
 #[component]
-pub fn PhotoGalleryTemplate(#[prop()] records: [PhotoDetails; 8]) -> impl IntoView {
+pub fn PhotoGalleryTemplate(records: Vec<PhotoDetails>) -> impl IntoView {
 	view! {
-		<div
-			class="grid justify-items-center py-3
-			xl:px-24
-			2xl:px-32
-			bg-gradient-to-r from-pink-200 to-yellow-200"
-		>
+		<SectionContainer class="bg-gradient-to-r from-pink-200 to-yellow-200">
 			<H2>"my favorite captures 📷"</H2>
 			<div
 				class="grid grid-cols-1 grid-flow-row-dense px-10 gap-4 z-10
@@ -34,6 +30,6 @@ pub fn PhotoGalleryTemplate(#[prop()] records: [PhotoDetails; 8]) -> impl IntoVi
 					}
 				}).collect::<Vec<_>>()}
 			</div>
-		</div>
+		</SectionContainer>
 	}
 }

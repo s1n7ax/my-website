@@ -4,7 +4,7 @@ use crate::components::templates::experties::{ExpertiesRecord, ExpertiesTemplate
 
 #[component]
 pub fn Experties() -> impl IntoView {
-	let records: [ExpertiesRecord; 6] = [
+	let records = vec![
 		ExpertiesRecord {
 			title: "Spring Boot".to_string(),
 			descrpition: "I have utilized Spring Boot, Spring Security, and Spring Cloud

@@ -71,15 +71,17 @@ fn Contact(link: String, details: String, icon: Icon) -> impl IntoView {
 }
 
 #[component]
-fn CoverPhoto(#[prop(optional)] class: String) -> impl IntoView {
+fn CoverPhoto(#[prop(optional, into)] class: Option<AttributeValue>) -> impl IntoView {
 	view! {
 		<div
-			class="w-10/12 my-3
-			sm:w-9/12
-			md:w-8/12
-			lg:w-6/12
-			xl:w-full xl:col-start-2
-			".to_owned() + &class
+			class="w-10/12
+				my-3
+				sm:w-9/12
+				md:w-8/12
+				lg:w-6/12
+				xl:w-full xl:col-start-2
+			"
+			class=class
 		>
 			<svg
 				id="visual"

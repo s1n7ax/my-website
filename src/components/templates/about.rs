@@ -1,5 +1,5 @@
 use crate::components::{
-	atoms::title::H2,
+	atoms::{container::SectionContainer, title::H2},
 	molecules::{education::Education, social::SocialMediaRecord, timerange_record::WorkRecord},
 };
 use icondata::Icon as IconType;
@@ -7,29 +7,31 @@ use leptos::*;
 
 #[component]
 pub fn AboutTemplate(
-	socials: [SocialDetails; 4],
-	work_history: [WorkDetails; 4],
-	education: [CourseDetails; 3],
+	socials: Vec<SocialDetails>,
+	work_history: Vec<WorkDetails>,
+	education: Vec<CourseDetails>,
 ) -> impl IntoView {
 	view! {
-		<div class="grid
-			justify-items-center
-			grid-flow-row
-			grid-rows-4
-			auto-cols-fr
-			auto-rows-fr
-			gap-4
-			py-3
-			px-10
+		<SectionContainer
+			class="
+				grid-flow-row
+				grid-rows-4
+				auto-cols-fr
+				auto-rows-fr
+				gap-4
+				py-3
+				px-10
 
-			md:w-10/12
-			lg:w-10/12 lg:grid-flow-col
-			xl:w-11/12"
+				md:w-10/12
+				lg:w-10/12 lg:grid-flow-col
+				xl:w-11/12
+			"
 		>
+
 			<SocialMediaTemplate records={socials}/>
 			<WorkHistoryTemplate records={work_history}/>
 			<EducationalQualificationTemplate records={education}/>
-		</div>
+		</SectionContainer>
 	}
 }
 
@@ -50,7 +52,7 @@ pub struct SocialDetails {
 }
 
 #[component]
-pub fn SocialMediaTemplate(records: [SocialDetails; 4]) -> impl IntoView {
+pub fn SocialMediaTemplate(records: Vec<SocialDetails>) -> impl IntoView {
 	view! {
 		<AboutCard title="Socials 🙋".to_string()>
 			{records
@@ -79,7 +81,7 @@ pub struct WorkDetails {
 }
 
 #[component]
-pub fn WorkHistoryTemplate(records: [WorkDetails; 4]) -> impl IntoView {
+pub fn WorkHistoryTemplate(records: Vec<WorkDetails>) -> impl IntoView {
 	view! {
 		<AboutCard title="Work 🧑‍🔧".to_string()>
 			{records
@@ -110,7 +112,7 @@ pub struct CourseDetails {
 }
 
 #[component]
-pub fn EducationalQualificationTemplate(records: [CourseDetails; 3]) -> impl IntoView {
+pub fn EducationalQualificationTemplate(records: Vec<CourseDetails>) -> impl IntoView {
 	view! {
 		<AboutCard title="Education 👨‍🎓".to_string()>
 			{records

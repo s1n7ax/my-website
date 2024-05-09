@@ -13,7 +13,7 @@ pub struct ExpertiesRecord {
 }
 
 #[component]
-pub fn ExpertiesTemplate(#[prop()] records: [ExpertiesRecord; 6]) -> impl IntoView {
+pub fn ExpertiesTemplate(#[prop()] records: Vec<ExpertiesRecord>) -> impl IntoView {
 	view! {
 		<SectionContainer>
 			<H2>"My Experties"</H2>

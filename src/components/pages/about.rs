@@ -7,7 +7,7 @@ use crate::components::templates::about::{
 
 #[component]
 pub fn About() -> impl IntoView {
-	let work_history: [WorkDetails; 4] = [
+	let work_history = vec![
 		WorkDetails {
 			designation: "Senior Software Engineer".to_string(),
 			company: "Orli Tech".to_string(),
@@ -46,7 +46,7 @@ pub fn About() -> impl IntoView {
 		},
 	];
 
-	let socials = [
+	let socials = vec![
 		SocialDetails {
 			icon: i::BsLinkedin,
 			url: "https://www.linkedin.com/in/srinesh-nisala".to_string(),
@@ -69,7 +69,7 @@ pub fn About() -> impl IntoView {
 		},
 	];
 
-	let education: [CourseDetails; 3] = [
+	let education = vec![
 		CourseDetails {
 			course: "BSc(Hons) First Class in Computer Science and Software Engineering"
 				.to_string(),

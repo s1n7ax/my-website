@@ -7,7 +7,7 @@ use crate::components::{
 
 #[component]
 pub fn PhotoGallery() -> impl IntoView {
-	let records: [PhotoDetails; 8] = [
+	let records = vec![
 		PhotoDetails {
 			src: "images/gallery/photo_19.jpg".to_string(),
 			aspect: AspectType::Portrait,

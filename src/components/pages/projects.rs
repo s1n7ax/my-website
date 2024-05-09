@@ -4,7 +4,7 @@ use crate::components::templates::projects::{ProjectDetails, ProjectsTemplate};
 
 #[component]
 pub fn Projects() -> impl IntoView {
-	let records: [ProjectDetails; 4] = [
+	let records = vec![
 		ProjectDetails {
 			name: "Computer Vision Automation Tool".to_string(),
 			// short_description: "CVAT leverages computer vision for UI automation".to_string(),

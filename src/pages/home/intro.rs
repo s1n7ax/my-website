@@ -7,7 +7,7 @@ use leptos_icons::*;
 pub fn Intro() -> impl IntoView {
 	view! {
 		<div
-			class="grid justify-items-center bg-red-200 pb-3
+			class="grid justify-items-center bg-red-200 pb-8 mb-8
 			xl:grid-flow-col xl:grid-cols-2 xl:px-24
 			xl:grid-flow-col xl:grid-cols-2 2xl:px-32"
 		>

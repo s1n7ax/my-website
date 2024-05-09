@@ -6,7 +6,7 @@ pub fn H2(children: Children) -> impl IntoView {
 		<h2 class="text-4xl
 			text-center
 			uppercase
-			mb-2">
+			mb-8">
 			{children()}
 		</h2>
 	}

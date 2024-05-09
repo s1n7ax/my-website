@@ -46,7 +46,7 @@ fn AboutCard(title: String, children: Children) -> impl IntoView {
 			xl:grid-rows-subgrid
 			xl:row-span-5
 		">
-			<hr class="xl:hidden h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+			<hr class="xl:hidden h-px my-1 bg-gray-200 border-0 dark:bg-gray-700" />
 			<H2>{title}</H2>
 
 			{children()}

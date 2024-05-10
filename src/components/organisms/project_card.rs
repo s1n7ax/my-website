@@ -1,6 +1,7 @@
 use icondata as i;
 use leptos::*;
 use leptos_icons::*;
+use leptos_image::Image;
 
 #[component]
 pub fn ProjectCard(
@@ -17,7 +18,18 @@ pub fn ProjectCard(
 		rounded-lg
 		overflow-hidden
 		bg-gray-200">
-			<img class="aspect-video w-full" src=video_uri alt="me"/>
+			<Image
+				width=1280
+				height=960
+				class="
+					aspect-video
+					w-full
+				"
+				src=video_uri
+				quality=85
+				blur=true
+				alt=""
+			/>
 			<h3 class="text-lg my-3 mx-3 text-xl">{name}</h3>
 			<p class="mx-3">{long_description}</p>
 			<div class="self-end justify-self-end p-2 gap-2 grid grid-flow-col">

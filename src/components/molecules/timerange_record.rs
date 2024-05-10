@@ -1,4 +1,5 @@
 use leptos::*;
+use leptos_image::Image;
 
 #[component]
 pub fn WorkRecord(
@@ -21,7 +22,17 @@ pub fn WorkRecord(
 			group"
 		>
 			<div class="grid grid-flow-col gap-x-4">
-				<img class="object-cover aspect-square w-14" src=logo alt=logo_alt/>
+				<Image
+					width=100
+					height=100
+					class="
+						object-cover aspect-square w-14
+					"
+					src=logo
+					quality=85
+					blur=true
+					alt=logo_alt
+				/>
 				<div class="text-gray-600 group-hover:text-gray-800">
 					<div>
 						<span>

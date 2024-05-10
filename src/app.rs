@@ -1,6 +1,7 @@
 use crate::error_template::{AppError, ErrorTemplate};
 use crate::pages::home::home_page::HomePage;
 use leptos::*;
+use leptos_image::provide_image_context;
 use leptos_meta::*;
 use leptos_router::*;
 
@@ -8,6 +9,7 @@ use leptos_router::*;
 pub fn App() -> impl IntoView {
 	// Provides context that manages stylesheets, titles, meta tags, etc.
 	provide_meta_context();
+	provide_image_context();
 
 	view! {
 		<Stylesheet id="leptos" href="/pkg/my-website.css"/>

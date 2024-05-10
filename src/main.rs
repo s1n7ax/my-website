@@ -7,7 +7,6 @@ async fn main() {
 	use leptos_image::*;
 	use my_website::app::*;
 	use my_website::fileserv::file_and_error_handler;
-	// use my_website::state::ImageOptimizerState;
 
 	// Setting get_configuration(None) means we'll be using cargo-leptos's env values
 	// For deployment these variables are:

@@ -2,7 +2,6 @@ use icondata as i;
 use icondata::Icon;
 use leptos::*;
 use leptos_icons::*;
-use leptos_image::Image;
 
 #[component]
 pub fn Intro() -> impl IntoView {
@@ -59,18 +58,15 @@ fn Header() -> impl IntoView {
 #[component]
 fn Contact(link: String, details: String, icon: Icon) -> impl IntoView {
 	view! {
-		<div>
-			<Image src="images/me_02.webp" width=300 height=300 quality=85 blur=true class="test-image"/>
-			<a href=link target="_blank" class="grid grid-flow-col auto-cols-min gap-4">
-				<Icon
-					icon=icon
-					height="100%"
-					width="100%"
-					class="aspect-square w-6 hover:text-gray-800 transition ease-in-out duration-200"
-				/>
-				<span class="whitespace-nowrap">{details}</span>
-			</a>
-		</div>
+		<a href=link target="_blank" class="grid grid-flow-col auto-cols-min gap-4">
+			<Icon
+				icon=icon
+				height="100%"
+				width="100%"
+				class="aspect-square w-6 hover:text-gray-800 transition ease-in-out duration-200"
+			/>
+			<span class="whitespace-nowrap">{details}</span>
+		</a>
 	}
 }
 
@@ -104,6 +100,8 @@ fn CoverPhoto(#[prop(optional, into)] class: Option<AttributeValue>) -> impl Int
 						preserveAspectRatio="xMidYMid slice"
 					>
 						<image width="100" height="100" href="images/me_02.webp"></image>
+						// <image width="100" height="100" href="http://localhost:3000/__cache/image?src=images%2Fme_02.webp&option[r][w]=300&option[r][h]=300&option[r][q]=85" data-hk="0-1-0-7" class=" " style=" color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url('/__cache/image?src=images%2Fme_02.webp&amp;option[b][w]=20&amp;option[b][h]=20&amp;option[b][sw]=100&amp;option[b][sh]=100&amp;option[b][s]=15');;"></image>
+						// <Image src="images/me_02.webp" width=300 height=300 quality=85 blur=true></Image>
 					</pattern>
 				</defs>
 
@@ -128,7 +126,6 @@ fn CoverPhoto(#[prop(optional, into)] class: Option<AttributeValue>) -> impl Int
 					></path>
 				</g>
 				<g transform="translate(461.2435766118532 299.62190761821614)">
-					// <g transform="translate(461.2435766118532 299.62190761821614)">
 					<path
 						fill="url(#imgpattern)"
 						d="M147.7 -233.2C188.1 -204 215 -157.2 232.9 -109C250.7 -60.8 259.5 -11.1 252.5 36.2C245.6 83.6 222.9 128.5 191.8 168.3C160.7 208.1 121 242.7 74.3 259.2C27.6 275.7 -26.2 274.1 -77.4 260.5C-128.7 246.9 -177.3 221.4 -211.7 182.8C-246 144.2 -266 92.7 -273.8 39.3C-281.7 -14.1 -277.3 -69.4 -253.3 -113C-229.2 -156.7 -185.6 -188.8 -140.1 -215.7C-94.6 -242.6 -47.3 -264.3 3.2 -269.3C53.7 -274.2 107.4 -262.5 147.7 -233.2"

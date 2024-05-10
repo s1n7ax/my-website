@@ -39,7 +39,6 @@ async fn main() {
 	// build our application with a route
 	let app = Router::new()
 		.image_cache_route(&state)
-		// .leptos_routes(&state, routes, App)
 		.leptos_routes_with_context(&state, routes, state.optimizer.provide_context(), App)
 		.fallback(file_and_error_handler)
 		.with_state(state);

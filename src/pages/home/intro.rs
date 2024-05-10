@@ -2,6 +2,7 @@ use icondata as i;
 use icondata::Icon;
 use leptos::*;
 use leptos_icons::*;
+use leptos_image::Image;
 
 #[component]
 pub fn Intro() -> impl IntoView {
@@ -58,15 +59,18 @@ fn Header() -> impl IntoView {
 #[component]
 fn Contact(link: String, details: String, icon: Icon) -> impl IntoView {
 	view! {
-		<a href=link target="_blank" class="grid grid-flow-col auto-cols-min gap-4">
-			<Icon
-				icon=icon
-				height="100%"
-				width="100%"
-				class="aspect-square w-6 hover:text-gray-800 transition ease-in-out duration-200"
-			/>
-			<span class="whitespace-nowrap">{details}</span>
-		</a>
+		<div>
+			<Image src="images/me_02.webp" width=300 height=300 quality=85 blur=true class="test-image"/>
+			<a href=link target="_blank" class="grid grid-flow-col auto-cols-min gap-4">
+				<Icon
+					icon=icon
+					height="100%"
+					width="100%"
+					class="aspect-square w-6 hover:text-gray-800 transition ease-in-out duration-200"
+				/>
+				<span class="whitespace-nowrap">{details}</span>
+			</a>
+		</div>
 	}
 }
 

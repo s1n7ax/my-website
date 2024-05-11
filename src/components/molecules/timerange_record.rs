@@ -1,6 +1,8 @@
 use leptos::*;
 use leptos_image::Image;
 
+use crate::components::atoms::link::Link;
+
 #[component]
 pub fn WorkRecord(
 	designation: String,
@@ -12,9 +14,10 @@ pub fn WorkRecord(
 	logo_alt: String,
 ) -> impl IntoView {
 	view! {
-		<a
+		<Link
 			href=url
-			target="_blank"
+			title=format!("Link to {} website", company)
+			label=format!("Link to {} website", company)
 			class="grid
 			grid-flow-col
 			grid-cols-[auto_1fr]
@@ -50,6 +53,6 @@ pub fn WorkRecord(
 					</div>
 				</div>
 			</div>
-		</a>
+		</Link>
 	}
 }

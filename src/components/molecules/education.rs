@@ -1,5 +1,7 @@
 use leptos::*;
 
+use crate::components::atoms::link::Link;
+
 #[component]
 pub fn Education(
 	course: String,
@@ -7,11 +9,13 @@ pub fn Education(
 	start_date: String,
 	end_date: String,
 	url: String,
+	url_label: String,
 ) -> impl IntoView {
 	view! {
-		<a
+		<Link
 			href=url
-			target="_blank"
+			title=url_label.clone()
+			label=url_label.clone()
 			class="
 				grid
 				grid-flow-col
@@ -35,6 +39,6 @@ pub fn Education(
 					</span>
 				</div>
 			</div>
-		</a>
+		</Link>
 	}
 }

@@ -50,21 +50,25 @@ pub fn About() -> impl IntoView {
 		SocialDetails {
 			icon: i::BsLinkedin,
 			url: "https://www.linkedin.com/in/srinesh-nisala".to_string(),
+			url_label: "Link to my LinkedIn profile".to_string(),
 			description: "I share my work here".to_string(),
 		},
 		SocialDetails {
 			icon: i::BsGithub,
 			url: "https://github.com/s1n7ax".to_string(),
+			url_label: "Link to my Github profile".to_string(),
 			description: "My opensource projects".to_string(),
 		},
 		SocialDetails {
 			icon: i::BsYoutube,
 			url: "https://www.youtube.com/@s1n7ax".to_string(),
+			url_label: "Link to my YouTube channel".to_string(),
 			description: "I make videos about Linux, Docker, Neovim etc...".to_string(),
 		},
 		SocialDetails {
 			icon: i::BsFacebook,
 			url: "https://web.facebook.com/s1n7ax".to_string(),
+			url_label: "Link to my Facebook profile".to_string(),
 			description: "If you are into top notch memes, find me here".to_string(),
 		},
 	];
@@ -77,6 +81,7 @@ pub fn About() -> impl IntoView {
 			start_date: "September, 2020".to_string(),
 			end_date: "July, 2021".to_string(),
 			url: "https://www.beds.ac.uk".to_string(),
+			url_label: "Link to University of Bedfordshire website".to_string(),
 		},
 		CourseDetails {
 			course: "Higher Diploma in Computer Based Information System".to_string(),
@@ -84,6 +89,7 @@ pub fn About() -> impl IntoView {
 			start_date: "January, 2014".to_string(),
 			end_date: "January, 2015".to_string(),
 			url: "https://www.nibm.lk".to_string(),
+			url_label: "Link to National Institute of Business Management website".to_string(),
 		},
 		CourseDetails {
 			course: "Hiploma in Computer System Design".to_string(),
@@ -91,6 +97,7 @@ pub fn About() -> impl IntoView {
 			start_date: "January, 2015".to_string(),
 			end_date: "January, 2016".to_string(),
 			url: "https://www.nibm.lk".to_string(),
+			url_label: "Link to National Institute of Business Management website".to_string(),
 		},
 	];
 

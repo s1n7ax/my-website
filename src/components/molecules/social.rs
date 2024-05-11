@@ -3,12 +3,20 @@ use icondata::Icon as IconType;
 use leptos::*;
 use leptos_icons::Icon;
 
+use crate::components::atoms::link::Link;
+
 #[component]
-pub fn SocialMediaRecord(icon: IconType, url: String, description: String) -> impl IntoView {
+pub fn SocialMediaRecord(
+	icon: IconType,
+	url: String,
+	url_label: String,
+	description: String,
+) -> impl IntoView {
 	view! {
-		<a
+		<Link
 			href=url
-			target="_blank"
+			label=url_label.clone()
+			title=url_label.clone()
 			class="grid
 				grid-flow-col
 				auto-cols-[auto_1fr]
@@ -37,6 +45,6 @@ pub fn SocialMediaRecord(icon: IconType, url: String, description: String) -> im
 					<span class="text-gray-600 group-hover:text-gray-800">{description}</span>
 				</div>
 			</div>
-		</a>
+		</Link>
 	}
 }

@@ -3,6 +3,8 @@ use leptos::*;
 use leptos_icons::*;
 use leptos_image::Image;
 
+use crate::components::atoms::link::Link;
+
 #[component]
 pub fn ProjectCard(
 	name: String,
@@ -36,24 +38,24 @@ pub fn ProjectCard(
 				{links
 					.into_iter()
 					.map(|link| {
-						let icon = if link.starts_with("https://github.com") {
-							i::FaGithubAltBrands
-						} else if link.starts_with("https://youtu.be")
-							|| link.starts_with("https://youtube.com")
-						{
-							i::AiYoutubeFilled
-						} else {
-							i::BiWorldRegular
-						};
+						let icon_details =
+						if link.starts_with("https://github.com") { (i::FaGithubAltBrands, "Link to Github Project".to_string()) }
+						else if link.starts_with("https://youtube.com") { (i::AiYoutubeFilled, "Link to Youtube Videos".to_string()) }
+						else { (i::BiWorldRegular, "Link to website".to_string()) };
+
 						view! {
-							<a href=link target="_blank">
+							<Link
+								href=link
+								title=icon_details.1.clone()
+								label=icon_details.1.clone()
+							>
 								<Icon
-									icon=icon
+									icon=icon_details.0
 									height="100%"
 									width="100%"
 									class="aspect-square w-12 text-gray-400 hover:text-gray-800 transition ease-in-out duration-200"
 								/>
-							</a>
+							</Link>
 						}
 					})
 					.collect::<Vec<_>>()}

@@ -11,9 +11,9 @@ use leptos::*;
 pub fn HomePage() -> impl IntoView {
 	view! {
 		<div class="grid">
-			<section>
+			<header>
 				<Intro/>
-			</section>
+			</header>
 			<section>
 				<Experties/>
 			</section>

@@ -57,7 +57,9 @@ pub fn Projects() -> impl IntoView {
 		},
 		ProjectDetails {
 			name: "Simple Message Router".to_string(),
-			// short_description: "".to_string(),
+			// short_description: "The Simple Message Router efficiently manages messaging channels,
+			// 	serving as a centralized router"
+			// 	.to_string(),
 			long_description:
 				"Simple Message Router provides a versatile solution for organizing and managing
 				various communication channels such as web sockets and Chrome extension message passing.

@@ -57,6 +57,7 @@ fn AboutCard(title: String, children: Children) -> impl IntoView {
 pub struct SocialDetails {
 	pub icon: IconType,
 	pub url: String,
+	pub url_label: String,
 	pub description: String,
 }
 
@@ -71,6 +72,7 @@ pub fn SocialMediaTemplate(records: Vec<SocialDetails>) -> impl IntoView {
 						<SocialMediaRecord
 							icon={record.icon}
 							url={record.url}
+							url_label={record.url_label}
 							description={record.description}
 						/>
 					}
@@ -118,6 +120,7 @@ pub struct CourseDetails {
 	pub start_date: String,
 	pub end_date: String,
 	pub url: String,
+	pub url_label: String,
 }
 
 #[component]
@@ -134,6 +137,7 @@ pub fn EducationalQualificationTemplate(records: Vec<CourseDetails>) -> impl Int
 							start_date={record.start_date}
 							end_date={record.end_date}
 							url={record.url}
+							url_label={record.url_label}
 						/>
 					}
 				}).collect::<Vec<_>>()}

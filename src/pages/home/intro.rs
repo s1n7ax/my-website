@@ -3,6 +3,8 @@ use icondata::Icon;
 use leptos::*;
 use leptos_icons::*;
 
+use crate::components::atoms::link::Link;
+
 #[component]
 pub fn Intro() -> impl IntoView {
 	view! {
@@ -42,11 +44,13 @@ fn Header() -> impl IntoView {
 			>
 				<Contact
 					link="tel: +94777398803".to_string()
+					link_label= "My Phone Number".to_string()
 					details="+94 777 3988 03".to_string()
 					icon=i::BsTelephoneFill
 				/>
 				<Contact
 					link="mailto: srineshnisala@gmail.com".to_string()
+					link_label= "My Email Address".to_string()
 					details="srineshnisala@gmail.com".to_string()
 					icon=i::FaEnvelopeOpenTextSolid
 				/>
@@ -56,9 +60,14 @@ fn Header() -> impl IntoView {
 }
 
 #[component]
-fn Contact(link: String, details: String, icon: Icon) -> impl IntoView {
+fn Contact(link: String, link_label: String, details: String, icon: Icon) -> impl IntoView {
 	view! {
-		<a href=link target="_blank" class="grid grid-flow-col auto-cols-min gap-4">
+		<Link
+			href=link
+			title=link_label.clone()
+			label=link_label.clone()
+			class="grid grid-flow-col auto-cols-min gap-4"
+		>
 			<Icon
 				icon=icon
 				height="100%"
@@ -66,7 +75,7 @@ fn Contact(link: String, details: String, icon: Icon) -> impl IntoView {
 				class="aspect-square w-6 hover:text-gray-800 transition ease-in-out duration-200"
 			/>
 			<span class="whitespace-nowrap">{details}</span>
-		</a>
+		</Link>
 	}
 }
 

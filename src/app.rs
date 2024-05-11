@@ -15,9 +15,10 @@ pub fn App() -> impl IntoView {
 		<Stylesheet id="leptos" href="/pkg/my-website.css"/>
 
 		<Meta charset="utf-8"/>
-		<Meta name="description" content="I'm Srinesha Nisala and this is my portfolio"  />
-		<Meta name="author" content="Srinesha Nisala" />
 		<Meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<Meta name="author" content="Srinesha Nisala" />
+		<Meta name="description" content="I'm Srinesha Nisala and this is my portfolio"  />
+		<Meta name="theme-color" content="light" />
 
 		// sets the document title
 		<Title text="Welcome to My Website"/>

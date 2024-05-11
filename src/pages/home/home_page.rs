@@ -1,5 +1,6 @@
 use super::intro::Intro;
 
+use crate::components::atoms::container::{Main, Section};
 use crate::components::pages::about::About;
 use crate::components::pages::experties::Experties;
 use crate::components::pages::photo_gallery::PhotoGallery;
@@ -11,21 +12,31 @@ use leptos::*;
 pub fn HomePage() -> impl IntoView {
 	view! {
 		<div class="grid">
-			<header>
+			<Main
+				label="Welcome to my portfolio".to_string()
+			>
 				<Intro/>
-			</header>
-			<section>
+			</Main>
+			<Section
+				label="My experties".to_string()
+			>
 				<Experties/>
-			</section>
-			<section>
+			</Section>
+			<Section
+				label="Projects I have worked on".to_string()
+			>
 				<Projects/>
-			</section>
-			<section>
+			</Section>
+			<Section
+				label="My favorite photos".to_string()
+			>
 				<PhotoGallery/>
-			</section>
-			<section>
+			</Section>
+			<Section
+				label="My social networks, working experience and education qualification details".to_string()
+			>
 				<About />
-			</section>
+			</Section>
 		</div>
 	}
 }

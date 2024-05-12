@@ -11,6 +11,11 @@ pub fn SectionContainer(
 				grid
         justify-items-center
         py-8
+
+				px-10
+				md:w-10/12
+				lg:w-10/12
+				xl:w-11/12
 			"
 			class=class
 		>
@@ -29,25 +34,16 @@ pub enum FlowDirection {
 #[component]
 pub fn Main(
 	#[prop(optional)] center: bool,
-	#[prop(default=FlowDirection::Row)] direction: FlowDirection,
 	#[prop(optional, into)] class: Option<AttributeValue>,
 	children: Children,
 	#[prop(default="region".to_string())] role: String,
 	label: String,
 ) -> impl IntoView {
-	let grid_flow_direction = move || match direction {
-		FlowDirection::Row => "grid-flow-row",
-		FlowDirection::Col => "grid-flow-col",
-		FlowDirection::RowDense => "grid-flow-row-dense",
-		FlowDirection::ColDense => "grid-flow-col-dense",
-	};
-
 	view! {
 		<main
 			role=role
 			aria-label=label
 			class="grid"
-			class=move|| grid_flow_direction()
 			class:justify-items-center=center
 			class=class
 		>
@@ -59,25 +55,16 @@ pub fn Main(
 #[component]
 pub fn Section(
 	#[prop(default = true)] center: bool,
-	#[prop(default=FlowDirection::Row)] direction: FlowDirection,
 	#[prop(optional, into)] class: Option<AttributeValue>,
 	children: Children,
 	#[prop(default="region".to_string())] role: String,
 	label: String,
 ) -> impl IntoView {
-	let grid_flow_direction = move || match direction {
-		FlowDirection::Row => "grid-flow-row",
-		FlowDirection::Col => "grid-flow-col",
-		FlowDirection::RowDense => "grid-flow-row-dense",
-		FlowDirection::ColDense => "grid-flow-col-dense",
-	};
-
 	view! {
 		<section
 			role=role
 			aria-label=label
 			class="grid"
-			class=move|| grid_flow_direction()
 			class:justify-items-center=center
 			class=class
 		>

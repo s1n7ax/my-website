@@ -9,13 +9,13 @@ pub fn ExpertiesCart(
 	img_alt: String,
 ) -> impl IntoView {
 	view! {
-		<div class="grid auto-rows-min h-full p-5 rounded-md bg-gray-200 drop-shadow">
+		<article class="grid auto-rows-min h-full p-5 rounded-md bg-gray-200 drop-shadow">
 			<Image
 				width=200
 				height=200
 				class="
 					aspect-square
-					h-24 m-0 p-0
+					h-24
 				"
 				src=img_uri
 				quality=100
@@ -23,6 +23,6 @@ pub fn ExpertiesCart(
 			/>
 			<h3 class="text-2xl mb-3 mt-4 p-0">{title}</h3>
 			<p>{description}</p>
-		</div>
+		</article>
 	}
 }

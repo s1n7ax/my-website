@@ -17,17 +17,12 @@ pub fn AboutTemplate(
 				grid
 				grid-flow-row
 				gap-4
-				px-10
-
-				md:w-10/12
 
 				xl:gap-0
 				xl:auto-rows-fr
 				xl:grid-rows-[auto]
 				xl:grid-flow-col
-
 				xl:grid-cols-3
-				xl:w-11/12
 			">
 				<SocialMediaTemplate records={socials} />
 				<WorkHistoryTemplate records={work_history} />

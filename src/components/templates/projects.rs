@@ -21,10 +21,11 @@ pub fn ProjectsTemplate(records: Vec<ProjectDetails>) -> impl IntoView {
 		<SectionContainer>
 			<H2>"Some Fun Projects"</H2>
 			<div
-				class="grid grid-cols-1 px-10 gap-4
-				md:grid-cols-2 md:w-10/12
-				lg:w-10/12
-				xl:grid-cols-2 xl:w-11/12"
+				class="
+					grid
+					gap-4
+					lg:grid-cols-2
+				"
 			>
 				{records
 					.into_iter()

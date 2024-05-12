@@ -17,7 +17,6 @@ pub fn Photo(src: String, aspect: AspectType) -> impl IntoView {
 					height=768
 					class="
 						object-cover object-center col-span-full aspect-4/3 w-full bg-white p-4
-
 						lg:col-span-2
 					"
 					src=src

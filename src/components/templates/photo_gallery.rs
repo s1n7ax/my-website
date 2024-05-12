@@ -14,13 +14,18 @@ pub struct PhotoDetails {
 #[component]
 pub fn PhotoGalleryTemplate(records: Vec<PhotoDetails>) -> impl IntoView {
 	view! {
-		<SectionContainer class="bg-gradient-to-r from-pink-200 to-yellow-200">
+		<SectionContainer >
 			<H2>"my favorite captures 📷"</H2>
 			<div
-				class="grid grid-cols-1 grid-flow-row-dense px-10 gap-4 z-10
-				md:grid-cols-2 md:w-10/12
-				lg:grid-cols-3 lg:w-10/12
-				xl:grid-cols-3 xl:w-11/12"
+				class="
+					grid
+					grid-flow-row-dense
+					gap-4
+					w-full
+
+					md:grid-cols-2
+					lg:grid-cols-3
+				"
 			>
 				{records
 					.into_iter()

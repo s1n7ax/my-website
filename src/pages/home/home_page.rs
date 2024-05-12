@@ -28,6 +28,11 @@ pub fn HomePage() -> impl IntoView {
 				<Projects/>
 			</Section>
 			<Section
+				class="
+					bg-gradient-to-r
+					from-pink-200
+					to-yellow-200
+				"
 				label="My favorite photos".to_string()
 			>
 				<PhotoGallery/>

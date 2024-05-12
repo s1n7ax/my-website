@@ -18,16 +18,12 @@ pub fn ExpertiesTemplate(#[prop()] records: Vec<ExpertiesRecord>) -> impl IntoVi
 		<SectionContainer>
 			<H2>"My Experties"</H2>
 			<div
-				class="grid
-					grid-cols-1
-					px-10
+				class="
+					grid
 					gap-4
 
-					md:w-10/12
-					lg:w-10/12
-
-					xl:grid-cols-2
-					xl:w-11/12"
+					lg:grid-cols-2
+				"
 			>
 				{records
 					.into_iter()

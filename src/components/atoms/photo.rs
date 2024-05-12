@@ -16,7 +16,14 @@ pub fn Photo(src: String, aspect: AspectType) -> impl IntoView {
 					width=1024
 					height=768
 					class="
-						object-cover object-center col-span-full aspect-4/3 w-full bg-white p-4
+						object-cover
+						object-center
+						col-span-full
+						aspect-4/3
+						w-full
+						bg-white
+						p-4
+
 						lg:col-span-2
 					"
 					src=src
@@ -33,7 +40,13 @@ pub fn Photo(src: String, aspect: AspectType) -> impl IntoView {
 					width=768
 					height=1024
 					class="
-						object-cover object-center aspect-3/4 w-full bg-white p-4
+						object-cover
+						object-center
+						aspect-3/4
+						w-full
+						bg-white
+						p-4
+
 						lg:h-full
 					"
 					src=src
@@ -50,7 +63,12 @@ pub fn Photo(src: String, aspect: AspectType) -> impl IntoView {
 					width=600
 					height=600
 					class="
-						object-cover object-center aspect-square w-full bg-white p-4
+						object-cover
+						object-center
+						aspect-square
+						w-full
+						bg-white
+						p-4
 					"
 					src=src
 					alt=""

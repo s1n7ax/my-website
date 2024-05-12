@@ -23,7 +23,7 @@ pub fn SocialMediaRecord(
 				gap-x-4
 				group"
 		>
-			<div>
+			<article>
 				<div class="grid
 					grid-flow-col
 					auto-cols-[auto_1fr]
@@ -44,7 +44,7 @@ pub fn SocialMediaRecord(
 					/>
 					<span class="text-gray-600 group-hover:text-gray-800">{description}</span>
 				</div>
-			</div>
+			</article>
 		</Link>
 	}
 }

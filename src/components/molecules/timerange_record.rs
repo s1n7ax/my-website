@@ -24,7 +24,7 @@ pub fn WorkRecord(
 			gap-x-4
 			group"
 		>
-			<div class="grid grid-flow-col gap-x-4">
+			<article class="grid grid-flow-col gap-x-4">
 				<Image
 					width=100
 					height=100
@@ -37,22 +37,22 @@ pub fn WorkRecord(
 					alt=logo_alt
 				/>
 				<div class="text-gray-600 group-hover:text-gray-800">
-					<div>
+					<header>
 						<span>
 							<span class="font-bold">{designation}</span>
 							<span>" at "</span>
 							<span class="font-bold">{company}</span>
 						</span>
-					</div>
-					<div>
+					</header>
+					<footer>
 						<span class="text-sm text-gray-500">
 							<span>{start_date}</span>
 							<span>" - "</span>
 							<span>{end_date}</span>
 						</span>
-					</div>
+					</footer>
 				</div>
-			</div>
+			</article>
 		</Link>
 	}
 }

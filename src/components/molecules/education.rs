@@ -23,22 +23,22 @@ pub fn Education(
 				group
 			"
 		>
-			<div class="text-gray-600 group-hover:text-gray-800">
-				<div>
+			<article class="text-gray-600 group-hover:text-gray-800">
+				<header>
 					<span>
 						<span class="font-bold">{course}</span>
 						<span>" at "</span>
 						<span class="font-bold">{institute}</span>
 					</span>
-				</div>
-				<div>
+				</header>
+				<footer>
 					<span class="text-sm text-gray-500">
 						<span>{start_date}</span>
 						<span>" - "</span>
 						<span>{end_date}</span>
 					</span>
-				</div>
-			</div>
+				</footer>
+			</article>
 		</Link>
 	}
 }

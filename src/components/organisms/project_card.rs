@@ -22,18 +22,29 @@ pub fn ProjectCard(
 			bg-gray-200
 		">
 			<header>
-				<Image
-					width=1280
-					height=960
-					class="
-						aspect-video
-						w-full
-					"
-					src=video_uri
-					quality=85
-					blur=true
-					alt={format!("Image of {} project", name)}
-				/>
+				<div class="
+					overflow-hidden
+				">
+					<Image
+						width=1280
+						height=960
+						class="
+							aspect-video
+							w-full
+							object-fill
+							scale-105
+
+							hover:scale-100
+							transition-transform
+							duration-300
+							ease-in-out
+						"
+						src=video_uri
+						quality=85
+						blur=true
+						alt={format!("Image of {} project", name)}
+					/>
+				</div>
 				<h3 class="text-lg my-3 mx-3 text-xl">{name}</h3>
 			</header>
 			<p class="mx-3">{long_description}</p>

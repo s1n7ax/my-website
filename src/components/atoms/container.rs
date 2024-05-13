@@ -36,12 +36,10 @@ pub fn Main(
 	#[prop(optional)] center: bool,
 	#[prop(optional, into)] class: Option<AttributeValue>,
 	children: Children,
-	#[prop(default="region".to_string())] role: String,
 	label: String,
 ) -> impl IntoView {
 	view! {
 		<main
-			role=role
 			aria-label=label
 			class="grid"
 			class:justify-items-center=center

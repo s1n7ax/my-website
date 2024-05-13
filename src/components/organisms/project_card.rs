@@ -20,6 +20,7 @@ pub fn ProjectCard(
 			rounded-lg
 			overflow-hidden
 			bg-gray-200
+			group
 		">
 			<header>
 				<div class="
@@ -34,7 +35,7 @@ pub fn ProjectCard(
 							object-fill
 							scale-105
 
-							hover:scale-100
+							group-hover:scale-100
 							transition-transform
 							duration-300
 							ease-in-out

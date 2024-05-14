@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "tailwind:build": "tailwindcss -i ./style/input.css -o ./style/main.css",
+    "tailwind:build": "tailwindcss -i ./style/input.css -o ./style/main.css --minify",
     "tailwind:watch": "tailwindcss -i ./style/input.css -o ./style/main.css --watch"
   },
   "devDependencies": {

@@ -18,7 +18,9 @@ COPY . .
 
 RUN npm install \
   && npm run tailwind:build \
-  && cargo leptos build --release -vv
+  && npm run leptos:build \
+  && npm run minify
+
 
 FROM rustlang/rust:nightly-alpine as runner
 

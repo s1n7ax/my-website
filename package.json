@@ -5,8 +5,11 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "tailwind:watch": "tailwindcss -i ./style/input.css -o ./style/main.css --watch",
     "tailwind:build": "tailwindcss -i ./style/input.css -o ./style/main.css --minify",
-    "tailwind:watch": "tailwindcss -i ./style/input.css -o ./style/main.css --watch"
+    "leptos:build": "cargo leptos build --release -vv",
+    "js-minify": "npx terser --compress --mangle -- ./target/site/pkg/my-website.js > ./target/site/pkg/my-website-minify.js",
+    "minify": "npm run js-minify && mv ./target/site/pkg/my-website-minify.js ./target/site/pkg/my-website.js"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",

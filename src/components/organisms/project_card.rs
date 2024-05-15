@@ -75,7 +75,15 @@ pub fn ProjectCard(
 									icon=icon_details.0
 									height="100%"
 									width="100%"
-									class="aspect-square w-12 text-gray-400 hover:text-gray-800 transition ease-in-out duration-200"
+									class="
+										aspect-square
+										w-12
+										text-gray-400
+										hover:text-gray-800
+										transition
+										ease-in-out
+										duration-200
+									"
 								/>
 							</Link>
 						}

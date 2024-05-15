@@ -7,7 +7,7 @@ async fn main() {
 	use leptos_image::*;
 	use my_website::app::*;
 	use my_website::fileserv::file_and_error_handler;
-	use tower_http::compression::CompressionLayer;
+	use tower_http::compression::{CompressionLayer, DefaultPredicate};
 
 	// Setting get_configuration(None) means we'll be using cargo-leptos's env values
 	// For deployment these variables are:
@@ -36,8 +36,11 @@ async fn main() {
 		optimizer: ImageOptimizer::new("/__cache/image", root, 1),
 	};
 
-	let compression_layer: CompressionLayer =
-		CompressionLayer::new().gzip(true).deflate(true).br(true);
+	let compression_layer: CompressionLayer = CompressionLayer::new()
+		.gzip(true)
+		.deflate(true)
+		.br(true)
+		.compress_when(DefaultPredicate::new());
 
 	// build our application with a route
 	let app = Router::new()

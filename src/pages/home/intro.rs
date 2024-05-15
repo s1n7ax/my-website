@@ -9,10 +9,18 @@ use crate::components::atoms::link::Link;
 pub fn Intro() -> impl IntoView {
 	view! {
 		<div
-			class="grid justify-items-center bg-red-200 pb-8 mb-8
-			xl:grid-flow-col xl:grid-cols-2 xl:px-24
-			xl:grid-flow-col xl:grid-cols-2 2xl:px-32"
-		>
+			class="
+				grid
+				justify-items-center
+				bg-red-200
+				pb-8
+				mb-8
+
+				xl:px-24
+				xl:grid-flow-col
+				xl:grid-cols-2
+				2xl:px-32
+		">
 			<CoverPhoto/>
 			<Header/>
 		</div>
@@ -72,7 +80,14 @@ fn Contact(link: String, link_label: String, details: String, icon: Icon) -> imp
 				icon=icon
 				height="100%"
 				width="100%"
-				class="aspect-square w-6 hover:text-gray-800 transition ease-in-out duration-200"
+				class="
+					aspect-square
+					w-6
+					hover:text-gray-800
+					transition
+					ease-in-out
+					duration-200
+				"
 			/>
 			<span class="whitespace-nowrap">{details}</span>
 		</Link>

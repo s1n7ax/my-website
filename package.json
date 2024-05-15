@@ -12,7 +12,7 @@
     "minify": "npm run js-minify && mv ./target/site/pkg/my-website-minify.js ./target/site/pkg/my-website.js"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.13",
     "tailwindcss": "^3.4.3"
   }
 }

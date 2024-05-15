@@ -11,8 +11,8 @@ pub fn ExpertiesCart(
 	view! {
 		<article class="grid auto-rows-min h-full p-5 rounded-md bg-gray-200 drop-shadow">
 			<Image
-				width=200
-				height=200
+				width=100
+				height=100
 				class="
 					aspect-square
 					h-24

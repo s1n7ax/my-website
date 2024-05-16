@@ -29,18 +29,59 @@ pub fn Intro() -> impl IntoView {
 
 #[component]
 fn Header() -> impl IntoView {
+	let (animate, set_animate) = create_signal(false);
+	create_effect(move |_| set_animate(true));
+
 	view! {
 		<div
 			class="grid justify-items-center gap-4 px-10"
 			class="xl:col-start-1 xl:self-end xl:justify-items-start"
 		>
-			<h1 class="text-2xl text-center uppercase" class="xl:text-left">
+			<h1
+				class="
+					text-2xl
+					text-cente
+					uppercase
+
+					transition-all
+					duration-1000
+					ease-in-out
+
+					xl:text-left
+				"
+				class:translate-x-32=move|| !animate()
+				class:opacity-0=move|| !animate()
+				class:translate-x-0=animate()
+				class:opacity-1=animate()
+			>
 				"Hi!, I'm Nisala"
 			</h1>
-			<h2 class="text-4xl text-center uppercase" class="xl:text-left">
+			<h2
+				class="
+					text-4xl
+					text-center
+					uppercase
+
+					transition-all
+					duration-1000
+					ease-in-out
+					delay-200
+
+					xl:text-left
+				"
+
+				class:translate-x-32=move|| !animate()
+				class:opacity-0=move|| !animate()
+				class:translate-x-0=animate()
+				class:opacity-1=animate()
+			>
 				"Senior Full-stack Developer"
 			</h2>
-			<p class="md:px-10" class="lg:px-24" class="xl:px-0">
+			<p
+				class="md:px-10"
+				class="lg:px-24"
+				class="xl:px-0"
+			>
 				"Hey! Welcome to my little corner of the internet! I'm a software whiz who
 				loves making big business apps run smoothly. When I'm not glued to my computer,
 				I'm out hiking, snapping pics, and having a blast playing video games.

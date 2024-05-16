@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./style/input.css", "./src/**/*.rs"],
+  content: {
+    files: ["./style/input.css", "./src/**/*.rs"],
+    transform: {
+      rs: (content) => content.replace(/(?:^|\s)class:/g, " "),
+    },
+  },
+
   theme: {
     extend: {
       aspectRatio: {

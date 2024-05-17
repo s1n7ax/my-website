@@ -13,6 +13,22 @@ module.exports = {
         "4/3": "4 / 3",
         "3/4": "3 / 4",
       },
+
+      keyframes: {
+        typing: {
+          "0%": {
+            left: "0%",
+          },
+          "100%": {
+            left: "100%",
+          },
+        },
+
+        "blink-caret": {
+          "from, to": { "border-left-width": 0 },
+          "50%": { "border-left-width": "2px" },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

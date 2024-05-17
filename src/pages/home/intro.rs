@@ -32,6 +32,14 @@ fn Header() -> impl IntoView {
 	let (animate, set_animate) = create_signal(false);
 	create_effect(move |_| set_animate(true));
 
+	let descirptions = vec![
+		"Hey! Welcome to my little corner of the internet! ".to_string(),
+		"I'm a software whiz who loves making big business apps run smoothly. ".to_string(),
+		"When I'm not glued to my computer, ".to_string(),
+		"I'm out hiking, snapping pics, and having a blast playing video games. ".to_string(),
+		"I'm all about free, open-source software, and I also enjoy giving back to the tech community. ".to_string(),
+	];
+
 	view! {
 		<div
 			class="grid justify-items-center gap-4 px-10"
@@ -43,16 +51,21 @@ fn Header() -> impl IntoView {
 					text-cente
 					uppercase
 
-					transition-all
-					duration-1000
-					ease-in-out
+					inline
+					relative
+
+					after:left-full
+					after:content-['']
+					after:border-l-0
+					after:border-red-800
+					after:absolute
+					after:w-full
+					after:h-full
+					after:bg-red-200
+					after:animate-[typing_.8s_steps(15,end),blink-caret_.75s_step-end]
 
 					xl:text-left
 				"
-				class:translate-x-32=move|| !animate()
-				class:opacity-0=move|| !animate()
-				class:translate-x-0=animate()
-				class:opacity-1=animate()
 			>
 				"Hi!, I'm Nisala"
 			</h1>
@@ -62,31 +75,48 @@ fn Header() -> impl IntoView {
 					text-center
 					uppercase
 
-					transition-all
-					duration-1000
-					ease-in-out
-					delay-200
+					inline
+					relative
+
+					after:left-0
+					after:content-['']
+					after:border-red-700
+					after:absolute
+					after:w-full
+					after:h-full
+					after:bg-red-200
+					after:animate-[typing_1s_steps(27,end)_forwards_.8s,blink-caret_.75s_step-end_infinite_.8s]
 
 					xl:text-left
 				"
-
-				class:translate-x-32=move|| !animate()
-				class:opacity-0=move|| !animate()
-				class:translate-x-0=animate()
-				class:opacity-1=animate()
 			>
 				"Senior Full-stack Developer"
 			</h2>
-			<p
-				class="md:px-10"
-				class="lg:px-24"
-				class="xl:px-0"
+			<div
+				class="
+					md:px-10
+					lg:px-24
+					xl:px-0
+				"
 			>
-				"Hey! Welcome to my little corner of the internet! I'm a software whiz who
-				loves making big business apps run smoothly. When I'm not glued to my computer,
-				I'm out hiking, snapping pics, and having a blast playing video games.
-				I'm all about free, open-source software, and I also enjoy giving back to the tech community."
-			</p>
+				{
+					descirptions
+						.into_iter()
+						.enumerate()
+						.map(move|(index, desc)| {
+							let delay = index as f32 * 0.2;
+
+							view! {
+								<AnimatedSpan
+									animate=animate
+									delay=format!("{}s", delay)
+								>
+									{desc}
+								</AnimatedSpan>
+							}
+						}).collect::<Vec<_>>()
+				}
+			</div>
 			<div
 				class="grid gap-2 justify-items-center"
 				class="xl:grid-flow-col xl:gap-4 xl:justify-self-end"
@@ -105,6 +135,30 @@ fn Header() -> impl IntoView {
 				/>
 			</div>
 		</div>
+	}
+}
+
+#[component]
+fn AnimatedSpan(animate: ReadSignal<bool>, delay: String, children: Children) -> impl IntoView {
+	view! {
+		<p
+			class="
+				block
+
+				p-0
+				m-0
+				transition-all
+				duration-1000
+				ease-in-out
+			"
+			class:translate-x-32=move|| !animate()
+			class:opacity-0=move|| !animate()
+			class:translate-x-0=animate()
+			class:opacity-1=animate()
+			style=format!("transition-delay: {};", delay)
+		>
+			{children()}
+		</p>
 	}
 }
 
@@ -139,7 +193,9 @@ fn Contact(link: String, link_label: String, details: String, icon: Icon) -> imp
 fn CoverPhoto(#[prop(optional, into)] class: Option<AttributeValue>) -> impl IntoView {
 	view! {
 		<div
-			class="w-10/12
+			class="
+				z-10
+				w-10/12
 				my-3
 				sm:w-9/12
 				md:w-8/12

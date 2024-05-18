@@ -5,6 +5,8 @@ use crate::components::{
 use icondata::Icon as IconType;
 use leptos::*;
 
+stylance::import_style!(styles, "about.module.scss");
+
 #[component]
 pub fn AboutTemplate(
 	socials: Vec<SocialDetails>,
@@ -13,17 +15,7 @@ pub fn AboutTemplate(
 ) -> impl IntoView {
 	view! {
 		<SectionContainer>
-			<div class="
-				grid
-				grid-flow-row
-				gap-4
-
-				xl:gap-0
-				xl:auto-rows-fr
-				xl:grid-rows-[auto]
-				xl:grid-flow-col
-				xl:grid-cols-3
-			">
+			<div class=styles::container>
 				<SocialMediaTemplate records={socials} />
 				<WorkHistoryTemplate records={work_history} />
 				<EducationalQualificationTemplate records={education} />

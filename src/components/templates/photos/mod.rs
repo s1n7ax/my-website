@@ -6,6 +6,8 @@ use crate::components::atoms::{
 	title::H2,
 };
 
+stylance::import_style!(styles, "photos.module.scss");
+
 pub struct PhotoDetails {
 	pub src: String,
 	pub aspect: AspectType,
@@ -16,17 +18,7 @@ pub fn PhotoGalleryTemplate(records: Vec<PhotoDetails>) -> impl IntoView {
 	view! {
 		<SectionContainer >
 			<H2>"my favorite captures 📷"</H2>
-			<div
-				class="
-					grid
-					grid-flow-row-dense
-					gap-4
-					w-full
-
-					md:grid-cols-2
-					lg:grid-cols-3
-				"
-			>
+			<div class=styles::container>
 				{records
 					.into_iter()
 					.map(|record| {

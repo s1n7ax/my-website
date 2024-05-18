@@ -6,7 +6,7 @@
   border-radius: 0.5rem;
 
   // color
-  background-color: #e5e7eb;
+  background-color: $gray-200;
 
   // transitions
   transition-property: filter;
@@ -21,10 +21,4 @@
 .image {
   aspect-ratio: 1 / 1;
   height: 6rem;
-}
-
-.header {
-  @extend .text-2xl;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
 }

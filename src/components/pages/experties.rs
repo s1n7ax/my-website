@@ -1,6 +1,6 @@
 use leptos::*;
 
-use crate::components::templates::experties::experties::{ExpertiesRecord, ExpertiesTemplate};
+use crate::components::templates::experties::{ExpertiesRecord, ExpertiesTemplate};
 
 #[component]
 pub fn Experties() -> impl IntoView {

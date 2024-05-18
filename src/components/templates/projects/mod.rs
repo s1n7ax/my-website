@@ -1,9 +1,10 @@
-use leptos::*;
-
 use crate::components::{
 	atoms::{container::SectionContainer, title::H2},
 	organisms::project_card::ProjectCard,
 };
+use leptos::*;
+
+stylance::import_style!(styles, "projects.module.scss");
 
 pub struct ProjectDetails {
 	pub name: String,
@@ -20,13 +21,7 @@ pub fn ProjectsTemplate(records: Vec<ProjectDetails>) -> impl IntoView {
 	view! {
 		<SectionContainer>
 			<H2>"Some Fun Projects"</H2>
-			<div
-				class="
-					grid
-					gap-4
-					lg:grid-cols-2
-				"
-			>
+			<div class=styles::container>
 				{records
 					.into_iter()
 					.map(|record| {

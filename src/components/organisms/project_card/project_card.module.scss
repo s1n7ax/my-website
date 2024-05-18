@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-auto-rows: auto auto 1fr;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: $gray-200;
+}
+
+.image {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: fill;
+
+  transition-property: transform;
+  transition-duration: $transition-duration-1;
+  transition-timing-function: $transition-timing-function-1;
+
+  transform: scale3d(1.05, 1.05, 1.05);
+
+  &:hover {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.link_container {
+  display: grid;
+  align-self: flex-end;
+  justify-self: end;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}

@@ -1,6 +1,8 @@
 use leptos::*;
 use leptos_image::Image;
 
+stylance::import_style!(styles, "experties_card.module.scss");
+
 #[component]
 pub fn ExpertiesCart(
 	title: String,
@@ -9,19 +11,16 @@ pub fn ExpertiesCart(
 	img_alt: String,
 ) -> impl IntoView {
 	view! {
-		<article class="grid auto-rows-min h-full p-5 rounded-md bg-gray-200 drop-shadow">
+		<article class=styles::container>
 			<Image
 				width=100
 				height=100
-				class="
-					aspect-square
-					h-24
-				"
+				class=styles::image
 				src=img_uri
 				quality=100
 				alt=img_alt
 			/>
-			<h3 class="text-2xl mb-3 mt-4 p-0">{title}</h3>
+			<h3 class=styles::header>{title}</h3>
 			<p>{description}</p>
 		</article>
 	}

@@ -1,17 +1,4 @@
-.container-5f5ac7d {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: $screen-lg) {
-  .container-5f5ac7d {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-.container-e69ad7d {
+.container {
   //layout
   display: grid;
   height: 100%;
@@ -31,25 +18,13 @@
   }
 }
 
-.image-e69ad7d {
+.image {
   aspect-ratio: 1 / 1;
   height: 6rem;
 }
 
-.header-e69ad7d {
+.header {
   @extend .text-2xl;
   margin-bottom: 0.5rem;
   margin-top: 1rem;
-}
-
-
-.back-c104f9b {
-  background-color: red;
-  transform: translateX(10px);
-  color: orange;
-}
-
-
-.hell-f209d82 {
-  color: blue;
 }

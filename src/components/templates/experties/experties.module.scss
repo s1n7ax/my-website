@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: $screen-lg) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

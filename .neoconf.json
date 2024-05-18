@@ -5,7 +5,10 @@
         "leptosfmt",
         "--stdin",
         "--rustfmt"
-      ]
+      ],
+      "rust-analyzer.procMacro.ignored": {
+        "stylance": ["import_style"]
+      }
     }
   }
 }

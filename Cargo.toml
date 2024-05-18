@@ -26,6 +26,7 @@ thiserror = "1"
 tracing = { version = "0.1", optional = true }
 http = "1"
 leptos_image = { version = "0.2.0", optional = true }
+stylance = { version = "0.3.0", features = ["nightly"] }
 
 [features]
 hydrate = [
@@ -68,7 +69,7 @@ site-root = "target/site"
 site-pkg-dir = "pkg"
 
 # [Optional] The source CSS file. If it ends with .sass or .scss then it will be compiled by dart-sass into CSS. The CSS is optimized by Lightning CSS before being written to <site-root>/<site-pkg>/app.css
-style-file = "style/main.css"
+style-file = "style/main.scss"
 # Assets source dir. All files found here will be copied and synchronized to site-root.
 # The assets-dir cannot have a sub directory with the same name/path as site-pkg-dir.
 #
@@ -120,3 +121,50 @@ lib-default-features = false
 #
 # Optional. Defaults to "release".
 lib-profile-release = "wasm-release"
+
+[package.metadata.stylance]
+# output_file
+# When set, stylance-cli will bundle all css module files
+# into by concatenating them and put the result in this file.
+output_file = "./styles/bundle.scss"
+
+# output_dir
+# When set, stylance-cli will create a folder named "stylance" inside
+# the output_dir directory.
+# The stylance folder will be populated with one file per detected css module
+# and one _all.scss file that contains one `@use "file.module-hash.scss";` statement
+# per module file.
+# You can use that file to import all your modules into your main scss project.
+# output_dir = "./styles/"
+
+# folders
+# folders in which stylance cli will look for css module files.
+# defaults to ["./src/"]
+# folders = ["./src/", "./styles/"]
+folders = ["./src/"]
+
+# extensions
+# files ending with these extensions will be considered to be
+# css modules by stylance cli and will be included in the output
+# bundle
+# defaults to [".module.scss", ".module.css"]
+extensions = [".module.scss", ".module.css"]
+
+# scss_prelude
+# When generating an scss file stylance-cli will prepend this string
+# Useful to include a @use statement to all scss modules.
+# scss_prelude = '@use "../path/to/prelude" as *;'
+
+# hash_len
+# Controls how long the hash name used in scoped classes should be.
+# It is safe to lower this as much as you want, stylance cli will produce an
+# error if two files end up with colliding hashes.
+# defaults to 7
+hash_len = 7
+
+# class_name_pattern
+# Controls the shape of the transformed scoped class names.
+# [name] will be replaced with the original class name
+# [hash] will be replaced with the hash of css module file path.
+# defaults to "[name]-[hash]"
+# class_name_pattern = "my-project-[name]-[hash]"

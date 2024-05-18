@@ -8,8 +8,8 @@
     "dev": "concurrently --kill-others 'npm run style:watch' 'cargo leptos watch'",
     "style:watch": "concurrently --kill-others 'npm run tailwind:watch' 'npm run stylance:watch'",
     "stylance:watch": "stylance --watch . --output-file ./style/stylance.scss",
-    "tailwind:watch": "tailwindcss -i ./style/input.css -o ./style/tailwind.css --watch",
-    "tailwind:build": "tailwindcss -i ./style/input.css -o ./style/main.css --minify",
+    "tailwind:watch": "tailwindcss -i ./style/tailwind-input.css -o ./style/tailwind.css --watch",
+    "tailwind:build": "tailwindcss -i ./style/tailwind-input.css -o ./style/tailwind.css --minify",
     "leptos:build": "cargo leptos build --release -vv",
     "js-minify": "npx terser --compress --mangle -- ./target/site/pkg/my-website.js > ./target/site/pkg/my-website-minify.js",
     "minify": "npm run js-minify && mv ./target/site/pkg/my-website-minify.js ./target/site/pkg/my-website.js"

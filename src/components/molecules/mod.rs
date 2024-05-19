@@ -1,3 +1,4 @@
-pub mod education;
-pub mod social;
-pub mod timerange_record;
+pub mod contact;
+pub mod cover_photo;
+pub mod icon_link;
+pub mod period;

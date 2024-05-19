@@ -1,0 +1,33 @@
+.link {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+}
+
+.article {
+  display: grid;
+  grid-auto-columns: auto;
+}
+
+.image {
+  aspect-ratio: 1 / 1;
+  width: 3.5rem;
+  object-fit: cover;
+}
+
+.text_container {
+  color: $gray-600;
+
+  &:hover {
+    color: $gray-800;
+  }
+}
+
+.text_bold {
+  font-weight: bold;
+}
+
+.time_range {
+  font-weight: bold;
+  color: $gray-500;
+}

@@ -1,0 +1,27 @@
+.container {
+  container-type: inline-size;
+  display: grid;
+  grid-template-areas: "cover_photo" "title";
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @container (min-width: #{$screen-md}) {
+    & {
+      background-color: green;
+      padding-left: 10rem;
+      padding-right: 10rem;
+    }
+  }
+}
+
+.cover_photo_container {
+  width: 100%;
+  grid-area: cover_photo;
+  place-self: center;
+}
+
+.title_container {
+  width: 100%;
+  grid-area: title;
+  align-self: end;
+}

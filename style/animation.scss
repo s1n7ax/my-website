@@ -38,3 +38,34 @@ $slow-ease-in: cubic-bezier(0.52, 0, 0.71, -0.04);
     transform: translate(0, 0) rotate(0);
   }
 }
+
+@keyframes typing {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes blinking-cursor {
+  from,
+  to {
+    border-left-width: 0;
+  }
+
+  50% {
+    border-left-width: 0.2rem;
+  }
+}
+
+@keyframes blinking-cursor-end {
+  from,
+  to {
+    border-left-width: 0;
+  }
+
+  50% {
+    border-left-width: 0.3rem;
+  }
+}

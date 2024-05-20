@@ -31,6 +31,7 @@ pub fn AboutTemplate(
 fn AboutCard(title: String, children: Children) -> impl IntoView {
 	view! {
 		<div class=styles::about_card_container>
+			<hr class=styles::hr />
 			<H2>{title}</H2>
 			{children()}
 		</div>

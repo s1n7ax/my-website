@@ -17,9 +17,7 @@ WORKDIR /work
 COPY . .
 
 RUN npm install \
-  && npm run tailwind:build \
-  && npm run leptos:build \
-  && npm run minify
+  && npm run build
 
 
 FROM rustlang/rust:nightly-alpine as runner

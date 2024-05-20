@@ -1,9 +1,14 @@
 use crate::components::{
 	atoms::{container::SectionContainer, title::H2},
-	molecules::{education::Education, social::SocialMediaRecord, timerange_record::WorkRecord},
+	molecules::{
+		icon_link::IconLink,
+		period::{PeriodAt, PeriodAtWithImaeg},
+	},
 };
 use icondata::Icon as IconType;
 use leptos::*;
+
+stylance::import_style!(styles, "about.module.scss");
 
 #[component]
 pub fn AboutTemplate(
@@ -13,17 +18,7 @@ pub fn AboutTemplate(
 ) -> impl IntoView {
 	view! {
 		<SectionContainer>
-			<div class="
-				grid
-				grid-flow-row
-				gap-4
-
-				xl:gap-0
-				xl:auto-rows-fr
-				xl:grid-rows-[auto]
-				xl:grid-flow-col
-				xl:grid-cols-3
-			">
+			<div class=styles::container>
 				<SocialMediaTemplate records={socials} />
 				<WorkHistoryTemplate records={work_history} />
 				<EducationalQualificationTemplate records={education} />
@@ -35,15 +30,8 @@ pub fn AboutTemplate(
 #[component]
 fn AboutCard(title: String, children: Children) -> impl IntoView {
 	view! {
-		<div class="
-			grid
-			gap-y-3
-			xl:grid-rows-subgrid
-			xl:row-span-5
-		">
-			<hr class="xl:hidden h-px my-1 bg-gray-200 border-0 dark:bg-gray-700" />
+		<div class=styles::about_card_container>
 			<H2>{title}</H2>
-
 			{children()}
 		</div>
 	}
@@ -64,7 +52,7 @@ pub fn SocialMediaTemplate(records: Vec<SocialDetails>) -> impl IntoView {
 				.into_iter()
 				.map(|record| {
 					view! {
-						<SocialMediaRecord
+						<IconLink
 							icon={record.icon}
 							url={record.url}
 							url_label={record.url_label}
@@ -94,9 +82,9 @@ pub fn WorkHistoryTemplate(records: Vec<WorkDetails>) -> impl IntoView {
 				.into_iter()
 				.map(|record| {
 					view! {
-						<WorkRecord
-							designation={record.designation}
-							company={record.company}
+						<PeriodAtWithImaeg
+							description={record.designation}
+							location={record.company}
 							start_date={record.start_date}
 							end_date={record.end_date}
 							url={record.url}
@@ -126,9 +114,9 @@ pub fn EducationalQualificationTemplate(records: Vec<CourseDetails>) -> impl Int
 				.into_iter()
 				.map(|record| {
 					view! {
-						<Education
-							course={record.course}
-							institute={record.institute}
+						<PeriodAt
+							location={record.institute}
+							description={record.course}
 							start_date={record.start_date}
 							end_date={record.end_date}
 							url={record.url}

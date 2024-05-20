@@ -1,0 +1,46 @@
+.container {
+  display: grid;
+  grid-auto-rows: auto 1fr auto;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: $gray-200;
+
+  padding: 0.5rem;
+}
+
+.image {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: fill;
+
+  transition-property: transform;
+  transition-duration: $transition-duration-1;
+  transition-timing-function: ease-out;
+
+  transform: scale3d(1.05, 1.05, 1.05);
+
+  &:hover {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.link_container {
+  justify-self: end;
+
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  column-gap: 0.5rem;
+
+  & a:nth-child(odd) {
+    animation: jiggle 1s infinite;
+  }
+
+  & a:nth-child(even) {
+    animation: jiggle 1s infinite 0.5s;
+  }
+
+  & a:hover {
+    animation: none;
+  }
+}

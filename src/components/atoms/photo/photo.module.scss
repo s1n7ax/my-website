@@ -1,0 +1,30 @@
+.image_landscape {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.image_portrait {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+.image_square {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+@media (min-width: $screen-lg) {
+  .image_landscape {
+    grid-column: span 2 / span 2;
+  }
+
+  .image_portrait {
+    height: 100%;
+  }
+}

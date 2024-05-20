@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+}
+
+.photo_background {
+  background: rgb(214, 64, 214);
+  background: linear-gradient(
+    90deg,
+    rgba(214, 64, 214, 0.48081239331670167) 0%,
+    rgba(255, 254, 14, 0.8309524493391106) 100%
+  );
+}

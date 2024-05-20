@@ -13,3 +13,7 @@ end2end/playwright-report/
 playwright/.cache/
 style/main.css
 .direnv
+.sass-cache/
+style/stylance.scss
+style/tailwind.css
+style/tailwind.css

@@ -1,0 +1,21 @@
+.link {
+  display: grid;
+  column-gap: 0.5rem;
+  grid-template-columns: min-content max-content;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: $screen-lg) {
+    justify-content: end;
+  }
+}
+
+.icon {
+  aspect-ratio: 1 / 1;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.details {
+  white-space: nowrap;
+}

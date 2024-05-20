@@ -1,6 +1,8 @@
 use leptos::*;
 use leptos_image::Image;
 
+stylance::import_style!(styles, "photo.module.scss");
+
 pub enum AspectType {
 	Landscape,
 	Portrait,
@@ -15,17 +17,7 @@ pub fn Photo(src: String, aspect: AspectType) -> impl IntoView {
 				<Image
 					width=1024
 					height=768
-					class="
-						object-cover
-						object-center
-						col-span-full
-						aspect-4/3
-						w-full
-						bg-white
-						p-4
-
-						lg:col-span-2
-					"
+					class=styles::image_landscape
 					src=src
 					alt=""
 					quality=85
@@ -39,16 +31,7 @@ pub fn Photo(src: String, aspect: AspectType) -> impl IntoView {
 				<Image
 					width=768
 					height=1024
-					class="
-						object-cover
-						object-center
-						aspect-3/4
-						w-full
-						bg-white
-						p-4
-
-						lg:h-full
-					"
+					class=styles::image_portrait
 					src=src
 					alt=""
 					quality=85
@@ -62,14 +45,7 @@ pub fn Photo(src: String, aspect: AspectType) -> impl IntoView {
 				<Image
 					width=600
 					height=600
-					class="
-						object-cover
-						object-center
-						aspect-square
-						w-full
-						bg-white
-						p-4
-					"
+					class=styles::image_square
 					src=src
 					alt=""
 					quality=85

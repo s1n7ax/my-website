@@ -2,7 +2,7 @@ use leptos::*;
 
 use crate::components::{
 	atoms::photo::AspectType,
-	templates::photo_gallery::{PhotoDetails, PhotoGalleryTemplate},
+	templates::photos::{PhotoDetails, PhotoGalleryTemplate},
 };
 
 #[component]

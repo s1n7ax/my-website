@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  grid-auto-flow: row dense;
+  gap: 1rem;
+  width: 100%;
+}
+
+@media (min-width: $screen-md) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,5 +1,5 @@
 use crate::error_template::{AppError, ErrorTemplate};
-use crate::pages::home::home_page::HomePage;
+use crate::pages::home::HomePage;
 use leptos::*;
 use leptos_image::provide_image_context;
 use leptos_meta::*;

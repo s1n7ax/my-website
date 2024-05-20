@@ -1,0 +1,45 @@
+.container {
+  //layout
+  display: grid;
+  grid-template:
+    "image title"
+    "description description";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 2rem;
+  row-gap: 0.5rem;
+
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+
+  // color
+  background-color: $gray-200;
+
+  // transitions
+  transition-property: filter;
+  transition-duration: $transition-duration-1;
+  transition-timing-function: $transition-timing-function-1;
+
+  &:hover {
+    @extend .drop-shadow;
+  }
+}
+
+.image {
+  grid-area: image;
+  aspect-ratio: 1 / 1;
+  height: 6rem;
+}
+
+.title {
+  justify-self: start;
+  align-self: center;
+  grid-area: title;
+  text-align: end;
+}
+
+.description {
+  grid-area: description;
+  text-align: justify;
+}

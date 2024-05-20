@@ -12,19 +12,14 @@ pub struct ExpertiesRecord {
 	pub img_alt: String,
 }
 
+stylance::import_style!(styles, "experties.module.scss");
+
 #[component]
 pub fn ExpertiesTemplate(#[prop()] records: Vec<ExpertiesRecord>) -> impl IntoView {
 	view! {
 		<SectionContainer>
 			<H2>"My Experties"</H2>
-			<div
-				class="
-					grid
-					gap-4
-
-					lg:grid-cols-2
-				"
-			>
+			<div class=styles::container>
 				{records
 					.into_iter()
 					.map(|record| {

@@ -1,0 +1,27 @@
+.link {
+  display: group;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  align-items: center;
+
+  // transition
+  transition-property: color;
+  transition-duration: $transition-duration-1;
+  transition-timing-function: $transition-timing-function-1;
+
+  color: $gray-600;
+
+  &:hover {
+    color: $gray-800;
+  }
+}
+
+.icon {
+  aspect-ratio: 1 / 1;
+}

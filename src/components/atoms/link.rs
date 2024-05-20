@@ -12,7 +12,8 @@ pub fn Link(
 	view! {
 		<a
 			href=href
-			aria-label=label
+			aria-label=label.clone()
+			label=label.clone()
 			target=target
 			title=title
 			class=class

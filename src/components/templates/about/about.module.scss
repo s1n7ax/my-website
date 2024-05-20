@@ -1,25 +1,35 @@
 .container {
   display: grid;
+  grid-template-columns: 1fr;
+
   gap: 1rem;
+
+  @media (min-width: $screen-xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .about_card_container {
   display: grid;
   row-gap: 1rem;
+
+  grid-template-rows: auto auto;
+  grid-auto-rows: 1fr;
+  align-items: center;
+
+  @media (min-width: $screen-xl) {
+    align-items: start;
+    grid-template-rows: subgrid;
+    grid-row: 1 / span 6;
+  }
 }
 
 .hr {
   height: 1px;
   color: $gray-200;
   border-width: 1px;
-}
 
-@media (min-width: $screen-lg) {
-  .container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .hr {
-    border-width: 0;
+  @media (min-width: $screen-xl) {
+    display: none;
   }
 }

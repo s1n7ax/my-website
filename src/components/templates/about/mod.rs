@@ -31,9 +31,7 @@ pub fn AboutTemplate(
 fn AboutCard(title: String, children: Children) -> impl IntoView {
 	view! {
 		<div class=styles::about_card_container>
-			<hr class=styles::hr />
 			<H2>{title}</H2>
-
 			{children()}
 		</div>
 	}
@@ -117,8 +115,8 @@ pub fn EducationalQualificationTemplate(records: Vec<CourseDetails>) -> impl Int
 				.map(|record| {
 					view! {
 						<PeriodAt
-							location={record.course}
-							description={record.institute}
+							location={record.institute}
+							description={record.course}
 							start_date={record.start_date}
 							end_date={record.end_date}
 							url={record.url}

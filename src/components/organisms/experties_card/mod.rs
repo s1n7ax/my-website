@@ -22,8 +22,8 @@ pub fn ExpertiesCart(
 				quality=100
 				alt=img_alt
 			/>
-			<H3>{title}</H3>
-			<p>{description}</p>
+			<H3 class=styles::title>{title}</H3>
+			<p class=styles::description>{description}</p>
 		</article>
 	}
 }

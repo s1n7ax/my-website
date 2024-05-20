@@ -1,32 +1,27 @@
-use icondata::Icon;
+use icondata as i;
 use leptos::*;
-use leptos_icons::*;
+use leptos_icons::Icon;
 
 use crate::components::atoms::link::Link;
 
+stylance::import_style!(styles, "contact.module.scss");
+
 #[component]
-pub fn Contact(link: String, link_label: String, details: String, icon: Icon) -> impl IntoView {
+pub fn Contact(link: String, link_label: String, details: String, icon: i::Icon) -> impl IntoView {
 	view! {
 		<Link
 			href=link
 			title=link_label.clone()
 			label=link_label.clone()
-			class="grid grid-flow-col auto-cols-min gap-4"
+			class=styles::link
 		>
 			<Icon
+				class=styles::icon
 				icon=icon
 				height="100%"
 				width="100%"
-				class="
-					aspect-square
-					w-6
-					hover:text-gray-800
-					transition
-					ease-in-out
-					duration-200
-				"
 			/>
-			<span class="whitespace-nowrap">{details}</span>
+			<span class=styles::details>{details}</span>
 		</Link>
 	}
 }

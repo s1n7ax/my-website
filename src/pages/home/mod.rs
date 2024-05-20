@@ -4,7 +4,7 @@ use crate::components::atoms::container::{Main, Section};
 use crate::components::pages::about::About;
 use crate::components::pages::cover::Cover;
 use crate::components::pages::experties::Experties;
-use crate::components::pages::photo_gallery::PhotoGallery;
+use crate::components::pages::photo::PhotoGallery;
 use crate::components::pages::projects::Projects;
 
 stylance::import_style!(styles, "home.module.scss");

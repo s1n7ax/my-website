@@ -23,7 +23,7 @@ pub fn PeriodAtWithImaeg(
 			class=styles::link
 		>
 			<article class=styles::article>
-				<div class=styles::text_container>
+				<div class=styles::text_container_with_img>
 					<Image
 						width=100
 						height=100

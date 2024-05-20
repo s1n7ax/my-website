@@ -25,27 +25,25 @@ pub fn CoverTemplate(
 			</div>
 
 			<div class=styles::title_container>
-				<div>
-					<h1>{welcome}</h1>
-					<h2>{designation}</h2>
-					<p>{details}</p>
-					<div>
-						{
-							contacts
-							.into_iter()
-							.map(|contact| {
-								view! {
-									<Contact
+				<h1 class=styles::welcome>{welcome}</h1>
+				<h2 class=styles::designation>{designation}</h2>
+				<p class=styles::details>{details}</p>
+				<div class=styles::contacts>
+					{
+						contacts
+						.into_iter()
+						.map(|contact| {
+							view! {
+								<Contact
 									link=contact.link
 									link_label=contact.link_label
 									details=contact.details
 									icon=contact.icon
-									/>
-								}
-							})
-							.collect::<Vec<_>>()
-						}
-					</div>
+								/>
+							}
+						})
+						.collect::<Vec<_>>()
+					}
 				</div>
 			</div>
 		</div>

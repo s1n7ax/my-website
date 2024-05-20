@@ -20,17 +20,6 @@ pub fn IconLink(
 			title=url_label.clone()
 			class=styles::link
 		>
-
-		// <Link
-		// 	href=url
-		// 	label=url_label.clone()
-		// 	title=url_label.clone()
-		// 	class="grid
-		// 		grid-flow-col
-		// 		auto-cols-[auto_1fr]
-		// 		gap-x-4
-		// 		group"
-		// >
 			<article>
 				<div class=styles::container>
 					<Icon

@@ -69,3 +69,12 @@ $slow-ease-in: cubic-bezier(0.52, 0, 0.71, -0.04);
     border-left-width: 0.3rem;
   }
 }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

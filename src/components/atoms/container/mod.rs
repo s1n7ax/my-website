@@ -26,6 +26,7 @@ pub enum FlowDirection {
 
 #[component]
 pub fn Main(
+	#[prop(optional)] center: bool,
 	#[prop(optional, into)] class: Option<AttributeValue>,
 	children: Children,
 	label: String,
@@ -34,6 +35,7 @@ pub fn Main(
 		<main
 			aria-label=label
 			class=styles::main
+			style=move || if center {"justify-items: center"} else {""}
 			class=class
 		>
 			{children()}
@@ -43,6 +45,7 @@ pub fn Main(
 
 #[component]
 pub fn Section(
+	#[prop(default = true)] center: bool,
 	#[prop(optional, into)] class: Option<AttributeValue>,
 	children: Children,
 	#[prop(default="region".to_string())] role: String,
@@ -52,7 +55,8 @@ pub fn Section(
 		<section
 			role=role
 			aria-label=label
-			class=styles::selection
+			class=styles::section
+			style=move || if center {"justify-items: center"} else {""}
 			class=class
 		>
 			{children()}

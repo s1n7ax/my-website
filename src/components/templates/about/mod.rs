@@ -1,9 +1,6 @@
 use crate::components::{
 	atoms::{container::SectionContainer, title::H2},
-	molecules::{
-		icon_link::IconLink,
-		period::{PeriodAt, PeriodAtWithImaeg},
-	},
+	molecules::{icon_link::IconLink, period::PeriodAt},
 };
 use icondata::Icon as IconType;
 use leptos::*;
@@ -13,8 +10,8 @@ stylance::import_style!(styles, "about.module.scss");
 #[component]
 pub fn AboutTemplate(
 	socials: Vec<SocialDetails>,
-	work_history: Vec<WorkDetails>,
-	education: Vec<CourseDetails>,
+	work_history: Vec<PeriodDetailsWithLogo>,
+	education: Vec<PeriodDetails>,
 ) -> impl IntoView {
 	view! {
 		<SectionContainer>
@@ -65,30 +62,41 @@ pub fn SocialMediaTemplate(records: Vec<SocialDetails>) -> impl IntoView {
 	}
 }
 
-pub struct WorkDetails {
-	pub designation: String,
-	pub company: String,
+pub struct PeriodDetails {
+	pub description: String,
+	pub place: String,
 	pub start_date: String,
 	pub end_date: String,
 	pub url: String,
+	pub url_label: String,
+}
+
+pub struct PeriodDetailsWithLogo {
+	pub description: String,
+	pub place: String,
+	pub start_date: String,
+	pub end_date: String,
+	pub url: String,
+	pub url_label: String,
 	pub logo: String,
 	pub logo_alt: String,
 }
 
 #[component]
-pub fn WorkHistoryTemplate(records: Vec<WorkDetails>) -> impl IntoView {
+pub fn WorkHistoryTemplate(records: Vec<PeriodDetailsWithLogo>) -> impl IntoView {
 	view! {
 		<AboutCard title="Work 🧑‍🔧".to_string()>
 			{records
 				.into_iter()
 				.map(|record| {
 					view! {
-						<PeriodAtWithImaeg
-							description={record.designation}
-							location={record.company}
+						<PeriodAt
+							description={record.description}
+							location={record.place}
 							start_date={record.start_date}
 							end_date={record.end_date}
 							url={record.url}
+							url_label={record.url_label}
 							logo={record.logo}
 							logo_alt={record.logo_alt}
 						/>
@@ -98,17 +106,8 @@ pub fn WorkHistoryTemplate(records: Vec<WorkDetails>) -> impl IntoView {
 	}
 }
 
-pub struct CourseDetails {
-	pub course: String,
-	pub institute: String,
-	pub start_date: String,
-	pub end_date: String,
-	pub url: String,
-	pub url_label: String,
-}
-
 #[component]
-pub fn EducationalQualificationTemplate(records: Vec<CourseDetails>) -> impl IntoView {
+pub fn EducationalQualificationTemplate(records: Vec<PeriodDetails>) -> impl IntoView {
 	view! {
 		<AboutCard title="Education 👨‍🎓".to_string()>
 			{records
@@ -116,8 +115,8 @@ pub fn EducationalQualificationTemplate(records: Vec<CourseDetails>) -> impl Int
 				.map(|record| {
 					view! {
 						<PeriodAt
-							location={record.institute}
-							description={record.course}
+							location={record.place}
+							description={record.description}
 							start_date={record.start_date}
 							end_date={record.end_date}
 							url={record.url}

@@ -33,7 +33,7 @@ pub fn ProjectCard(
 				</div>
 				<H3>{name}</H3>
 			</header>
-			<p>{long_description}</p>
+			<p class=styles::description>{long_description}</p>
 			<footer class=styles::link_container>
 				{links
 					.into_iter()

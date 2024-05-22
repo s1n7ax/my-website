@@ -1,7 +1,7 @@
 .selection_container {
   display: grid;
   justify-items: center;
-  padding-inline: 2.5rem;
+  padding-inline: 1.5rem;
 
   @media (min-width: $screen-md) {
     width: 83%;

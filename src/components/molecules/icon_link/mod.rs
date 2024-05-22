@@ -25,7 +25,7 @@ pub fn IconLink(
 					<Icon
 						icon=icon
 						width="100%"
-						height="2rem"
+						height="100%"
 						class=styles::icon
 					/>
 					<span>{description}</span>

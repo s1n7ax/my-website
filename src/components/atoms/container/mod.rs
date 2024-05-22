@@ -1,5 +1,7 @@
 use leptos::*;
 
+stylance::import_style!(styles, "container.module.scss");
+
 #[component]
 pub fn SectionContainer(
 	children: Children,
@@ -7,16 +9,7 @@ pub fn SectionContainer(
 ) -> impl IntoView {
 	view! {
 		<div
-			class="
-				grid
-        justify-items-center
-        py-8
-
-				px-10
-				md:w-10/12
-				lg:w-10/12
-				xl:w-11/12
-			"
+			class=styles::selection_container
 			class=class
 		>
 			{children()}
@@ -33,7 +26,6 @@ pub enum FlowDirection {
 
 #[component]
 pub fn Main(
-	#[prop(optional)] center: bool,
 	#[prop(optional, into)] class: Option<AttributeValue>,
 	children: Children,
 	label: String,
@@ -41,8 +33,7 @@ pub fn Main(
 	view! {
 		<main
 			aria-label=label
-			class="grid"
-			class:justify-items-center=center
+			class=styles::main
 			class=class
 		>
 			{children()}
@@ -52,7 +43,6 @@ pub fn Main(
 
 #[component]
 pub fn Section(
-	#[prop(default = true)] center: bool,
 	#[prop(optional, into)] class: Option<AttributeValue>,
 	children: Children,
 	#[prop(default="region".to_string())] role: String,
@@ -62,8 +52,7 @@ pub fn Section(
 		<section
 			role=role
 			aria-label=label
-			class="grid"
-			class:justify-items-center=center
+			class=styles::selection
 			class=class
 		>
 			{children()}

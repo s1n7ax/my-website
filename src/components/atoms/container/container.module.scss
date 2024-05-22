@@ -1,0 +1,21 @@
+.selection_container {
+  display: grid;
+  justify-items: center;
+  padding-inline: 2.5rem;
+
+  @media (min-width: $screen-md) {
+    width: 83%;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 91%;
+  }
+}
+
+.main {
+  display: grid;
+}
+
+.selection {
+  display: grid;
+}

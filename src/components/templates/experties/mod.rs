@@ -1,12 +1,9 @@
 use leptos::*;
 use leptos_use::use_intersection_observer;
 
-use crate::{
-	components::{
-		atoms::{container::SectionContainer, title::H2},
-		organisms::experties_card::ExpertiesCart,
-	},
-	utils::get_class_or_empty,
+use crate::components::{
+	atoms::{container::SectionContainer, title::H2},
+	organisms::experties_card::ExpertiesCart,
 };
 
 pub struct ExpertiesRecord {

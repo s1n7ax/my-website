@@ -22,7 +22,7 @@ RUN npm install \
   && npm run build
 
 
-FROM alpine/alpine:3.19.1 as runner
+FROM alpine:3.19.1 as runner
 
 WORKDIR /app
 

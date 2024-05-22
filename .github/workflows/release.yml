@@ -46,4 +46,4 @@ jobs:
             docker compose down
             docker compose pull
             docker compose up -d
-            docker image prune
+            docker image prune -a --force

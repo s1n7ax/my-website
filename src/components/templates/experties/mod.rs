@@ -1,9 +1,12 @@
 use leptos::*;
-use leptos_use::{use_mouse_in_element, UseMouseInElementReturn};
+use leptos_use::use_intersection_observer;
 
-use crate::components::{
-	atoms::{container::SectionContainer, title::H2},
-	organisms::experties_card::ExpertiesCart,
+use crate::{
+	components::{
+		atoms::{container::SectionContainer, title::H2},
+		organisms::experties_card::ExpertiesCart,
+	},
+	utils::get_class_or_empty,
 };
 
 pub struct ExpertiesRecord {
@@ -18,42 +21,28 @@ stylance::import_style!(styles, "experties.module.scss");
 #[component]
 pub fn ExpertiesTemplate(#[prop()] records: Vec<ExpertiesRecord>) -> impl IntoView {
 	let el = create_node_ref::<html::Div>();
+	let (is_visible, set_visible) = create_signal(false);
 
-	let UseMouseInElementReturn {
-		x,
-		y,
-		source_type,
-		element_x,
-		element_y,
-		element_position_x,
-		element_position_y,
-		element_width,
-		element_height,
-		is_outside,
-		..
-	} = use_mouse_in_element(el);
+	use_intersection_observer(el, move |entries, _| {
+		set_visible.set(entries[0].is_intersecting());
+	});
+
+	let classes = move || {
+		if is_visible.get_untracked() {
+			format!("{} {}", styles::container, styles::container_visible)
+		} else {
+			is_visible.get();
+			styles::container.to_string()
+		}
+	};
 
 	view! {
 		<SectionContainer>
 			<H2>"My Experties"</H2>
-
-			<div node_ref=el style="background-color: gray;">
-			</div>
-
-			<pre lang="yaml">
-				x: {x}
-				y: {y}
-				source_type: {move || format!("{:?}", source_type())}
-				element_x: {element_x}
-				element_y: {element_y}
-				element_position_x: {element_position_x}
-				element_position_y: {element_position_y}
-				element_width: {element_width}
-				element_height: {element_height}
-				is_outside: {is_outside}
-			</pre>
-
-			<div class=styles::container>
+			<div
+				class=move|| classes()
+				node_ref=el
+			>
 				{records
 					.into_iter()
 					.map(|record| {

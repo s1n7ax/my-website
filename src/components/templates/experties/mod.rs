@@ -1,8 +1,12 @@
 use leptos::*;
+use leptos_use::use_intersection_observer;
 
-use crate::components::{
-	atoms::{container::SectionContainer, title::H2},
-	organisms::experties_card::ExpertiesCart,
+use crate::{
+	components::{
+		atoms::{container::SectionContainer, title::H2},
+		organisms::experties_card::ExpertiesCart,
+	},
+	utils::get_class_or_empty,
 };
 
 pub struct ExpertiesRecord {
@@ -16,15 +20,35 @@ stylance::import_style!(styles, "experties.module.scss");
 
 #[component]
 pub fn ExpertiesTemplate(#[prop()] records: Vec<ExpertiesRecord>) -> impl IntoView {
+	let el = create_node_ref::<html::Div>();
+	let (is_visible, set_visible) = create_signal(false);
+
+	use_intersection_observer(el, move |entries, _| {
+		set_visible.set(entries[0].is_intersecting());
+	});
+
+	let classes = move || {
+		if is_visible.get_untracked() {
+			format!("{} {}", styles::container, styles::container_visible)
+		} else {
+			is_visible.get();
+			styles::container.to_string()
+		}
+	};
+
 	view! {
 		<SectionContainer>
 			<H2>"My Experties"</H2>
-			<div class=styles::container>
+			<div
+				class=move|| classes()
+				node_ref=el
+			>
 				{records
 					.into_iter()
 					.map(|record| {
 						view! {
 							<div>
+								// <div>{ move || if is_visible() { "*****" } else { ">>>>>>" } }</div>
 								<ExpertiesCart
 									title=record.title
 									description=record.descrpition

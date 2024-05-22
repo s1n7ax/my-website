@@ -2,10 +2,30 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
+
+  & div {
+    transition-property: transform opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+
+    transform: translateX(5rem);
+    opacity: 0;
+  }
+
+  @for $i from 1 through 6 {
+    & div:nth-child(#{$i}n) {
+      transition-delay: #{$i * 0.2}s;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (min-width: $screen-lg) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
+.container_visible {
+  & div {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

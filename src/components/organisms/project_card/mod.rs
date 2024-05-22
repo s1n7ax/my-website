@@ -18,9 +18,7 @@ pub fn ProjectCard(
 	view! {
 		<article class=styles::container>
 			<header>
-				<div class="
-					overflow-hidden
-				">
+				<div>
 					<Image
 						width=1280
 						height=960
@@ -33,7 +31,7 @@ pub fn ProjectCard(
 				</div>
 				<H3>{name}</H3>
 			</header>
-			<p>{long_description}</p>
+			<p class=styles::description>{long_description}</p>
 			<footer class=styles::link_container>
 				{links
 					.into_iter()

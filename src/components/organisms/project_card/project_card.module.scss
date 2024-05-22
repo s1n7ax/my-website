@@ -4,6 +4,7 @@
   border-radius: 0.5rem;
   overflow: hidden;
   background-color: $gray-200;
+  border-color: $gray-200;
 
   padding: 0.5rem;
 }
@@ -43,4 +44,8 @@
   & a:hover {
     animation: none;
   }
+}
+
+.description {
+  text-align: justify;
 }

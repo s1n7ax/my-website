@@ -17,21 +17,19 @@ pub fn PeriodAt(
 	#[prop(optional)] logo: Option<String>,
 	#[prop(optional)] logo_alt: Option<String>,
 ) -> impl IntoView {
-	let image = move || {
-		logo.map(|url| {
-			view! {
-				<Image
-					width=100
-					height=100
-					class=styles::image
-					quality=85
-					blur=true
-					src=url
-					alt=logo_alt.unwrap_throw()
-				/>
-			}
-		})
-	};
+	let image = logo.map(|url| {
+		view! {
+			<Image
+				width=100
+				height=100
+				class=styles::image
+				quality=85
+				blur=true
+				src=url
+				alt=logo_alt.unwrap_throw()
+			/>
+		}
+	});
 
 	view! {
 		<Link
@@ -44,7 +42,7 @@ pub fn PeriodAt(
 		>
 			<article class=styles::article>
 				<div class=styles::text_container_with_img>
-					{ image() }
+					{ image }
 					<header>
 						<span>
 							<span class=styles::text_bold>{description}</span>

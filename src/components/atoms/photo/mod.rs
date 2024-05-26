@@ -3,6 +3,7 @@ use leptos_image::Image;
 
 stylance::import_style!(styles, "photo.module.scss");
 
+#[derive(Copy, Clone)]
 pub enum AspectType {
 	Landscape,
 	Portrait,

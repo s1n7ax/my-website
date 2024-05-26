@@ -35,7 +35,7 @@ pub fn App() -> impl IntoView {
 		}>
 			<main class="font-mono text-gray-700">
 				<Routes>
-					<Route path="" view=HomePage/>
+					<Route path="" view=HomePage />
 				</Routes>
 			</main>
 		</Router>

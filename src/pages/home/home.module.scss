@@ -3,10 +3,11 @@
 }
 
 .photo_background {
-  background: rgb(214, 64, 214);
+  background: rgb(32, 32, 32);
   background: linear-gradient(
     90deg,
-    rgba(214, 64, 214, 0.48081239331670167) 0%,
-    rgba(255, 254, 14, 0.8309524493391106) 100%
+    rgba(32, 32, 32, 1) 0%,
+    rgba(65, 65, 65, 1) 50%,
+    rgba(32, 32, 32, 1) 100%
   );
 }

@@ -1,13 +1,13 @@
 use leptos::*;
 
-use crate::components::atoms::{
-	container::SectionContainer,
-	photo::{AspectType, Photo},
-	title::H2,
+use crate::components::{
+	atoms::{container::SectionContainer, photo::AspectType, title::H2},
+	organisms::carousel::Carousel,
 };
 
 stylance::import_style!(styles, "photos.module.scss");
 
+#[derive(Clone)]
 pub struct PhotoDetails {
 	pub src: String,
 	pub aspect: AspectType,
@@ -16,17 +16,9 @@ pub struct PhotoDetails {
 #[component]
 pub fn PhotoGalleryTemplate(records: Vec<PhotoDetails>) -> impl IntoView {
 	view! {
-		<SectionContainer >
-			<H2>"my favorite captures 📷"</H2>
-			<div class=styles::container>
-				{records
-					.into_iter()
-					.map(|record| {
-					view! {
-						<Photo src={record.src} aspect={record.aspect}/>
-					}
-				}).collect::<Vec<_>>()}
-			</div>
+		<SectionContainer>
+			<H2 class=styles::title>"my favorite captures 📷"</H2>
+			<Carousel images=records />
 		</SectionContainer>
 	}
 }

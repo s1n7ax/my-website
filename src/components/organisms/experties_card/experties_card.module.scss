@@ -11,19 +11,14 @@
 
   height: 100%;
   padding: 1.5rem;
-  border-radius: 0.5rem;
 
-  // color
-  background-color: $gray-200;
+  border: solid $gray-400 1px;
+  border-radius: 0.5rem;
 
   // transitions
   transition-property: filter;
   transition-duration: $transition-duration-1;
   transition-timing-function: $transition-timing-function-1;
-
-  &:hover {
-    @extend .drop-shadow;
-  }
 }
 
 .image {

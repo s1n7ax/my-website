@@ -1,10 +1,11 @@
 .container {
   display: grid;
   grid-auto-rows: auto 1fr auto;
+
+  border: solid $gray-400 1px;
   border-radius: 0.5rem;
+
   overflow: hidden;
-  background-color: $gray-200;
-  border-color: $gray-200;
 
   padding: 0.5rem;
 }

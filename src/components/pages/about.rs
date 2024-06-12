@@ -96,7 +96,7 @@ pub fn About() -> impl IntoView {
 			url_label: "Link to National Institute of Business Management website".to_string(),
 		},
 		PeriodDetails {
-			description: "Higher in Computer System Design".to_string(),
+			description: "Diploma in Computer System Design".to_string(),
 			place: "NIBM, Sri Lanka".to_string(),
 			start_date: "January, 2015".to_string(),
 			end_date: "January, 2016".to_string(),

@@ -20,6 +20,16 @@
     transition-duration: 0.5s;
     transition-timing-function: $slow-ease-in;
   }
+
+  .img {
+    opacity: 0;
+    filter: blur(20px);
+  }
+
+  .focused_img {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 .thumbnail {
@@ -47,31 +57,21 @@
 
     transition-property: width height opacity;
     transition-duration: 0.5s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: $slow-ease-in;
   }
-}
 
-.img {
-  opacity: 0;
-  filter: blur(20px);
-}
+  .thumbnail_img {
+    width: 6rem;
+    height: 9rem;
+    opacity: 0.5;
 
-.focused_img {
-  opacity: 1;
-  filter: blur(0);
-}
-
-.thumbnail_img {
-  width: 6rem;
-  height: 9rem;
-  opacity: 0.5;
-
-  &:hover {
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .focused_thumbnail_img {
+    width: 7rem;
+    height: 10rem;
     opacity: 1;
   }
-}
-.focused_thumbnail_img {
-  width: 7rem;
-  height: 10rem;
-  opacity: 1;
 }

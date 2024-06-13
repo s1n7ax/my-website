@@ -6,7 +6,7 @@
   & div {
     transition-property: transform opacity;
     transition-duration: 0.5s;
-    transition-timing-function: ease-in;
+    transition-timing-function: $slow-ease-in;
 
     transform: translateX(5rem);
     opacity: 0;
@@ -28,4 +28,8 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.title_container {
+  padding-bottom: 1rem;
 }

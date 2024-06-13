@@ -18,7 +18,7 @@ pub fn ProjectCard(
 	view! {
 		<article class=styles::container>
 			<header>
-				<div>
+				<div class=styles::image_container>
 					<Image
 						width=1280
 						height=960

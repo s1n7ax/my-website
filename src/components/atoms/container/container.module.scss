@@ -2,6 +2,7 @@
   display: grid;
   justify-items: center;
   padding-inline: 1.5rem;
+  padding-block: 1.5rem;
 
   @media (min-width: $screen-md) {
     width: 83%;

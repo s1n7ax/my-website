@@ -35,7 +35,9 @@ pub fn ExpertiesTemplate(#[prop()] records: Vec<ExpertiesRecord>) -> impl IntoVi
 
 	view! {
 		<SectionContainer>
-			<H2>"My Experties"</H2>
+			<div class=styles::title_container>
+				<H2>"My Experties"</H2>
+			</div>
 			<div
 				class=move|| classes()
 				node_ref=el
@@ -45,7 +47,6 @@ pub fn ExpertiesTemplate(#[prop()] records: Vec<ExpertiesRecord>) -> impl IntoVi
 					.map(|record| {
 						view! {
 							<div>
-								// <div>{ move || if is_visible() { "*****" } else { ">>>>>>" } }</div>
 								<ExpertiesCart
 									title=record.title
 									description=record.descrpition

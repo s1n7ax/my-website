@@ -1,18 +1,8 @@
 .container {
   display: grid;
-}
 
-.photo_background {
-  background: rgb(32, 32, 32);
-  background: linear-gradient(
-    90deg,
-    rgba(32, 32, 32, 1) 0%,
-    rgba(65, 65, 65, 1) 50%,
-    rgba(32, 32, 32, 1) 100%
-  );
-}
-
-.link {
-  color: blue;
-  text-decoration: underline;
+  // & section {
+  //   scroll-snap-type: both mandatory;
+  //   scroll-snap-align: start;
+  // }
 }

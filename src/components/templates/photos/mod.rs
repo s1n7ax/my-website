@@ -17,7 +17,9 @@ pub struct PhotoDetails {
 pub fn PhotoGalleryTemplate(records: Vec<PhotoDetails>) -> impl IntoView {
 	view! {
 		<SectionContainer>
-			<H2 class=styles::title>"my favorite captures 📷"</H2>
+			<div class=styles::title_container>
+				<H2>"my favorite captures 📷"</H2>
+			</div>
 			<Carousel images=records />
 		</SectionContainer>
 	}

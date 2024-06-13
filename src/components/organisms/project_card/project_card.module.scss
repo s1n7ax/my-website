@@ -10,6 +10,10 @@
   padding: 0.5rem;
 }
 
+.image_container {
+  overflow: hidden;
+}
+
 .image {
   aspect-ratio: 16 / 9;
   width: 100%;
@@ -18,11 +22,10 @@
   transition-property: transform;
   transition-duration: $transition-duration-1;
   transition-timing-function: ease-out;
-
-  transform: scale3d(1.05, 1.05, 1.05);
+  border-radius: 0.5rem;
 
   &:hover {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1.05, 1.05, 1.05);
   }
 }
 

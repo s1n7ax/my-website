@@ -20,7 +20,9 @@ pub fn ProjectsTemplate(records: Vec<ProjectDetails>) -> impl IntoView {
 
 	view! {
 		<SectionContainer>
-			<H2>"Some Fun Projects"</H2>
+			<div class=styles::title_container>
+				<H2>"Some Fun Projects"</H2>
+			</div>
 			<div class=styles::container>
 				{records
 					.into_iter()

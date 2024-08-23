@@ -40,3 +40,8 @@ docker compose up certbot
 
 Let's encrypt certificate will be outdated in 90 days. So another request has
 to be made to update. This can be automated using a cron job
+
+### Automated SSL renewal
+
+[This documentation](https://eff-certbot.readthedocs.io/en/latest/using.html#setting-up-automated-renewal)
+shows how to add a crone job to automatically renew the certificate

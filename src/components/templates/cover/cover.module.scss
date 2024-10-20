@@ -1,6 +1,7 @@
 .container {
   display: grid;
   grid-template-areas: "cover_photo" "title";
+  background: transparent;
 
   @media (min-width: $screen-lg) {
     grid-template-areas: "title cover_photo";

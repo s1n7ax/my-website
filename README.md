@@ -8,11 +8,14 @@ This is [https://s1n7ax.com](https://s1n7ax.com) built with Rust 🦀
 ## Development
 
 - Clone the project
-- Run the dev container `devcontainer up --workspace-folder .`
-- Open up the shell `devcontainer exec --workspace-folder . bash`
+- Prepare the dev environment
+  - Using direnv (recommended)
+    - Allow the direnv to initiate the environment using `direnv allow`
+  - Using Devcontainer
+    - Run the dev container `devcontainer up --workspace-folder .`
+    - Open up the shell `devcontainer exec --workspace-folder . bash`
 - Install node dependencies `yarn install`
-- Run tailwind watch process `yarn run tailwind:watch`
-- Run leptos watch process `cargo leptos watch`
+- Run tailwind watch process `yarn dev`
 - Open the browser `http://localhost:3000`
 
 ## Deployment

@@ -127,12 +127,24 @@ pub fn Spider() -> impl IntoView {
 		}
 	};
 
+	let on_mouse_out = {
+		let points_ref = Rc::clone(&points);
+		move |_| {
+			if let Some((canvas, ctx)) = get_canvas_and_context() {
+				let points = points_ref.borrow().clone();
+				clear_lines(canvas, ctx.clone());
+				draw_circles(points, ctx);
+			}
+		}
+	};
+
 	view! {
-		<canvas
-			node_ref=canvas_ref
-			on:mousemove=on_mouse_move
-			class=styles::canvas
-		/>
+	<canvas
+		node_ref=canvas_ref
+		on:mousemove=on_mouse_move
+		on:mouseout=on_mouse_out
+		class=styles::canvas
+	/>
 	}
 }
 

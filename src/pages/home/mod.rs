@@ -17,8 +17,8 @@ pub fn HomePage() -> impl IntoView {
 			<Main
 				label="Welcome to my portfolio".to_string()
 			>
-				<Cover/>
 				<Spider/>
+				<Cover/>
 			</Main>
 			<Section
 				label="My experties".to_string()

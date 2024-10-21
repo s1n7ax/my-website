@@ -23,7 +23,7 @@ struct Point<'a> {
 #[component]
 pub fn Spider() -> impl IntoView {
 	let canvas_ref = create_node_ref::<html::Canvas>();
-	let color_palette = ["#DC8665", "#138086", "#534666", "#CD7672", "EEB462"];
+	let color_palette = ["#DC8665", "#138086", "#534666", "#CD7672", "#EEB462"];
 	let points: Rc<RefCell<Vec<Point>>> = Rc::new(RefCell::new(vec![]));
 
 	let get_canvas_and_context =
@@ -39,8 +39,8 @@ pub fn Spider() -> impl IntoView {
 			None
 		};
 
-	let clear_lines = move |canvas: html::HtmlElement<html::Canvas>,
-	                        ctx: CanvasRenderingContext2d| {
+	let clear_canvas = move |canvas: html::HtmlElement<html::Canvas>,
+	                         ctx: CanvasRenderingContext2d| {
 		ctx.clear_rect(0_f64, 0_f64, canvas.width() as f64, canvas.height() as f64);
 	};
 
@@ -56,8 +56,9 @@ pub fn Spider() -> impl IntoView {
 				0_f64,
 				PI * 2_f64,
 			);
+			ctx.close_path();
 			ctx.fill();
-		})
+		});
 	};
 
 	let draw_lines = move |points_copy: Vec<Point>,
@@ -72,10 +73,11 @@ pub fn Spider() -> impl IntoView {
 			if distance < 300_f64 {
 				ctx.set_stroke_style(&JsValue::from_str(point.color));
 				ctx.set_line_width(1_f64);
-				ctx.set_global_alpha(0.5);
+				ctx.set_global_alpha((301_f64 - distance) / 800_f64);
 				ctx.begin_path();
 				ctx.move_to(point.x as f64, point.y as f64);
 				ctx.line_to(mouse_x as f64, mouse_y as f64);
+				ctx.close_path();
 				ctx.stroke();
 			};
 		});
@@ -109,18 +111,18 @@ pub fn Spider() -> impl IntoView {
 		}
 	});
 
-	let on_mouse_move = {
+	let redraw_canvas = {
 		let points_clone = Rc::clone(&points);
 		move |ev: MouseEvent| {
 			if let Some((canvas, ctx)) = get_canvas_and_context() {
 				let points_copy = points_clone.borrow().clone();
 
-				clear_lines(canvas.clone(), ctx.clone());
+				clear_canvas(canvas.clone(), ctx.clone());
 				draw_circles(points_copy.clone(), ctx.clone());
 
 				let bound_rect = canvas.get_bounding_client_rect();
-				let cursor_x = ev.page_x() - bound_rect.left() as i32;
-				let cursor_y = ev.page_y() - bound_rect.top() as i32;
+				let cursor_x = ev.x() - bound_rect.left() as i32;
+				let cursor_y = ev.y() - bound_rect.top() as i32;
 
 				draw_lines(points_copy, ctx, cursor_x, cursor_y);
 			}
@@ -132,7 +134,7 @@ pub fn Spider() -> impl IntoView {
 		move |_| {
 			if let Some((canvas, ctx)) = get_canvas_and_context() {
 				let points = points_ref.borrow().clone();
-				clear_lines(canvas, ctx.clone());
+				clear_canvas(canvas, ctx.clone());
 				draw_circles(points, ctx);
 			}
 		}
@@ -141,7 +143,7 @@ pub fn Spider() -> impl IntoView {
 	view! {
 	<canvas
 		node_ref=canvas_ref
-		on:mousemove=on_mouse_move
+		on:mousemove=redraw_canvas
 		on:mouseout=on_mouse_out
 		class=styles::canvas
 	/>

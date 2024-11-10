@@ -26,9 +26,9 @@ struct Point<'a> {
 #[component]
 pub fn Spider() -> impl IntoView {
 	let canvas_ref = create_node_ref::<html::Canvas>();
-	let color_palette = ["#DC8665", "#138086", "#534666", "#CD7672", "#EEB462"];
 	let points: Rc<RefCell<Vec<Point>>> = Rc::new(RefCell::new(vec![]));
 	let UseElementSizeReturn { width, height } = use_element_size(canvas_ref);
+	let color_palette = ["#DC8665", "#138086", "#534666", "#CD7672", "#EEB462"];
 
 	let get_canvas_and_context =
 		move || -> Option<(html::HtmlElement<html::Canvas>, CanvasRenderingContext2d)> {
@@ -44,10 +44,12 @@ pub fn Spider() -> impl IntoView {
 		};
 
 	let clear_canvas = move |ctx: CanvasRenderingContext2d, width: u32, height: u32| {
+		log!("clear canvas w:{} h:{}", width, height);
 		ctx.clear_rect(0_f64, 0_f64, width as f64, height as f64);
 	};
 
 	let draw_circles = move |points: Vec<Point>, ctx: CanvasRenderingContext2d| {
+		log!("draw circles");
 		points.iter().for_each(|point| {
 			ctx.set_fill_style(&JsValue::from_str(point.color));
 			ctx.set_global_alpha(0.5);
@@ -90,6 +92,7 @@ pub fn Spider() -> impl IntoView {
 		let points_ref = Rc::clone(&points);
 		move |count: i32, width: u32, height: u32| {
 			let mut rg = rand::thread_rng();
+			points_ref.borrow_mut().clear();
 
 			(0..count)
 				.map(move |_| Point {
@@ -106,20 +109,23 @@ pub fn Spider() -> impl IntoView {
 
 	create_effect({
 		let points_ref = Rc::clone(&points);
+
 		move |_| {
 			if let Some((canvas, ctx)) = get_canvas_and_context() {
 				let xw = canvas.offset_width() as u32;
 				let xh = canvas.offset_height() as u32;
+
 				let w = width.get() as u32;
 				let h = height.get() as u32;
+
 				log!("ref w:{} h:{}   use w:{} h:{}", xw, xh, w, h);
 
-				canvas.set_width(w);
-				canvas.set_height(h);
-				update_points(50, w, h);
+				canvas.set_width(xw);
+				canvas.set_height(xh);
+				update_points(30, xw, xh);
 
-				log!("clear canvas");
-				clear_canvas(ctx.clone(), w, h);
+				log!("clear canvas, {}x{}", xw, xh);
+				clear_canvas(ctx.clone(), xw, xh);
 				draw_circles(points_ref.borrow().clone(), ctx.clone());
 			};
 		}
@@ -131,7 +137,7 @@ pub fn Spider() -> impl IntoView {
 			if let Some((canvas, ctx)) = get_canvas_and_context() {
 				let points_copy = points_clone.borrow().clone();
 
-				clear_canvas(ctx.clone());
+				clear_canvas(ctx.clone(), width.get() as u32, height.get() as u32);
 				draw_circles(points_copy.clone(), ctx.clone());
 
 				let bound_rect = canvas.get_bounding_client_rect();
@@ -146,21 +152,23 @@ pub fn Spider() -> impl IntoView {
 	let clear_lines = {
 		let points_ref = Rc::clone(&points);
 		move |_| {
-			if let Some((canvas, ctx)) = get_canvas_and_context() {
+			if let Some((_, ctx)) = get_canvas_and_context() {
 				let points = points_ref.borrow().clone();
-				clear_canvas(canvas, ctx.clone());
+				clear_canvas(ctx.clone(), width.get() as u32, height.get() as u32);
 				draw_circles(points, ctx);
 			}
 		}
 	};
 
 	view! {
-	<canvas
-		node_ref=canvas_ref
-		on:mousemove=redraw_canvas
-		on:mouseout=clear_lines
-		class=styles::canvas
-	/>
+		<div class=styles::container>
+			<canvas
+				node_ref=canvas_ref
+				on:mousemove=redraw_canvas
+				on:mouseout=clear_lines
+				class=styles::canvas
+			/>
+		</div>
 	}
 }
 

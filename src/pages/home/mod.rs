@@ -1,7 +1,6 @@
 use leptos::*;
 
 use crate::components::atoms::container::{Main, Section};
-use crate::components::molecules::spider::Spider;
 use crate::components::pages::about::About;
 use crate::components::pages::cover::Cover;
 use crate::components::pages::experties::Experties;
@@ -17,7 +16,6 @@ pub fn HomePage() -> impl IntoView {
 			<Main
 				label="Welcome to my portfolio".to_string()
 			>
-				<Spider/>
 				<Cover/>
 			</Main>
 			<Section

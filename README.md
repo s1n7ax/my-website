@@ -1,6 +1,6 @@
 # My Website
 
-This is [https://s1n7ax.com](https://s1n7ax.com) built with Rust 🦀
+This is my portfolio [https://s1n7ax.com](https://s1n7ax.com) built with Rust 🦀
 
 ## Demo
 
@@ -8,9 +8,9 @@ https://github.com/user-attachments/assets/ff3c5a12-fb95-43d8-9154-fc804085a259
 
 ## Screenshots
 
-![PC](https://github.com/user-attachments/assets/b57bf6aa-66cb-41f9-9da4-45a07a647e09)
+<img src="https://github.com/user-attachments/assets/b57bf6aa-66cb-41f9-9da4-45a07a647e09" alt="PC" width="1000"/>
 
-![Mobile](https://github.com/user-attachments/assets/0209cdb6-4d6a-4ab4-8d64-2e396fd18d07)
+<img src="https://github.com/user-attachments/assets/0209cdb6-4d6a-4ab4-8d64-2e396fd18d07" alt="Mobile" width="400"/>
 
 ## Development
 

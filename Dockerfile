@@ -7,7 +7,8 @@ ENV LEPTOS_SITE_ADDR="0.0.0.0:3000"
 
 WORKDIR /work
 COPY . .
-RUN nix develop --command pnpm install && pnpm build
+RUN nix --extra-experimental-features 'flakes nix-command' develop \
+  --command pnpm install && pnpm build
 
 #--------------------------------------------------------------------#
 #                          deployment image                          #

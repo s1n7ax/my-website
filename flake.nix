@@ -35,7 +35,7 @@
             # npm stuff
             nodePackages.pnpm
             nodejs_22
-            sass
+            dart-sass
 
             # other language servers
             tailwindcss-language-server

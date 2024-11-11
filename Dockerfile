@@ -27,7 +27,7 @@ RUN npm install \
 #--------------------------------------------------------------------#
 #                          deployment image                          #
 #--------------------------------------------------------------------#
-FROM alpine:3.19.1 AS runner
+FROM busybox:stable AS runner
 
 WORKDIR /app
 

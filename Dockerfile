@@ -14,7 +14,7 @@ RUN nix --extra-experimental-features 'flakes nix-command' develop --command pnp
 #--------------------------------------------------------------------#
 #                          deployment image                          #
 #--------------------------------------------------------------------#
-FROM alpine:3.19.1 AS runner
+FROM busybox:stable AS runner
 
 WORKDIR /app
 

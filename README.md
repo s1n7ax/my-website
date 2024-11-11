@@ -2,8 +2,15 @@
 
 This is [https://s1n7ax.com](https://s1n7ax.com) built with Rust 🦀
 
-![Screenshot PC 1](https://github.com/s1n7ax/my-website-ssr/assets/18459807/ebbe2fa6-03fc-4fa9-9e3e-53fb9014682b)
-![Screenshot Mobile 1](https://github.com/s1n7ax/my-website-ssr/assets/18459807/1ff22851-b152-414d-8603-3fb697086d3d)
+## Demo
+
+https://github.com/user-attachments/assets/ff3c5a12-fb95-43d8-9154-fc804085a259
+
+## Screenshots
+
+![PC](https://github.com/user-attachments/assets/b57bf6aa-66cb-41f9-9da4-45a07a647e09)
+
+![Mobile](https://github.com/user-attachments/assets/0209cdb6-4d6a-4ab4-8d64-2e396fd18d07)
 
 ## Development
 

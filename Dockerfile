@@ -4,6 +4,7 @@
 FROM nixos/nix:2.18.9 AS builder
 
 ENV LEPTOS_SITE_ADDR="0.0.0.0:3000"
+ENV LEPTOS_SASS_VERSION="1.71.0"
 
 WORKDIR /work
 COPY . .

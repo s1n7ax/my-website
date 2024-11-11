@@ -54,6 +54,11 @@
             ))
           ];
 
+          buildPhase = ''
+            pnpm install
+            pnpm run build
+          '';
+
           shellHook = ''
             alias ls=eza
             alias find=fd

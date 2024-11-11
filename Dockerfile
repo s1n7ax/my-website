@@ -10,7 +10,7 @@ COPY . .
 RUN nix --extra-experimental-features 'flakes nix-command' develop \
   --command pnpm install
 RUN nix --extra-experimental-features 'flakes nix-command' develop \
-  --command pnpm run build
+  --command pnpm build
 
 #--------------------------------------------------------------------#
 #                          deployment image                          #

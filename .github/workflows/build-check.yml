@@ -18,8 +18,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+      - name: Docker image build
+        uses: docker/build-push-action@v6
         with:
-          push: true
-          tags: s1n7ax/my-website:latest
+          push: false

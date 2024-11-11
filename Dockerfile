@@ -1,7 +1,7 @@
 #--------------------------------------------------------------------#
 #                            build image                             #
 #--------------------------------------------------------------------#
-FROM rustlang/rust:nightly-alpine as builder
+FROM rustlang/rust:nightly-alpine AS builder
 
 ENV LEPTOS_SITE_ADDR="0.0.0.0:3000"
 ENV PATH="/usr/local/cargo/bin:$PATH"
@@ -27,7 +27,7 @@ RUN npm install \
 #--------------------------------------------------------------------#
 #                          deployment image                          #
 #--------------------------------------------------------------------#
-FROM alpine:3.19.1 as runner
+FROM alpine:3.19.1 AS runner
 
 WORKDIR /app
 

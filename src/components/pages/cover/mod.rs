@@ -29,7 +29,7 @@ pub fn Cover() -> impl IntoView {
 		<div class=styles::container>
 			<Spider/>
 			<CoverTemplate
-				welcome="Hi!, I'm Nisala".to_string()
+				welcome="Hi! I'm Nisala".to_string()
 				designation="Senior Full-stack Developer".to_string()
 				details="Hey! Welcome to my little corner of the internet!
 						I'm a software whiz who loves making big business apps run smoothly.

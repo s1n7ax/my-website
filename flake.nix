@@ -7,27 +7,53 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { nixpkgs, rust-overlay, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      nixpkgs,
+      rust-overlay,
+      flake-utils,
+      ...
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         overlays = [ (import rust-overlay) ];
         pkgs = import nixpkgs { inherit system overlays; };
-      in with pkgs; {
+      in
+      with pkgs;
+      {
         devShells.default = mkShell {
           buildInputs = [
-            tailwindcss-language-server
+            # rust stuff
+            cargo
+            cargo-leptos
+            cargo-generate
+            rust-analyzer
             leptosfmt
-            binaryen
+            stylance-cli
+
+            # npm stuff
+            nodePackages.pnpm
+            nodejs_22
+            dart-sass
+
+            # other language servers
+            tailwindcss-language-server
             emmet-language-server
+
+            # utils
+            binaryen
             openssl
             pkg-config
             eza
             fd
-            (rust-bin.selectLatestNightlyWith (toolchain:
+            (rust-bin.selectLatestNightlyWith (
+              toolchain:
               toolchain.default.override {
                 extensions = [ "rust-src" ];
                 targets = [ "wasm32-unknown-unknown" ];
-              }))
+              }
+            ))
           ];
 
           shellHook = ''
@@ -35,5 +61,6 @@
             alias find=fd
           '';
         };
-      });
+      }
+    );
 }

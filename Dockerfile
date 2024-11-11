@@ -1,27 +1,19 @@
-FROM rustlang/rust:nightly-alpine as builder
+#--------------------------------------------------------------------#
+#                            build image                             #
+#--------------------------------------------------------------------#
+FROM nixos/nix:2.18.9 AS builder
 
 ENV LEPTOS_SITE_ADDR="0.0.0.0:3000"
-ENV PATH="/usr/local/cargo/bin:$PATH"
-
-
-RUN apk update && \
-  apk add --no-cache bash curl npm libc-dev binaryen musl-dev
-
-SHELL [ "/bin/bash", "-exo", "pipefail", "-c" ]
-
-RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-leptos/releases/latest/download/cargo-leptos-installer.sh | sh
-
-# Add the WASM target
-RUN rustup target add wasm32-unknown-unknown \
-  && cargo install stylance-cli
+ENV LEPTOS_SASS_VERSION="1.71.0"
 
 WORKDIR /work
 COPY . .
+RUN nix --extra-experimental-features 'flakes nix-command' develop --command pnpm install
+RUN nix --extra-experimental-features 'flakes nix-command' develop --command pnpm build
 
-RUN npm install \
-  && npm run build
-
-
+#--------------------------------------------------------------------#
+#                          deployment image                          #
+#--------------------------------------------------------------------#
 FROM alpine:3.19.1 as runner
 
 WORKDIR /app

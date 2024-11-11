@@ -1,7 +1,7 @@
 #--------------------------------------------------------------------#
 #                            build image                             #
 #--------------------------------------------------------------------#
-FROM nixos/nix:2.18.9 as builder
+FROM nixos/nix:2.18.9 AS builder
 
 ENV LEPTOS_SITE_ADDR="0.0.0.0:3000"
 
@@ -14,7 +14,7 @@ RUN nix --extra-experimental-features nix-command develop \
 #--------------------------------------------------------------------#
 #                          deployment image                          #
 #--------------------------------------------------------------------#
-FROM alpine:3.19.1 as runner
+FROM alpine:3.19.1 AS runner
 
 WORKDIR /app
 

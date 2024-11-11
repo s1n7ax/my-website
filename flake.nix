@@ -30,6 +30,7 @@
             cargo-generate
             rust-analyzer
             leptosfmt
+            stylance-cli
 
             # npm stuff
             nodePackages.pnpm

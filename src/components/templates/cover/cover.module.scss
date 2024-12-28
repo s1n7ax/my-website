@@ -2,7 +2,7 @@
   display: grid;
   grid-template-areas: "cover_photo" "title";
   background: transparent;
-  
+
   @media (min-width: $screen-sm) {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -86,6 +86,7 @@
 }
 
 .designation {
+  color: #e05959;
   position: relative;
   justify-self: center;
   font-size: 1.3rem;

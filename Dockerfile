@@ -8,9 +8,9 @@ ENV PATH="/usr/local/cargo/bin:$PATH"
 
 
 RUN apk update && \
-  apk add --no-cache bash curl npm libc-dev binaryen musl-dev
+  apk add --no-cache bash curl npm libc-dev binaryen musl-dev pnpm
 
-RUN wget -qO- https://get.pnpm.io/install.sh | sh -
+# RUN wget -qO- https://get.pnpm.io/install.sh | sh -
 
 SHELL [ "/bin/bash", "-exo", "pipefail", "-c" ]
 

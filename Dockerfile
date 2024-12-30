@@ -8,7 +8,7 @@ ENV PATH="/usr/local/cargo/bin:$PATH"
 
 
 RUN apk update && \
-  apk add --no-cache bash curl npm libc-dev binaryen musl-dev
+  apk add --no-cache bash curl npm libc-dev binaryen musl-dev pnpm
 
 SHELL [ "/bin/bash", "-exo", "pipefail", "-c" ]
 

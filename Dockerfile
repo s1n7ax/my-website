@@ -8,21 +8,21 @@ ENV PATH="/usr/local/cargo/bin:$PATH"
 
 
 RUN apk update && \
-  apk add --no-cache bash curl npm libc-dev binaryen musl-dev
+  apk add --no-cache bash curl libc-dev binaryen musl-dev pnpm
 
 SHELL [ "/bin/bash", "-exo", "pipefail", "-c" ]
-
-RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-leptos/releases/latest/download/cargo-leptos-installer.sh | sh
 
 # Add the WASM target
 RUN rustup target add wasm32-unknown-unknown \
   && cargo install stylance-cli
 
+RUN cargo install --locked cargo-leptos@0.2.24
+
 WORKDIR /work
 COPY . .
 
-RUN npm install \
-  && npm run build
+RUN pnpm install \
+  && pnpm build
 
 #--------------------------------------------------------------------#
 #                          deployment image                          #

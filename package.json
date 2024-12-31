@@ -6,7 +6,7 @@
   "private": false,
   "scripts": {
     "dev": "concurrently --kill-others 'pnpm run style:watch' 'cargo leptos watch'",
-    "build": "pnpm run tailwind:build && npm run stylance:build && npm run leptos:build && npm run minify",
+    "build": "pnpm run tailwind:build && pnpm run stylance:build && pnpm run leptos:build && pnpm run minify",
     "style:watch": "concurrently --kill-others 'pnpm run tailwind:watch' 'npm run stylance:watch'",
     "stylance:watch": "stylance --watch . --output-file ./style/stylance.scss",
     "tailwind:watch": "tailwindcss -i ./style/tailwind-input.css -o ./style/tailwind.css --watch",

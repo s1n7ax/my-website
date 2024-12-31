@@ -12,6 +12,7 @@ RUN apk update && \
 
 SHELL [ "/bin/bash", "-exo", "pipefail", "-c" ]
 
+# Install leptos
 RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-leptos/releases/latest/download/cargo-leptos-installer.sh | sh
 
 # Add the WASM target

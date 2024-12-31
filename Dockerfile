@@ -13,11 +13,15 @@ RUN apk update && \
 SHELL [ "/bin/bash", "-exo", "pipefail", "-c" ]
 
 # Install leptos
-RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-leptos/releases/latest/download/cargo-leptos-installer.sh | sh
+# RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-leptos/releases/latest/download/cargo-leptos-installer.sh | sh
+
+
 
 # Add the WASM target
 RUN rustup target add wasm32-unknown-unknown \
   && cargo install stylance-cli
+
+RUN cargo install --locked cargo-leptos@0.2.24
 
 WORKDIR /work
 COPY . .

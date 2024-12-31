@@ -8,7 +8,7 @@ ENV PATH="/usr/local/cargo/bin:$PATH"
 
 
 RUN apk update && \
-  apk add --no-cache bash curl npm libc-dev binaryen musl-dev
+  apk add --no-cache bash curl libc-dev binaryen musl-dev pnpm
 
 SHELL [ "/bin/bash", "-exo", "pipefail", "-c" ]
 
@@ -21,8 +21,8 @@ RUN rustup target add wasm32-unknown-unknown \
 WORKDIR /work
 COPY . .
 
-RUN npm install \
-  && npm run build
+RUN pnpm install \
+  && pnpm build
 
 #--------------------------------------------------------------------#
 #                          deployment image                          #
